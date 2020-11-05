@@ -1,0 +1,326 @@
+{
+    "unix_time": 1604579910.5969484,
+    "success": true,
+    "datasets": [
+        {
+            "id": "44e196d3-6028-4371-9c4b-45268d61b330",
+            "name": "kohlendioxid-emissionen-kommunale-co2-bilanzen-stadt-konstanz",
+            "title": "Kohlendioxid-Emissionen: Kommunale CO2 Bilanzen Stadt Konstanz ",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=44e196d3-6028-4371-9c4b-45268d61b330",
+            "notes": "<p><strong>Quelle der Daten</strong>: <a href=\"https://www.statistik-bw.de/\">Statistisches Landesamt Baden-Württemberg</a></p>\n<p>Die Angaben über CO2-Emissionen nach Sektoren beruhen auf den Energiebilanzen für Baden-Württemberg, die zunächst nur auf Landesebene vorliegen. Bei der Berechnung der Emissionswerte auf Kreis- und Gemeindeebene wird notwendigerweise auf modellhafte und damit in den verschiedenen Sektoren zum Teil verallgemeinernde Annahmen zurückgegriffen. Insbesondere wird aufgrund fehlender primärstatistischer Angaben im Sektor Haushalte, Gewerbe, Handel, Dienstleistungen und übrige Verbraucher mit einem durchschnittlichen Energieverbrauch je Wohnung bzw. je sozialversicherungspflichtig Beschäftigtem gerechnet. Regionale Minderungsmaßnahmen in diesem Sektor werden deshalb in der Modellrechnung nicht vollständig berücksichtigt.</p>\n<p><strong>Jahr:</strong></p>\n<p>Die Jahreszahl 2011a bezieht sich auf Bevölkerungsstand zum 31.12., Fortschreibung des Zensus 1987 (VZ1987)</p>\n<p>Die Jahreszahl 2011b auf Bevölkerungsstand zum 31.12., Fortschreibung des Zensus 2011 (VZ2011)</p>\n<p><strong>Gemeindekennung: </strong>335043, Konstanz</p>\n<p><strong>Private Haushalte, GHD und übrige Verbraucher</strong>: damit sind Gewerbe, Handel, Dienstleistungen (GHD) und übrige Verbraucher wie öffentliche Einrichtungen, Landwirtschaft und militärische Einrichtungen gemeint.</p>\n<p><strong>Verkehr</strong>: bezeichnet den Straßenverkehr und sonstiger Verkehr wie Schienen-, nationaler Luftverkehr, Binnenschifffahrt und Off-Road-Verkehr (landwirtschaftl. Zugmaschinen, Baumaschinen, Militär, Industriegeräte,Garten/Hobby).</p>\n<p><strong>Wohnbevölkerung</strong>:</p>\n<p>-Bevölkerungsstand zum 31.12., Fortschreibung der  Volkszählung 2011 (VZ2011).</p>\n<p>-Bevölkerungsstand zum 31.12., Fortschreibung der Volkszählung 1987 (VZ1987).</p>\n<p><strong>Tonnen</strong>: Menge an CO2 Emissionen in Tonnen nach Sektoren</p>\n<p><strong>EW</strong>: Einwohnerzahl im jeweiligen Jahr</p>\n<p><strong>Tonnen Je Einwohner</strong>: Menge der CO2 Emissionen in Tonnen je Einwohner nach Sektoren</p>\n<p><strong>Mengenanteile der Sektoren in %:</strong> CO2 Emissionen nach Sektoren in Prozenten.</p>\n<p><strong>Methodische Hinweise</strong>: Änderungen Allgemein/ Methodisch CO2-Berechnung regional/ Revision ab Herbst 2019:</p>\n<p>- Umstellung auf die endgültige Energiebilanz 2016</p>\n<p>- Die Emissionsfaktoren für feuerungsbedingte CO2-Emissionen ab dem Berichtsjahr 2016 wurden mit den Daten des Umweltbundesamtes gemäß NIR 2019 aktualisiert.</p>\n<p>- Die bundesweiten Anteile Nationalflug an Gesamtflug wurden seitens des Umweltbundesamtes in NIR 2019 ab 1990 um durchschnittlich 10 % gesenkt. Dadurch Ändern sich alle Emissionen des nationalen Luftverkehrs und somit die Emissionen des Sektors Verkehr.</p>\n<p>- Die Regionalisierungsdaten aus weiteren amtlichen und nichtamtlichen Quellen wurden hinsichtlich Datenverfügbarkeit zum jeweiligen Berichtsjahr überprüft und aktualisiert, sowie die Detailberechnungen methodisch vereinheitlicht.</p>\n<p>- Die den regionalen Straßenverkehrsemissionen zugrundeliegenden Jahresfahrleistungen wurden ab dem Jahr 2010 einer grundlegenden Revision unterzogen. Das Verkehrszählungsjahr 2010, das die Basis für die Fortschreibung der Jahre 2011 bis 2014 bildet, greift auf deutlich veränderte Zählergebnisse nach dem neuen Verkehrsmonitoring zurück. Die Verkehrszählung 2015 bildet bis zur nächsten Zählung die Basis für künftige Fortschreibungen ab 2016. Details hierzu finden Sie im Glossar des Internetauftritts des Statistischen Landesamtes unter dem Thema \"Verkehr\", Unterthema \"KFZ und Verkehrsbelastung\", Jahresfahrleistungen im Straßenverkehr (<a href=\"https://www.statistik-bw.de/Glossar/456\">https://www.statistik-bw.de/Glossar/456</a>)</p>\n<p>- Aus methodischen Gründen werden die regionalen Straßenverkehrsemissionen aus Strom erst ab Berichtsjahr 2016 ausgewiesen.</p>\n<p>-Die Vergleichbarkeit der Ergebnisse mit früheren Berechnungsjahren sind eingeschränkt.</p>\n"
+        },
+        {
+            "id": "5d78bac6-4f76-4648-bf4a-3239d50a5404",
+            "name": "m-ngelmelder",
+            "title": "Mängelmelder",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=5d78bac6-4f76-4648-bf4a-3239d50a5404",
+            "notes": "<p>Zusammenstellung aller über den Mängelmelder (<a href=\"https://konstanz-mitgestalten.de/bms/search#portal-bms\">https://konstanz-mitgestalten.de/bms/search#portal-bms</a>) gemeldeten Probleme.</p>\n"
+        },
+        {
+            "id": "5f0134ec-41af-4907-b997-a783c175ab04",
+            "name": "abfallplaner-m-llabfuhrtermine-2020",
+            "title": "Abfallplaner Müllabfuhrtermine 2020",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=5f0134ec-41af-4907-b997-a783c175ab04",
+            "notes": "<p>Auflistung der Müllabfuhrtermine der EBK für Biomüll, Restmüll, Gelbersack, Papiertonne, Christbaumabholung im Stadtgebiet Konstanz für das Jahr 2020.</p>\n<p>Der Spaltenaufbau des Datensatzes bestimmt sich wie folgt:</p>\n<ul>\n<li>Datum (DD.MM.)</li>\n<li>PLZ = Postleitzahl </li>\n<li>Straße = Straßennamen</li>\n<li>Müllart (Biomüll, Restmüll, Gelbersack, Papier, Christbaumabholung)</li>\n<li>Abholregion (Konstanz)</li>\n</ul>\n<p>(Quelle: Entsorgungsbetriebe Stadt Konstanz)</p>\n"
+        },
+        {
+            "id": "a7d3a81d-4dce-41fc-a61b-844ed232e85a",
+            "name": "wahlbezirke",
+            "title": "Wahlbezirke",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=a7d3a81d-4dce-41fc-a61b-844ed232e85a",
+            "notes": "<p class=\"rtejustify\">Die Datenbank enthält die Aktualisierungsinformationen für Wahlbezirke.</p>\n<p class=\"rtejustify\"><a href=\"https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjx7ozMx9vrAhWlM-wKHVAEAmgQFjAAegQIBBAB&amp;url=https%3A%2F%2Fwww.konstanz.de%2Fsite%2FKonstanz%2Fget%2Fparams_E-763012888_Dattachment%2F103462%2FBundestagswahl%25202017_Wahlergebnisse%2520in%2520der%2520Stadt%2520Konstanz.pdf&amp;usg=AOvVaw0ep9wG4TiP0M2dqUGR_Vpe\" target=\"_parent\">Lesen Sie mehr</a></p>\n<p class=\"rtejustify\">(Quelle: Stadt Konstanz, Projektgruppe Wahlen)</p>\n"
+        },
+        {
+            "id": "be007cbd-d9f5-4556-ac5a-81cb31948cd6",
+            "name": "wahlergebnisse-konstanzer-oberb-rgermeisterwahlen",
+            "title": "Wahlergebnisse Konstanzer Oberbürgermeisterwahlen",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=be007cbd-d9f5-4556-ac5a-81cb31948cd6",
+            "notes": "<p>Die Ergebnisse der Oberbürgermeisterwahlen 1996 bis 2020 stehen maschinenlesbar in diesem offenen Daten Portal zur Verfügung.</p>\n<p>Berichte (pdf) zu den Wahlergebnisse finden Sie hier: <a href=\"https://www.konstanz.de/leben+in+konstanz/statistik/weitere+daten\">https://www.konstanz.de/leben+in+konstanz/statistik/weitere+daten</a></p>\n"
+        },
+        {
+            "id": "6ebde3b5-333e-4d94-85f7-d37763493b8c",
+            "name": "dauerz-hlstellen-radverkehr",
+            "title": "Dauerzählstellen Radverkehr",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=6ebde3b5-333e-4d94-85f7-d37763493b8c",
+            "notes": "<p>Der Datensatz enthält die Messergebnisse der Fahrradzählungen aller städtischen Dauerzählstellen im Konstanzer Stadtgebiet. Mit diesen Daten kann genau festgestellt werden, wann wie viele Radfahrerinnen und Radfahrer an diesen Orten unterwegs gewesen sind. Die Messergebnisse sind im 15 Minuten-Rhythmus erfasst. </p>\n<p>Aktuell befindet sich eine Dauerzählstelle im Konstanzer Stadtgebiet. Die Fahrradzählstelle befindet sich am Ende der Fahrradbrücke an Herosépark und fungiert als wichtige Datengrundlage für die städtische Radpolitik. </p>\n<p>Wer die Daten der Konstanzer Fahrradzählstelle für einen bestimmten Tag abrufen will, kann das auf einer interaktiven Karte des Herstellers Eco Counter (<a href=\"http://eco-public.com/ParcPublic/?id=4586#\">http://eco-public.com/ParcPublic/?id=4586#</a>) tun.</p>\n<p>(Quelle: Stadt Konstanz, Amt für Stadtplanung und Umwelt)</p>\n"
+        },
+        {
+            "id": "b0135807-8d4a-439e-a0de-6d358eef051f",
+            "name": "grenz-berg-nge-kraftfahrzeuge-deutschland-schweiz",
+            "title": "Grenzübergänge Kraftfahrzeuge Deutschland Schweiz",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=b0135807-8d4a-439e-a0de-6d358eef051f",
+            "notes": "<p>Die  Schweizer Kantonsbehörde Thurgau und das Schweizer Bundesamt für Straßen (ASTRA) erheben die durchschnittliche tägliche Verkehrsstärke (DTV) der Grenzübergänge von Kraftfahrzeugen an den drei Zollstellen “Tägerwielen-Paradieser Tor”, “Emmishofer Zoll” und der “Gemeinschaftszollanlage Kreuzlingen/Tägerwielen (kurz GZA)”. Seit 2013 werden diese Daten gesammelt, und nun auch als offene Daten zur Verfügung gestellt. Diese Daten sind außerdem im Open Data Portal des Kanton Thurgau verfügbar: <a href=\"https://map.geo.tg.ch/apps/mf-geoadmin3/?lang=de&amp;topic=ech&amp;catalogNodes=10000,20000,30000,15100,34000&amp;layers=richtplankt50k_hauptverkehrstrassen,richtplankt200k_motorfahrzeugverkehr,strassenverkehrszaehlung_messdaten&amp;layers_opacity=0.9,1,1&amp;E=2728994.19&amp;N=1280640.14&amp;zoom=6&amp;layers_timestamp=,,20130101&amp;layers_visibility=true\">https://map.geo.tg.ch/apps/mf-geoadmin3/?lang=de&amp;topic=ech&amp;catalogNodes=10000,20000,30000,15100,34000&amp;layers=richtplankt50k_hauptverkehrstrassen,richtplankt200k_motorfahrzeugverkehr,strassenverkehrszaehlung_messdaten&amp;layers_opacity=0.9,1,1&amp;E=2728994.19&amp;N=1280640.14&amp;zoom=6&amp;layers_timestamp=,,20130101&amp;layers_visibility=true</a><br />\n </p>\n<p>Die Stadt Konstanz hat die Daten ausdrücklich nicht erhoben.</p>\n"
+        },
+        {
+            "id": "22c08d05-c9cb-4af2-ae0d-bed37503ab39",
+            "name": "mobile-verkehrsz-hlungen-rad-und-fu-verkehr",
+            "title": "Mobile Verkehrszählungen Rad- und Fußverkehr",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=22c08d05-c9cb-4af2-ae0d-bed37503ab39",
+            "notes": "<p>Das Handlungsfeld Mobilität ist ein zentrales Thema auf dem Weg zur Klimaneutralität. Mit einer Mobilitätswende soll die Senkung des Energieverbrauchs ohne Einschränkung der Mobilität erreicht werden. Dabei geht es nicht nur um die Klärung, wie und mit welchen Verkehrsmitteln sich die Bürgerinnen und Bürger zukünftig bewegen. Es geht auch darum, wie der knappe öffentliche Raum genutzt wird. </p>\n<p>Für einen besseren Überblick über die Anzahl der Radfahrer, Autos und Fußgänger an einzelnen Stellen, hat die Stadt Konstanz zwei neue, mobile Zählgeräte beschafft.</p>\n<p>Unter diesem Datensatz finden Sie verschiedene Ressourcen zu den mobilen Verkehrszählungen. Sie interessieren sich für die städtische Verkehrsplanung? <a href=\"https://www.konstanz.de/stadt+gestalten/verkehrsplanung\">Hier</a> gibt's mehr Informationen.</p>\n<p>(Quelle, Stadt Konstanz, Amt für Stadtplanung und Umwelt)</p>\n"
+        },
+        {
+            "id": "9b439a59-62b0-4ada-9976-08a631a96b82",
+            "name": "baumkataster-konstanz",
+            "title": "Baumkataster Konstanz",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=9b439a59-62b0-4ada-9976-08a631a96b82",
+            "notes": "<p>Auf Konstanzer Stadtgebiet befinden sich rund 15.500 Bäume. Davon sind 1.400 mindestens 100 Jahre alt. Doch wie gelingt die allgemeine Überwachung und aufwendige Pflege der städtischen Bäume? Dabei hilft das Baumkataster. Dieser Datensatz beinhaltet ein Verzeichnis, in dem Bäume der Stadt Konstanz enthalten sind. Zuständig für die städtische Baumpflege sind die Technischen Betriebe der Stadt Konstanz (TBK). Sie interessieren sich für das vielfältige Aufgabengebiet der TBK? <a href=\"https://www.konstanz.de/141376\">Mehr dazu</a></p>\n<p>(Quelle: Technische Betriebe Stadt Konstanz)</p>\n"
+        },
+        {
+            "id": "71f1f691-2acb-4d9c-a86c-74ca7d337d33",
+            "name": "historische-wetterdaten",
+            "title": "Historische Wetterdaten",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=71f1f691-2acb-4d9c-a86c-74ca7d337d33",
+            "notes": "<p><strong>Quelle: Deutscher Wetterdienst (DWD)</strong></p>\n<p>Dieser Datensatz beinhaltet historische Wetterdaten der Station des DWD (Station-Nummer: 02712) im Konstanzer Silvanerweg 6. Wie hat sich das Wetter über einen längeren Zeitraum in Konstanz verändert?</p>\n<p>Am 25.07.2017 ist eine Änderung des Gesetzes über den Deutschen Wetterdienst (\"DWD-Gesetz\") in Kraft getreten. Der DWD wird gesetzlich beauftragt, seine Wetter- und Klimainformationen weitgehend entgeltfrei zur Verfügung zu stellen. Zurzeit stehen viele Geodaten wie Modellvorhersagen, Radardaten, aktuelle Mess- und Beobachtungsdaten sowie eine große Zahl von Klimadaten auf dem Open Data Server <a href=\"https://opendata.dwd.de/\">https://opendata.dwd.de </a>zur Verfügung. Die Klimadaten werden unter <a href=\"https://opendata.dwd.de/climate_environment/\">https://opendata.dwd.de/climate_environment/CDC/</a> bereitgestellt.</p>\n<p>Die frei zugänglichen Daten dürfen entsprechend der \"Verordnung zur Festlegung der Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes (GeoNutzV)\" unter Beigabe eines Quellenvermerks ohne Einschränkungen weiterverwendet werden. (<a href=\"https://gdz.bkg.bund.de/\">https://gdz.bkg.bund.de/</a>)Im Hinblick auf die Gestaltung der Quellenvermerke fordert der Deutsche Wetterdienst (DWD) (gemäß § 7 DWD-Gesetz, § 3 GeoNutzV) zur Beachtung nachfolgender Hinweise auf:</p>\n<ul>\n<li>Die Pflicht zur Einbindung beigegebener Quellenvermerke gilt für die unveränderte Verwendung von Geodaten und anderer Leistungen des DWD. Auch bei Bildung von Auszügen oder Änderung des Datenformats sind Quellenvermerkeeinzubinden. Eine Abbildung des DWD-Logos ist als Quellenvermerk im Sinne der GeoNutzV ausreichend.</li>\n<li>Bei weitergehenden Veränderungen, Bearbeitungen, neuen Gestaltungen oder sonstigen Abwandlungen erwartet der DWD mindestens eine Nennung des DWD in zentralen Quellenverzeichnissen oder im Impressum.</li>\n<li>Veränderungshinweise gemäß GeoNutzV können z.B. lauten: \"Datenbasis: Deutscher Wetterdienst, Rasterdaten bildlich wiedergegeben\", \"Datenbasis: Deutscher Wetterdienst, Einzelwerte gemittelt\" oder \"Datenbasis:Deutscher Wetterdienst, eigene Elemente ergänzt\".</li>\n</ul>\n<p>Bei einer Verwendung, die nicht der Zweckbestimmung der Leistung des DWD gerecht wird, sind beigegebene Quellenvermerke zu löschen. Das gilt insbesondere für Wetterwarnungen, wenn nicht sichergestellt ist, dass diese jederzeit vollständig und unverzüglich allen Nutzern zur Verfügung gestellt werden.<br />\n </p>\n"
+        },
+        {
+            "id": "d5e0cdd2-c32a-45a3-a177-748b19928b9b",
+            "name": "stra-enverkehrsunf-lle",
+            "title": "Straßenverkehrsunfälle",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=d5e0cdd2-c32a-45a3-a177-748b19928b9b",
+            "notes": "<p>(Quelle: Unfallatlas der Statistischen Ämtern des Bundes und der Länder)</p>\n<p>Straßenverkehrsunfälle sind Unfälle, bei denen infolge des Fahrverkehrs auf öffentlichen Wegen und Plätzen Personen getötet oder verletzt wurden oder Sachschaden entstanden ist. Der Unfallatlas enthält Unfälle mit Personenschaden. Unfälle, bei denen nur Sachschaden entstand, werden nicht dargestellt. Der Unfallatlas enthält Angaben aus der Statistik der Straßenverkehrsunfälle, die auf Meldungen der Polizeidienststellen basieren.</p>\n<p>Die hier veröffentlichten CSV Daten wurden wie folgt behandelt:</p>\n<ul>\n<li>Es wurden nur die Unfälle in der Stadt Konstanz berücksichtigt.</li>\n<li>Für jeden Unfall wurde eine eindeutige ID-Nummer erstellt.</li>\n<li>Die Jahre 2016 bis 2019 wurden aggregiert.</li>\n<li>Die Variable \"IstStrasse\" wurde nach 2017 in \"STRZUSTAND\" umbenannt. Aus Gründen der Konsistenz wurden beide für den gesamten Zeitraum mit \"STRZUSTAND\" bezeichnet.</li>\n<li>Die Messungen sind die gleichen (0, 1, 2).</li>\n<li>Die Variable \"LICHT\" wurde nach 2017 in \"ULICHTVERH\" umbenannt. Aus Gründen der Konsistenz wurden beide für den gesamten Zeitraum mit \"ULICHTVERH\" bezeichnet. Die Messungen sind die gleichen (0, 1, 2)</li>\n<li>Der komplette Datensatz wurde auch in 6 weitere unterteilt, die jeweils Unfälle mit nur Fahrrädern, Personenkraftwagen, Fußgängern, Krafträdern, Güterkraftfahrzeugen und Sonstigen enthielten.</li>\n<li>Jahr und Monat wurden in einer zusätzlichen Spalte zusammengefasst, um Zeitreihenvergleiche zu erleichtern.</li>\n</ul>\n<p>Variablen:</p>\n<ul>\n<li>UnfallID: eindeutige Nummer für jeden Unfall</li>\n<li>Jahr-Monat: Jahr und Monat kombiniert 2016-1</li>\n<li>UJAHR: Unfalljahr</li>\n<li>UMONAT: Unfallmonat</li>\n<li>USTUNDE: Unfallstunde</li>\n<li>UWOCHENTAG: Wochentag (1 = Sonntag 2 = Montag 3 = Dienstag 4 = Mittwoch 5 = Donnerstag 6 = Freitag 7 = Samstag)</li>\n<li>UKATEGORIE: Unfallkategorien (Kriterium der Zuordnung ist jeweils die schwerste Unfallfolge) 1 = Unfall mit Getöteten 2 = Unfall mit Schwerverletzten 3 = Unfall mit Leichtverletzten UART: Unfallart 1 = Zusammenstoß mit anfahrendem/ anhaltendem/ruhendem Fahrzeug 2 = Zusammenstoß mit vorausfahrendem / wartendem Fahrzeug 3 = Zusammenstoß mit seitlich in gleicher Richtung fahrendem Fahrzeug 4 = Zusammenstoß mit entgegenkommendem Fahrzeug 5 = Zusammenstoß mit einbiegendem / kreuzendemFahrzeug 6 = Zusammenstoß zwischen Fahrzeug und Fußgänger 7 = Aufprall auf Fahrbahnhindernis 8 = Abkommen von Fahrbahn nach rechts 9 = Abkommen von Fahrbahn nach links 0 = Unfall anderer Art</li>\n<li>UTYP1: Unfalltyp 1 = Fahrunfall 2 = Abbiegeunfall 3 = Einbiegen / Kreuzen-Unfall 4 = Überschreiten-Unfall 5 = Unfall durch ruhenden Verkehr 6 = Unfall im Längsverkehr 7 = sonstiger Unfall</li>\n<li>ULICHTVERH: Lichtverhältnisse 0 = Tageslicht 1 = Dämmerung 2 = Dunkelheit</li>\n<li>IstRad: Unfall, an dem mindestens ein Fahrradbeteiligt war 0 = Unfall ohne Fahrradbeteiligung 1 = Unfall mit Fahrradbeteiligung</li>\n<li>IstPKW Unfall mit Pkw: Unfall, an dem mindestens einPersonenkraftwagen beteiligt war 0 = Unfall ohne PKW-Beteiligung 1 = Unfall mit PKW-Beteiligung</li>\n<li>IstFuss Unfall mit Fußgänger: Unfall, an dem mindestens eineFußgängerin oder ein Fußgängerbeteiligt war 0 = Unfall ohne Fußgängerbeteiligung 1 = Unfall mit Fußgängerbeteiligung</li>\n<li>IstKrad Unfall mit Kraftrad: Unfall, an dem mindestens einKraftrad, wie z. B. Mofa, Motorrad/-roller beteiligt war 0 = Unfall ohne Kraftradbeteiligung 1 = Unfall mit Kraftradbeteiligung</li>\n<li>IstGkfz: Unfall mit Güterkraftfahrzeug (GKFZ): Unfall, an demmindestens ein Lastkraftwagen mit Normalaufbau undeinem Gesamtgewicht über 3,5 t, ein Lastkraftwagen mit Tankauflage bzw. Spezialaufbau, eine Sattelzugmaschineoder eine andere Zugmaschine beteiligt war (diese Kategorie ist in den Jahren 2016 und 2017 in\"Unfall mit Sonstigen\" enthalten) 0 = Unfall ohne Güterkraftfahrzeugbeteiligung 1 = Unfall mit Güterkraftfahrzeugbeteiligung</li>\n<li>IstSonstige: Unfall mit Sonstigen: Unfall, an dem mindestens ein obennicht genanntes Verkehrsmittel beteiligt war, wie z. B. einBus oder eine Straßenbahn (2016 und 2017 einschließlich) Unfall mit Güterkraftfahrzeug (GKFZ), ab 2018 ohneUnfall mit GKFZ) 0 = Unfall ohne Beteiligung eines oben nicht genanntenVerkehrsmittels 1 = Unfall mit Beteiligung eines oben nicht genanntenVerkehrsmittels</li>\n<li>LINREFX und LINREFY: Grafische Koordinate 1 undGrafische Koordinate 2LINREFX und LINREFYbilden die Koordinate desauf dem Straßenabschnittliegenden Unfallortes(UTM-Koordinate desReferenzsystems ETRS89,Zone 32N). XGCSWGS84und YGCSWGS84: Grafische Koordinate 1 und Grafische Koordinate 2 XGCSWGS84 und YGCSWGS84 bilden die Koordinate des auf dem Straßenabschnitt liegenden Unfallortes (Koordinate des Referenzsystems GK 3)</li>\n</ul>\n<p>Für weitere Erläuterungen siehe: <a href=\"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Verkehrsunfaelle/Methoden/_inhalt.html#sprg371798\">https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Verkehrsunfaelle/M...</a></p>\n"
+        },
+        {
+            "id": "afc99849-8eb0-4c1b-8902-fd19db2a9ac7",
+            "name": "kleiner-waffenschein",
+            "title": "Kleiner Waffenschein",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=afc99849-8eb0-4c1b-8902-fd19db2a9ac7",
+            "notes": "<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{6f4b3948-30df-4591-9c91-540f112f8c05}{178}\" paraid=\"1602895839\">Für den Umgang mit Waffen oder Munition ist in den meisten Fällen eine Erlaubnis erforderlich. Der \"kleine Waffenschein\" ist erforderlich, um eine Schreckschusswaffe, eine Reizstoffwaffe oder eine Signalwaffe mit PTB-Kennzeichnung zu führen. </p>\n<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{6f4b3948-30df-4591-9c91-540f112f8c05}{190}\" paraid=\"2064664907\">Nach dem Waffengesetz bedeutet den Begriff \"Führen\"; die Ausübung der tatsächlichen Gewalt außerhalb der eigenen Wohnung, der eigenen Geschäftsräume, des eigenen befriedeten Besitztums (z.B. eingezäuntes Grundstück) oder einer Schießstätte. Die Voraussetzungen für den Kleinen Waffenschein sind: 1 - Mindestalter: 18 Jahre, 2 - Zuverlässigkeit, 3 - persönliche Eignung. Die zuständige Abteilung überprüft die Erfüllung der Anforderungen auf der Grundlage der von anderen öffentlichen Institutionen gelieferten Informationen.(<a href=\"https://service.konstanz.de/Leistung-Detailansicht/?id=1175\">https://service.konstanz.de/Leistung-Detailansicht/?id=1175</a>) </p>\n<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{6f4b3948-30df-4591-9c91-540f112f8c05}{250}\" paraid=\"751536915\">(Quelle: Stadt Konstanz, Untere Waffenbehörde) </p>\n<p aria-level=\"3\" class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{08e13f56-48da-4b7a-b655-1a57f0502d69}{1}\" paraid=\"1832347865\" role=\"heading\">Rechtsgrundlage </p>\n<ul class=\"BulletListStyle1 SCXW211717105 BCX3\" role=\"list\">\n<li aria-setsize=\"-1\" class=\"OutlineElement Ltr SCXW211717105 BCX3\" data-aria-level=\"1\" data-aria-posinset=\"1\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"2\" role=\"listitem\">\n<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{08e13f56-48da-4b7a-b655-1a57f0502d69}{7}\" paraid=\"539608185\"><a class=\"Hyperlink SCXW211717105 BCX3\" href=\"http://www.landesrecht-bw.de/jportal/?quelle=jlink&amp;query=WaffG+%C2%A7+4&amp;psml=bsbawueprod.psml&amp;max=true\" rel=\"noreferrer noopener\" target=\"_blank\">§ 4 Waffengesetz (WaffG) (Voraussetzungen für eine Erlaubnis)</a> </p>\n</li>\n</ul>\n<ul class=\"BulletListStyle1 SCXW211717105 BCX3\" role=\"list\">\n<li aria-setsize=\"-1\" class=\"OutlineElement Ltr SCXW211717105 BCX3\" data-aria-level=\"1\" data-aria-posinset=\"1\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"2\" role=\"listitem\">\n<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{08e13f56-48da-4b7a-b655-1a57f0502d69}{15}\" paraid=\"870092004\"><a class=\"Hyperlink SCXW211717105 BCX3\" href=\"http://www.landesrecht-bw.de/jportal/?quelle=jlink&amp;query=WaffG+%C2%A7+5&amp;psml=bsbawueprod.psml&amp;max=true\" rel=\"noreferrer noopener\" target=\"_blank\">§ 5 Waffengesetz (WaffG) (Zuverlässigkeit)</a> </p>\n</li>\n<li aria-setsize=\"-1\" class=\"OutlineElement Ltr SCXW211717105 BCX3\" data-aria-level=\"1\" data-aria-posinset=\"2\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"2\" role=\"listitem\">\n<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{08e13f56-48da-4b7a-b655-1a57f0502d69}{23}\" paraid=\"790975729\"><a class=\"Hyperlink SCXW211717105 BCX3\" href=\"http://www.landesrecht-bw.de/jportal/?quelle=jlink&amp;query=WaffG+%C2%A7+6&amp;psml=bsbawueprod.psml&amp;max=true\" rel=\"noreferrer noopener\" target=\"_blank\">§ 6 Waffengesetz (WaffG) (Persönliche Eignung)</a> </p>\n</li>\n<li aria-setsize=\"-1\" class=\"OutlineElement Ltr SCXW211717105 BCX3\" data-aria-level=\"1\" data-aria-posinset=\"3\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"2\" role=\"listitem\">\n<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{08e13f56-48da-4b7a-b655-1a57f0502d69}{31}\" paraid=\"739489288\"><a class=\"Hyperlink SCXW211717105 BCX3\" href=\"http://www.landesrecht-bw.de/jportal/?quelle=jlink&amp;query=WaffG+%C2%A7+10&amp;psml=bsbawueprod.psml&amp;max=true\" rel=\"noreferrer noopener\" target=\"_blank\">§ 10 Waffengesetz (WaffG) (Erteilung von Erlaubnissen)</a> </p>\n</li>\n<li aria-setsize=\"-1\" class=\"OutlineElement Ltr SCXW211717105 BCX3\" data-aria-level=\"1\" data-aria-posinset=\"4\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"2\" role=\"listitem\">\n<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{08e13f56-48da-4b7a-b655-1a57f0502d69}{39}\" paraid=\"711925631\"><a class=\"Hyperlink SCXW211717105 BCX3\" href=\"http://www.landesrecht-bw.de/jportal/?quelle=jlink&amp;query=WaffG+%C2%A7+36&amp;psml=bsbawueprod.psml&amp;max=true\" rel=\"noreferrer noopener\" target=\"_blank\">§ 36 Waffengesetz (WaffG) (Aufbewahren von Waffen und Munition)</a> </p>\n</li>\n<li aria-setsize=\"-1\" class=\"OutlineElement Ltr SCXW211717105 BCX3\" data-aria-level=\"1\" data-aria-posinset=\"5\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"2\" role=\"listitem\">\n<p class=\"Paragraph SCXW211717105 BCX3\" paraeid=\"{08e13f56-48da-4b7a-b655-1a57f0502d69}{47}\" paraid=\"1819760322\"><a class=\"Hyperlink SCXW211717105 BCX3\" href=\"http://www.landesrecht-bw.de/jportal?quelle=purl&amp;query=Anlage+2+WaffG+2002&amp;psml=bsbawueprod.psml&amp;doktyp=Gesetze&amp;max=true\" rel=\"noreferrer noopener\" target=\"_blank\">Anlage 2 zu § 2 Abs. 2 bis 4 Waffengesetz (WaffG) - Waffenliste</a> </p>\n</li>\n</ul>\n"
+        },
+        {
+            "id": "c6ed879e-9a2c-41ca-a168-a88d449a24c1",
+            "name": "georeferenzierte-standorte-fahrradmietsytsem-konrad-tink",
+            "title": "Georeferenzierte Standorte Fahrradmietsytsem (konrad, TINK)",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=c6ed879e-9a2c-41ca-a168-a88d449a24c1",
+            "notes": "<p class=\"rtejustify\"><strong>Konstanz Fahrradmietsystem</strong></p>\n<p class=\"rtejustify\">In Konstanz steht Ihnen ein vielfältiges Fahrrad-Mietsystem zur Verfügung: 150 konräder (konrad = Konstanz + Rad) und 26 Transporträder von TINK. So können Sie sich einfach und jederzeit ein Fahrrad an einer der 15 konrad-Mietstationen oder ein Transportrad an den zusätzlichen 13 TINK-Stationen ausleihen.</p>\n<p><a href=\"https://www.stadtwerke-konstanz.de/mobilitaet/rad-mietsystem/\">Lesen Sie mehr</a></p>\n<p>(Quelle: Stadtwerke Konstanz GmbH)</p>\n"
+        },
+        {
+            "id": "1fd6d20a-44c5-4dc8-994f-305a723e5511",
+            "name": "georeferenzierte-standorte-parkh-user",
+            "title": "Georeferenzierte Standorte Parkhäuser ",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=1fd6d20a-44c5-4dc8-994f-305a723e5511",
+            "notes": "<p>(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "ab233046-76eb-4d25-97ec-5b6ba27c7706",
+            "name": "stadtteilgrenzen-stadtteilfl-che",
+            "title": "Stadtteilgrenzen / Stadtteilfläche",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=ab233046-76eb-4d25-97ec-5b6ba27c7706",
+            "notes": "<p><strong>Stadtteilgrenzen/Stadtbezirke</strong></p>\n<p class=\"rtejustify\">Die Gesamtstadt Fläche der Stadt Konstanz ist in 15 Bezirke aufgeteilt. </p>\n<p class=\"rtejustify\">Die folgende Datenbank hat den Stadtteilgrenzen Namen  <em><strong>(STT-Name)</strong></em>, Stastteilgrenzen Nummer <em><strong>(STT-Nummer)</strong></em>, Shape typ information <em><strong>(Shape)</strong></em>, Länge jedes Stadtteilgrenzen in Meter <em><strong>(SHAPE Length)</strong></em> und Fläche jedes Stadtteilgrenzen in Meter (<em><strong>SHAPE Area).</strong></em></p>\n<p class=\"rtejustify\">(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "a1cafd20-93f3-448c-9c38-bc69bda8a54c",
+            "name": "georeferenzierte-standorte-spielpl-tze",
+            "title": "Georeferenzierte Standorte Spielplätze",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=a1cafd20-93f3-448c-9c38-bc69bda8a54c",
+            "notes": "<p>(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "fdbf2c18-c926-46ad-991f-68aa8de80ce7",
+            "name": "bodenrichtwertkarte",
+            "title": "Bodenrichtwertkarte",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=fdbf2c18-c926-46ad-991f-68aa8de80ce7",
+            "notes": "<p>Dieser Datensatz enthält eine Karte mit den Bodenrichtwerte im Konstaner Stadtgebiet.</p>\n<p>(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "1bb1b823-e059-422f-839b-d59043a2c5eb",
+            "name": "gesamtnutzung-fahrrad-mietsystem",
+            "title": "Gesamtnutzung Fahrrad-Mietsystem",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=1bb1b823-e059-422f-839b-d59043a2c5eb",
+            "notes": "<p>Statistische Daten zur Nutzung des Fahrrad-Mietsystems der Stadtwerke Konstanz. Neben dem im Mai 2018 gestarteten konrad (Konstanz+Rad) gibt es seit August 2018 die Daten des Angebots für Transporträder von TINK. Wie wird das Fahrradangebot genutzt? Wird im Winter tatsächlich weniger geradelt als im Sommer? Der folgende Datensatz zeigt die tatsächliche Nutzung des Fahrrad Mietsystems der Stadtwerke Konstanz</p>\n<p>Visualisierung: <a href=\"https://www.stadtwerke-konstanz.de/mobilitaet/rad-mietsystem/\" target=\"_blank\">https://www.stadtwerke-konstanz.de/mobilitaet/rad-mietsystem/</a></p>\n<p>Die statistische Daten zu den Rückgaben und Anmietungen der jeweiligen Mieträder gibt es kleinräumig für jede Station in unserer Stadt und für jeden einzelnen Monat.</p>\n<p>(Quelle: Stadtwerke Konstanz GmbH)</p>\n"
+        },
+        {
+            "id": "0b38d63c-4a76-4e28-b9a8-609924aaa24e",
+            "name": "bildungseinrichtungen-2019",
+            "title": "Bildungseinrichtungen - 2019",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=0b38d63c-4a76-4e28-b9a8-609924aaa24e",
+            "notes": "<p>(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "2e012bc8-20c8-4057-8e64-f3c775f0ff21",
+            "name": "st-dtische-einrichtungen-beh-rden",
+            "title": "Städtische Einrichtungen/ Behörden",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=2e012bc8-20c8-4057-8e64-f3c775f0ff21",
+            "notes": "<p>(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "c405d8cd-2a27-49fb-af39-88f4700f4142",
+            "name": "kleinr-umige-gliederung-stadtviertelfl-che",
+            "title": "Kleinräumige Gliederung Stadtviertelfläche",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=c405d8cd-2a27-49fb-af39-88f4700f4142",
+            "notes": "<p>(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "20401185-a5f1-4a8c-b762-66a8fd9a2ad2",
+            "name": "georeferenzierte-standorte-sportanlagen",
+            "title": "Georeferenzierte Standorte Sportanlagen",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=20401185-a5f1-4a8c-b762-66a8fd9a2ad2",
+            "notes": "<p>(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "f5b3f6d3-9c5d-485e-8e1c-bb9cdc068b51",
+            "name": "georeferenzierte-standorte-glascontainer",
+            "title": "Georeferenzierte Standorte Glascontainer",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=f5b3f6d3-9c5d-485e-8e1c-bb9cdc068b51",
+            "notes": "<p>(Quelle: Entsorgungsbetriebe Stadt Konstanz)</p>\n"
+        },
+        {
+            "id": "13b021a3-916a-492e-b48e-fcb79e32c649",
+            "name": "kindertagesbetreuung-2019",
+            "title": "Kindertagesbetreuung - 2019",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=13b021a3-916a-492e-b48e-fcb79e32c649",
+            "notes": "<p>(Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)</p>\n"
+        },
+        {
+            "id": "dc37dce2-1550-4257-a896-e1056062b37c",
+            "name": "geschwindigkeits-berwachung-jahresstatistik",
+            "title": "Geschwindigkeitsüberwachung Jahresstatistik",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=dc37dce2-1550-4257-a896-e1056062b37c",
+            "notes": "<p>Erfasste Bußgeldtatbestände der städtischen Geschwindigkeitsüberwachung über die 12 Monaten eines gesamtes Jahres. Neben der Gesamtstatistik für die Stadt Konstanz, sind Statistiken für folgende stationäre Radarstationen enthalten:</p>\n<ul>\n<li>Untere Laube</li>\n<li>Gartenstraße</li>\n<li>Steinstraße</li>\n<li>Mainaustraße</li>\n<li>Im Loh</li>\n<li>Reichenaustraße/Moschee</li>\n<li>Reichenaustraße/Casino</li>\n<li>Reichenaustraße/Neue Rheinbrücke</li>\n</ul>\n<p>(Quelle: Stadt Konstanz, Bürgeramt)</p>\n"
+        },
+        {
+            "id": "474b11ad-9948-4a03-8da8-73bdfc9fdbdb",
+            "name": "busverkehr",
+            "title": "Busverkehr",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=474b11ad-9948-4a03-8da8-73bdfc9fdbdb",
+            "notes": "<p>Dieser Datensatz entält Daten zu den Konstanzer Busverkehrsnetz, dem Mobilitätsangebot der Stadtwerke Konstanz. Weitere Informationen und Neuigkeiten zum Busverkehr finden Sie <a href=\"https://www.stadtwerke-konstanz.de/mobilitaet/bus/aktuelles/\" target=\"_blank\">hier</a></p>\n<p>(Quelle: Stadtwerke Konstanz GmbH)</p>\n<p>Fahrplandaten nach Landkreisen in Baden-Württemberg gibt es auch hier, auch für den Landkreis Konstanz: </p>\n<p><a href=\"https://www.nvbw.de/open-data/fahrplandaten/fahrplandaten-nach-landkreisen\">https://www.nvbw.de/open-data/fahrplandaten/fahrplandaten-nach-landkreisen</a></p>\n"
+        },
+        {
+            "id": "b5ddf98d-52bc-4677-ad72-939192a5d5a9",
+            "name": "standorte-konstanz-wlan",
+            "title": "Standorte Konstanz WLAN",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=b5ddf98d-52bc-4677-ad72-939192a5d5a9",
+            "notes": "<p>An vielen Orten in Konstanz können Sie sich seit November 2015 kostenlos im \"KonstanzWLAN\" einloggen. Wo sich die kostenlose Hot-Spots befinden zeigt dieser Datensatz.</p>\n<p>Hier gelangen Sie zu dem Angebot der Stadtwerke Konstanz: <a href=\"https://www.stadtwerke-konstanz.de/telekommunikation/konstanz-wlan/\" target=\"_blank\">https://www.stadtwerke-konstanz.de/telekommunikation/konstanz-wlan/</a></p>\n<p>(Quelle: Stadtwerke Konstanz GmbH)</p>\n<p> </p>\n"
+        },
+        {
+            "id": "23683041-b9ee-4a70-add4-42e5930b4d1d",
+            "name": "konstanzer-geb-ude-nach-baujahren",
+            "title": "Konstanzer Gebäude nach Baujahren",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=23683041-b9ee-4a70-add4-42e5930b4d1d",
+            "notes": "<p>Gebäudebestand mit Baujahr aus dem Jahr 2016. Der Datensatz enthält die Gebäude in Konstanz mit Koordinaten sowie den Merkmalen Baujahr (gruppiert) und Anzahl der Wohnungen (gruppiert).<br />\nAusgewiesen wird das Baujahr des Gebäudes, spätere Umbaut- /Sanierungsjahre sind nicht ausgewiesen.</p>\n<p>(Quelle: Stadt Konstanz, Referat Oberbürgermeister - Statistik und Steuerungsunterstützung)</p>\n"
+        },
+        {
+            "id": "67e37de3-ba6e-44fc-8e07-0884b1b4d61c",
+            "name": "einwohnerentwicklung-stadt-konstanz",
+            "title": "Einwohnerentwicklung Stadt Konstanz",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=67e37de3-ba6e-44fc-8e07-0884b1b4d61c",
+            "notes": "<p>Wie hat sich die Einwohnerzahl in der Stadt Konstanz seit 1975 entwickelt? Der Datensatz enthält die Einwohnerzahl (Wohnbevölkerung = Hauptwohnsitz) insgesamt und nach Staatsangehörigkeit (Deutsch, Ausländer) ab dem Jahr 1975.</p>\n<p>(Quelle: Stadt Konstanz, Referat Oberbürgermeister - Statistik und Steuerungsunterstützung)</p>\n"
+        },
+        {
+            "id": "f28f68ae-301f-4a7f-9974-fd1f6ab3effa",
+            "name": "kinderbetreuung-nach-stadtteilen",
+            "title": "Kinderbetreuung nach Stadtteilen",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=f28f68ae-301f-4a7f-9974-fd1f6ab3effa",
+            "notes": "<p>Dieser Datensatz enthält eine Übersicht üder die Kinderbetreuungsplätze im Konstanzer Stadtgebiet. In welchem Stadtgebiet gibt es die größte Anzahl an Kinderbetreuungsplätzen? Dieser Datensatz gibt Auskunft darüber. Die Daten gibt es kleinräumig für jeden Staddteil von Konstanz.</p>\n<p>(Quelle: Stadt Konstanz, Referat Oberbürgermeister - Statistik und Steuerungsunterstützung)</p>\n"
+        },
+        {
+            "id": "a47fac75-1d4d-4dc4-9b76-b400d483f73f",
+            "name": "abfallstatistik-eigenbetriebe-konstanz",
+            "title": "Abfallstatistik Eigenbetriebe Konstanz",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=a47fac75-1d4d-4dc4-9b76-b400d483f73f",
+            "notes": "<p>Dieser Datensatz gibt Auskunft über die Abfallmenge der von den Entsorgungsbetrieben Konstanz (EBK) eingesammelten Abfällen in Konstanz. Wie hat sich die Abfallmenge der einzelnen Müllarten seit 2014 verändert? Der Datensatz enthält folgende Müllarten: Restmüll, Biomüll, Altpapier, Wertstoffe*, Altglas, Gelber Sack, Grünabfälle, Sperrmüll.</p>\n<p>Zu den Wertstoffen gehören bspw.: Holz, Metall, E-Schrott, Kühlschränke,Mineral. Stoffe, Hartkunststoffe</p>\n<p>(Quelle: Entsorgungsbetriebe Stadt Konstanz)</p>\n"
+        },
+        {
+            "id": "ba32f547-4403-4abf-9fe0-83642c4b3fd8",
+            "name": "konstanzer-stadtteilprofile",
+            "title": "Konstanzer Stadtteilprofile ",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=ba32f547-4403-4abf-9fe0-83642c4b3fd8",
+            "notes": "<p>Die Konstanzer Stadtteilprofile stellen die 15 Stadtteile anhand ausgewählter Daten über die Bevölkerung, soziale Infrastruktur oder etwa Wahlen vor.</p>\n<p>Mit den Stadtteilprofilen wird die kleinräumige Vielfalt der Stadt beschrieben und vergleichbarer gemacht. Dieser Datensatz bietet eine Übersicht über Flächennutzung, soziodemografische Indikatoren, soziale Infrastruktur sowie Kaufkraft, Arbeitsmarkt, PKW-Bestand und Wahlergebnisse auf Ebenen der Stadtteile.</p>\n<p>Die Stadtteilgrenzen orientieren sich im Wesentlichen an historischen (Gemarkungs-)Grenzen. </p>\n<p>Mehr zu den Konstanzer Stadtteilprofilen finden sie <a href=\"https://www.konstanz.de/leben+in+konstanz/statistik\">hier</a>.</p>\n<p>(Quelle: Stadt Konstanz, Referat Oberbürgermeister, Abteilung Statistik und Steuerungsunterstützung)</p>\n"
+        },
+        {
+            "id": "e6c98d3b-0e42-4297-97e0-e6197a358500",
+            "name": "alte-wahlbezirkseinteilung-bis-2018",
+            "title": "Alte Wahlbezirkseinteilung bis 2018",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=e6c98d3b-0e42-4297-97e0-e6197a358500",
+            "notes": "<p>Kleinräumige Gliederung der Stadt Konstanz: Wahlbezirke bis 2018 Diese Arbeit oder dieser Inhalt unterliegt einer Creative Commons Nemensnennung 4.0 International Lizenz (CC-BY 4.0).</p>\n<p>(Quelle: Stadt Konstanz, Projektgruppe Wahlen)</p>\n"
+        },
+        {
+            "id": "2ae41c2c-6001-47a3-80b5-3ba437308ec8",
+            "name": "st-dtische-umfrage-im-projekt-klimaschutzdaten-f-r-konstanz",
+            "title": "Städtische Umfrage im Projekt \"Klimaschutzdaten für Konstanz\"",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=2ae41c2c-6001-47a3-80b5-3ba437308ec8",
+            "notes": "<p>Vom 01.07.2020 bis 17.07.2020 lief im Rahmen des Projekts «Klimaschutzdaten für Konstanz» eine Umfrage bei Mitarbeiter*innen der Stadt Konstanz, die in klimaschutzrelevanten Fachbereichen arbeiten oder in der Task Force Klima tätig sind. Die Umfrage fokussiert sich darauf, wie die Mitarbeiter*innen die Themen frei nutzbare und maschinenlesbare Daten, klimaschutzrelevante Daten und Datenverwaltung bewerten. Das Projekt wird im Rahmen des Landeswettbewerbs «Städte, Gemeinden und Landkreise 4.0 – Future Communities 2019» des Ministeriums für Inneres, Digitales und Migration Baden-Württemberg gefördert. Seit Januar 2020 wird erforscht, wie kommunale offene Daten Wirkungen im kommunalen Klimaschutz entfachen können.</p>\n<p>Die Umfrage wurde von einer Master-Studierenden an der Universität Konstanz im Studiengang Politik- und Verwaltungswissenschaften, die dieses Projekt wissenschaftlich begleitet, entworfen. Weitere Informationen zum Projekt «Klimaschutzdaten für Konstanz» (bspw. einen Projektflyer) finden Sie auf unserer Projektwebsite: <a href=\"https://www.digitales-konstanz.de/Foerderprojekte/\">https://www.digitales-konstanz.de/Foerderprojekte/</a>. Dort finden Sie in Kürze auch die Ergebnisse der Umfrage.</p>\n<p>(Quelle: Stadt Konstanz, Referat Oberbürgermeister, Abteilung Statistik und Steuerungsunterstützung)</p>\n"
+        },
+        {
+            "id": "db8d5dc2-b740-45cf-9c42-c0fa8e271051",
+            "name": "modal-split",
+            "title": "Modal Split ",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=db8d5dc2-b740-45cf-9c42-c0fa8e271051",
+            "notes": "<p>Der Modal Split ist eine statistische Berechnung, die beschreibt, wie sich der Verkehr auf die verschiedenen Verkehrsmittel (zu Fuß, mit dem Rad, ÖPNV, oder den motorisierten Individualverkehr) verteilt. <br />\nUnterschieden wird dabei zwischen <strong>Gesamtverkehr </strong>(Besteht aus Binnen- und Quell-/ Zielverkehr sowie Durchgangs- und Tangentialverkehr. Bei der Untersuchung Mobilität in Städten wurde nur der Gesamtverkehr der Konstanzer Bevölkerung untersucht, d.h. keine Einpendler, keine Besucher, kein Durchgangsverkehr), <strong>Binnenverkehr </strong>(Wege, die Quelle und Ziel innerhalb der Stadt haben) und Quell/Zielverkehr (Dass heißt Wege, die entweder ihr Ziel oder ihre Quelle innerhalb der Stadt haben).<br />\nDie Daten sollen perspektivisch alle 5 Jahre erhoben werden. Die erste Erhebung aus dem Jahr 1997 wurde von Socialdata durchgeführt, ebenso die zweite Erhebung aus dem Jahr 2007. Im Jahr 2018 hat die Technische Universität Dresden die Daten erhoben.</p>\n<p>Weitere Informationen zum Modal Split und der städtischen Verkehrsplanung finden Sie <a href=\"https://www.konstanz.de/stadt+gestalten/verkehrsplanung/verkehrszaehlungen+und+mobilitaetserhebungen/srv+2018+-+mobilitaet+in+staedten\">hier</a>.</p>\n<p>(Quelle: Stadt Konstanz, Amt für Stadtplanung und Umwelt)</p>\n"
+        },
+        {
+            "id": "8743fd11-8f6b-46cb-8815-d942b9a45653",
+            "name": "bico2-bilanzierung",
+            "title": "BICO2 Bilanzierung",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=8743fd11-8f6b-46cb-8815-d942b9a45653",
+            "notes": "<p>Mithilfe von Energie- und CO2-Bilanzen wird der Ist-Zustand bei Endenergieverbrauch, Einsatz erneuerbarer Energien und CO2-Emissionen in einer Kommune ermittelt und den unterschiedlichen Sektoren und Energieträgern zugeordnet.</p>\n<p>Das Bilanzierungstool BICO2 BW wurde im Jahr 2010 vom ifeu im Auftrag des Umweltministeriums Baden-Württemberg entwickelt und in einer Pilotphase an Kommunen getestet. Ein wesentlicher Bestandteil des Projekts war die Verwendung landesspezifischer Daten zur Optimierung der Bilanzergebnisse. Im Rahmen des derzeitigen Projekts werden jährlich neue Bilanzjahre integriert und die Bilanzierungsmethode an die aktuellsten Entwicklungen der BISKO-Systematik (Bilanzierungssystematik Kommunal) angepasst. Das Tool enthält neben einer grafischen Aufbereitung der Ergebnisse auch das Indikatorenset des Benchmarks Kommunaler Klimaschutz sowie ein Exportblatt für den Covenant of Mayors.</p>\n<p>Eine Gebrauchsanweisung sowie eine speziell für das Tool entwickelte Schulung unterstützen die Kommunen bei der Nutzung.</p>\n<p>(Quelle: Stadt Konstanz, Stabsstelle Klimaschutz)</p>\n<p> </p>\n"
+        },
+        {
+            "id": "591d86a9-9626-46af-8d93-a25da74040bc",
+            "name": "konstanzer-einwohner-nach-stadtvierteln",
+            "title": "Konstanzer Einwohner nach Stadtvierteln",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=591d86a9-9626-46af-8d93-a25da74040bc",
+            "notes": "<p>Einwohner nach Stadtviertel in der Stadt Konstanz ab 2010. Der Datensatz enthält die Einwohner nach Stadtviertel in der Stadt Konstanz für die Jahre ab 2010.<br />\nBasis ist die eigene Einwohnerfortschreibung jeweils zum 31.12. eines Jahres.<br />\nDie Stadt Konstanz ist 51 Stadtviertel eingeteilt. Das Stadtviertel 100 2 in Egg umfasst die Universität Konstanz, hier sind keine EinwohnerInnen gemeldet. </p>\n<p>Quelle: Stadt Konstanz, Referat Oberbürgermeister - Statistik und Steuerungsunterstützung (Eigene Einwohnerfortschreibung)</p>\n"
+        },
+        {
+            "id": "2cece95e-1dc8-4d56-8125-c1c152eb96c2",
+            "name": "ffentliche-papiereimer-stadt-konstanz",
+            "title": "Öffentliche Papiereimer - Stadt Konstanz",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=2cece95e-1dc8-4d56-8125-c1c152eb96c2",
+            "notes": "<p>Die Daten file enthält den Standort aller Papiereimer (öffentlichen Mülleimer) in Stadt Konstanz. Das Format dieser Daten ist ein Punkt-Shapefile mit dem projizierten Koordinatensystem „ETRS_1989_UTM_Zone_32N“. Die Entleerung dieser Papiereimer im öffentlichen Raum liegt im Aufgabenbereich der <a href=\"https://www.konstanz.de/start/leben+in+konstanz/technische+betriebe.html\" target=\"_blank\">Technischen Betriebe Konstanz</a>.</p>\n<p><strong>Datum der letzten Aktualisierung: 09.07.2019.</strong></p>\n"
+        },
+        {
+            "id": "75395570-1de4-4227-ad43-ecdc2cf0e74d",
+            "name": "kfz-statistik-konstanz",
+            "title": "KFZ-Statistik Konstanz ",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=75395570-1de4-4227-ad43-ecdc2cf0e74d",
+            "notes": "<p>Dieser Datensatz stellt den Kraftfahrzeug (KFZ) Bestand in den Konstanzer Stadtteilen dar. </p>\n<p>Neben des KFZ-Bestandes nach Stadtteilen und Merkmalen (bspw. Schadstoffklassen und Antriebsarten) gibt es u.a. auch eine interessante Zeitreihe für die städtische Entwicklung seit 1983.</p>\n<p>Quelle: Kraftfahrt-Bundesamt; Stadt Konstanz Referat Oberbügermeister - Statistik und Steuerungsunterstützung. </p>\n"
+        },
+        {
+            "id": "61204ad3-9e46-4562-9cbc-3cf6c26dcd22",
+            "name": "gesamt-bersicht-ma-nahmenpaket-2019-klimaschutzbericht-stadt-konstanz",
+            "title": "Gesamtübersicht Maßnahmenpaket 2019 Klimaschutzbericht Stadt Konstanz",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=61204ad3-9e46-4562-9cbc-3cf6c26dcd22",
+            "notes": "<p>Die Stadt Konstanz hat am 02. Mai 2019 als erste deutsche Stadt den kommunalen Klimanotstand ausgerufen. Am 2. Mai 2019 beschloss der Konstanzer Gemeinderat einstimmig die Resolution zum Klimanotstand. Die Resolution fordert, dem Thema Klimaschutz in Konstanz \"höchste Priorität\" einzuräumen. Was hat sich seit dem 2. Mai 2019 im kommunalen Klimaschutz getan? </p>\n<p>Dieser Datensatz gibt einen Gesamtüberblick über die vielfältige klimarelevante Maßnahmen in der Stadtverwaltung und ihren Beteiligungen. Innerhalb der städtischen Handlungsfelder \"Gebäude und Energieversorgung\", \"Stadtplanung und Mobilität\", \"Wirken nach außen\" und \"Wirken nach innen\" sowie bei den städtischen Beteiligungen (ohne definierten Beginn) wurden 2019 über 70 zusätzliche Klimaschutz-Maßnahmen gesammelt. Mehr Informationen finden sie im <a href=\"https://www.konstanz.de/site/Konstanz/get/documents_E-952507350/konstanz/Dateien/Leben%20in%20Konstanz/Umwelt-%20u.%20Naturschutz/Klimaschutzbericht%201-2020_final.pdf\">1. Klimaschutzbericht der Stadt Konstanz. vom 23.01.2020</a>.</p>\n<p> </p>\n"
+        }
+    ]
+}
