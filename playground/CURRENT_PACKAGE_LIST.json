@@ -1,7 +1,39 @@
 {
-    "unix_time": 1604579910.5969484,
+    "unix_time": 1605177396.7622194,
     "success": true,
     "datasets": [
+        {
+            "id": "e6c98d3b-0e42-4297-97e0-e6197a358500",
+            "name": "alte-wahlbezirkseinteilung-bis-2018",
+            "title": "Alte Wahlbezirkseinteilung bis 2018",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=e6c98d3b-0e42-4297-97e0-e6197a358500",
+            "notes": "<p>Kleinräumige Gliederung der Stadt Konstanz: Wahlbezirke bis 2018 Diese Arbeit oder dieser Inhalt unterliegt einer Creative Commons Nemensnennung 4.0 International Lizenz (CC-BY 4.0).</p>\n<p>(Quelle: Stadt Konstanz, Projektgruppe Wahlen)</p>\n"
+        },
+        {
+            "id": "9b439a59-62b0-4ada-9976-08a631a96b82",
+            "name": "baumkataster-konstanz",
+            "title": "Baumkataster Konstanz",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=9b439a59-62b0-4ada-9976-08a631a96b82",
+            "notes": "<p>Auf Konstanzer Stadtgebiet befinden sich rund 15.500 Bäume. Davon sind 1.400 mindestens 100 Jahre alt. Doch wie gelingt die allgemeine Überwachung und aufwendige Pflege der städtischen Bäume? Dabei hilft das Baumkataster. Dieser Datensatz beinhaltet ein Verzeichnis, in dem Bäume der Stadt Konstanz enthalten sind. Zuständig für die städtische Baumpflege sind die Technischen Betriebe der Stadt Konstanz (TBK). Sie interessieren sich für das vielfältige Aufgabengebiet der TBK? <a href=\"https://www.konstanz.de/141376\">Mehr dazu</a></p>\n<p>(Quelle: Technische Betriebe Stadt Konstanz)</p>\n"
+        },
+        {
+            "id": "ba32f547-4403-4abf-9fe0-83642c4b3fd8",
+            "name": "konstanzer-stadtteilprofile",
+            "title": "Konstanzer Stadtteilprofile ",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=ba32f547-4403-4abf-9fe0-83642c4b3fd8",
+            "notes": "<p>Die Konstanzer Stadtteilprofile stellen die 15 Stadtteile anhand ausgewählter Daten über die Bevölkerung, soziale Infrastruktur oder etwa Wahlen vor.</p>\n<p>Mit den Stadtteilprofilen wird die kleinräumige Vielfalt der Stadt beschrieben und vergleichbarer gemacht. Dieser Datensatz bietet eine Übersicht über Flächennutzung, soziodemografische Indikatoren, soziale Infrastruktur sowie Kaufkraft, Arbeitsmarkt, PKW-Bestand und Wahlergebnisse auf Ebenen der Stadtteile.</p>\n<p>Die Stadtteilgrenzen orientieren sich im Wesentlichen an historischen (Gemarkungs-)Grenzen. </p>\n<p>Mehr zu den <strong><em><a href=\"https://www.konstanz.de/leben+in+konstanz/statistik\">Konstanzer Stadtteilprofilen finden Sie hier</a>.</em></strong></p>\n<p>(Quelle: Stadt Konstanz, Referat Oberbürgermeister, Abteilung Statistik und Steuerungsunterstützung)</p>\n"
+        },
+        {
+            "id": "6ebde3b5-333e-4d94-85f7-d37763493b8c",
+            "name": "dauerz-hlstellen-radverkehr",
+            "title": "Dauerzählstellen Radverkehr",
+            "state": "Active",
+            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=6ebde3b5-333e-4d94-85f7-d37763493b8c",
+            "notes": "<p>Der Datensatz enthält die Messergebnisse der Fahrradzählungen aller städtischen Dauerzählstellen im Konstanzer Stadtgebiet. Mit diesen Daten kann genau festgestellt werden, wann wie viele Radfahrerinnen und Radfahrer an diesen Orten unterwegs gewesen sind. Die Messergebnisse sind im 15 Minuten-Rhythmus erfasst. </p>\n<p>Aktuell befindet sich eine Dauerzählstelle im Konstanzer Stadtgebiet. Die Fahrradzählstelle befindet sich am Ende der Fahrradbrücke an Herosépark und fungiert als wichtige Datengrundlage für die städtische Radpolitik. </p>\n<p>Wer die Daten der Konstanzer Fahrradzählstelle für einen bestimmten Tag abrufen will, kann das auf einer interaktiven Karte des Herstellers Eco Counter (<a href=\"http://eco-public.com/ParcPublic/?id=4586#\">http://eco-public.com/ParcPublic/?id=4586#</a>) tun.</p>\n<p>(Quelle: Stadt Konstanz, Amt für Stadtplanung und Umwelt)</p>\n"
+        },
         {
             "id": "44e196d3-6028-4371-9c4b-45268d61b330",
             "name": "kohlendioxid-emissionen-kommunale-co2-bilanzen-stadt-konstanz",
@@ -43,14 +75,6 @@
             "notes": "<p>Die Ergebnisse der Oberbürgermeisterwahlen 1996 bis 2020 stehen maschinenlesbar in diesem offenen Daten Portal zur Verfügung.</p>\n<p>Berichte (pdf) zu den Wahlergebnisse finden Sie hier: <a href=\"https://www.konstanz.de/leben+in+konstanz/statistik/weitere+daten\">https://www.konstanz.de/leben+in+konstanz/statistik/weitere+daten</a></p>\n"
         },
         {
-            "id": "6ebde3b5-333e-4d94-85f7-d37763493b8c",
-            "name": "dauerz-hlstellen-radverkehr",
-            "title": "Dauerzählstellen Radverkehr",
-            "state": "Active",
-            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=6ebde3b5-333e-4d94-85f7-d37763493b8c",
-            "notes": "<p>Der Datensatz enthält die Messergebnisse der Fahrradzählungen aller städtischen Dauerzählstellen im Konstanzer Stadtgebiet. Mit diesen Daten kann genau festgestellt werden, wann wie viele Radfahrerinnen und Radfahrer an diesen Orten unterwegs gewesen sind. Die Messergebnisse sind im 15 Minuten-Rhythmus erfasst. </p>\n<p>Aktuell befindet sich eine Dauerzählstelle im Konstanzer Stadtgebiet. Die Fahrradzählstelle befindet sich am Ende der Fahrradbrücke an Herosépark und fungiert als wichtige Datengrundlage für die städtische Radpolitik. </p>\n<p>Wer die Daten der Konstanzer Fahrradzählstelle für einen bestimmten Tag abrufen will, kann das auf einer interaktiven Karte des Herstellers Eco Counter (<a href=\"http://eco-public.com/ParcPublic/?id=4586#\">http://eco-public.com/ParcPublic/?id=4586#</a>) tun.</p>\n<p>(Quelle: Stadt Konstanz, Amt für Stadtplanung und Umwelt)</p>\n"
-        },
-        {
             "id": "b0135807-8d4a-439e-a0de-6d358eef051f",
             "name": "grenz-berg-nge-kraftfahrzeuge-deutschland-schweiz",
             "title": "Grenzübergänge Kraftfahrzeuge Deutschland Schweiz",
@@ -65,14 +89,6 @@
             "state": "Active",
             "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=22c08d05-c9cb-4af2-ae0d-bed37503ab39",
             "notes": "<p>Das Handlungsfeld Mobilität ist ein zentrales Thema auf dem Weg zur Klimaneutralität. Mit einer Mobilitätswende soll die Senkung des Energieverbrauchs ohne Einschränkung der Mobilität erreicht werden. Dabei geht es nicht nur um die Klärung, wie und mit welchen Verkehrsmitteln sich die Bürgerinnen und Bürger zukünftig bewegen. Es geht auch darum, wie der knappe öffentliche Raum genutzt wird. </p>\n<p>Für einen besseren Überblick über die Anzahl der Radfahrer, Autos und Fußgänger an einzelnen Stellen, hat die Stadt Konstanz zwei neue, mobile Zählgeräte beschafft.</p>\n<p>Unter diesem Datensatz finden Sie verschiedene Ressourcen zu den mobilen Verkehrszählungen. Sie interessieren sich für die städtische Verkehrsplanung? <a href=\"https://www.konstanz.de/stadt+gestalten/verkehrsplanung\">Hier</a> gibt's mehr Informationen.</p>\n<p>(Quelle, Stadt Konstanz, Amt für Stadtplanung und Umwelt)</p>\n"
-        },
-        {
-            "id": "9b439a59-62b0-4ada-9976-08a631a96b82",
-            "name": "baumkataster-konstanz",
-            "title": "Baumkataster Konstanz",
-            "state": "Active",
-            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=9b439a59-62b0-4ada-9976-08a631a96b82",
-            "notes": "<p>Auf Konstanzer Stadtgebiet befinden sich rund 15.500 Bäume. Davon sind 1.400 mindestens 100 Jahre alt. Doch wie gelingt die allgemeine Überwachung und aufwendige Pflege der städtischen Bäume? Dabei hilft das Baumkataster. Dieser Datensatz beinhaltet ein Verzeichnis, in dem Bäume der Stadt Konstanz enthalten sind. Zuständig für die städtische Baumpflege sind die Technischen Betriebe der Stadt Konstanz (TBK). Sie interessieren sich für das vielfältige Aufgabengebiet der TBK? <a href=\"https://www.konstanz.de/141376\">Mehr dazu</a></p>\n<p>(Quelle: Technische Betriebe Stadt Konstanz)</p>\n"
         },
         {
             "id": "71f1f691-2acb-4d9c-a86c-74ca7d337d33",
@@ -249,22 +265,6 @@
             "state": "Active",
             "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=a47fac75-1d4d-4dc4-9b76-b400d483f73f",
             "notes": "<p>Dieser Datensatz gibt Auskunft über die Abfallmenge der von den Entsorgungsbetrieben Konstanz (EBK) eingesammelten Abfällen in Konstanz. Wie hat sich die Abfallmenge der einzelnen Müllarten seit 2014 verändert? Der Datensatz enthält folgende Müllarten: Restmüll, Biomüll, Altpapier, Wertstoffe*, Altglas, Gelber Sack, Grünabfälle, Sperrmüll.</p>\n<p>Zu den Wertstoffen gehören bspw.: Holz, Metall, E-Schrott, Kühlschränke,Mineral. Stoffe, Hartkunststoffe</p>\n<p>(Quelle: Entsorgungsbetriebe Stadt Konstanz)</p>\n"
-        },
-        {
-            "id": "ba32f547-4403-4abf-9fe0-83642c4b3fd8",
-            "name": "konstanzer-stadtteilprofile",
-            "title": "Konstanzer Stadtteilprofile ",
-            "state": "Active",
-            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=ba32f547-4403-4abf-9fe0-83642c4b3fd8",
-            "notes": "<p>Die Konstanzer Stadtteilprofile stellen die 15 Stadtteile anhand ausgewählter Daten über die Bevölkerung, soziale Infrastruktur oder etwa Wahlen vor.</p>\n<p>Mit den Stadtteilprofilen wird die kleinräumige Vielfalt der Stadt beschrieben und vergleichbarer gemacht. Dieser Datensatz bietet eine Übersicht über Flächennutzung, soziodemografische Indikatoren, soziale Infrastruktur sowie Kaufkraft, Arbeitsmarkt, PKW-Bestand und Wahlergebnisse auf Ebenen der Stadtteile.</p>\n<p>Die Stadtteilgrenzen orientieren sich im Wesentlichen an historischen (Gemarkungs-)Grenzen. </p>\n<p>Mehr zu den Konstanzer Stadtteilprofilen finden sie <a href=\"https://www.konstanz.de/leben+in+konstanz/statistik\">hier</a>.</p>\n<p>(Quelle: Stadt Konstanz, Referat Oberbürgermeister, Abteilung Statistik und Steuerungsunterstützung)</p>\n"
-        },
-        {
-            "id": "e6c98d3b-0e42-4297-97e0-e6197a358500",
-            "name": "alte-wahlbezirkseinteilung-bis-2018",
-            "title": "Alte Wahlbezirkseinteilung bis 2018",
-            "state": "Active",
-            "url": "https://offenedaten-konstanz.de/api/3/action/package_show?id=e6c98d3b-0e42-4297-97e0-e6197a358500",
-            "notes": "<p>Kleinräumige Gliederung der Stadt Konstanz: Wahlbezirke bis 2018 Diese Arbeit oder dieser Inhalt unterliegt einer Creative Commons Nemensnennung 4.0 International Lizenz (CC-BY 4.0).</p>\n<p>(Quelle: Stadt Konstanz, Projektgruppe Wahlen)</p>\n"
         },
         {
             "id": "2ae41c2c-6001-47a3-80b5-3ba437308ec8",
