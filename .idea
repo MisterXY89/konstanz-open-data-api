@@ -1,0 +1,77 @@
+
+
+from colorama import init, Fore, Style
+
+
+https://offenedaten-konstanz.de/dataset/konstanzer-stadtteilprofile
+bezeichner:
+
+example: ba32f547-4403-4abf-9fe0-83642c4b3fd8
+
+https://offenedaten-konstanz.de/api/3/action/package_show?id=<<BEZEICHNER>>
+-> results[0][ressources][i][url] / [description]
+
+https://offenedaten-konstanz.de/api/3/action/package_show?id=ba32f547-4403-4abf-9fe0-83642c4b3fd8
+
+-> json lookup file for all bezeichner - cache this: [current_package_list_with_resources.json]
+https://offenedaten-konstanz.de/api/3/action/current_package_list_with_resources
+und refresh maybe every x days and create dataset-urls.json
+
+bezeichner: result[0][i][id]
+
+
+some general reader & prepper
+pandas
+def load_data(url):
+    return pd.read_csv(url)
+
+
+d = pd.read_csv("https://offenedaten-konstanz.de/sites/default/files/Konstanzer%20Stadtteilprofile_2019.csv", encoding="gbk", sep=";")
+
+
+
+simple request with result dict:
+{
+	status: code,
+	data: result
+}
+data can be none // json
+
+
+// konradUdoHannes
+// create
+
+return data frame
+3.8
+
+
+type hints (internal)
+
+mypy	
+
+
+for dev: editable installs
+"pip install -e ."
+versionierung: version file (load in init)
+
+hochladen: python setup.py sdist (see dist)
+twine upload package (pypip)
+twine upload <<DIST>> username & password
+-> new version needed
+
+test: twine upload --repository-url https://test.pypi.org
+
+
+jupiter notebook ipykernel (general)
+
+test automatisch/
+linting 
+
+
+pylint
+flake8
+black / yapf
+
+i do those 
+
+master & dev branch
