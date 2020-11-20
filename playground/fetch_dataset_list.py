@@ -59,7 +59,7 @@ class DataSetUrlFetcher(object):
 
 	def update(self):
 		resp = self.fetch()
-		if type(resp) == int:
+		if isinstance(resp, int):
 			print(f"Error: status_code = {resp}")
 			return False
 
