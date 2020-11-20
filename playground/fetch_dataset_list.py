@@ -1,14 +1,15 @@
 
-import json
-from tqdm import tqdm
 import time
 import requests
+import pandas as pd
+from tqdm import tqdm
+from bs4 import BeautifulSoup
 
-from config import *
+from config import CURRENT_PACKAGE_LIST_FILE
 
 
 class DataSetUrlFetcher(object):
-	""" 
+	"""
 	docstring for DataSetFetcher
 	"""
 	def __init__(self):
@@ -17,24 +18,22 @@ class DataSetUrlFetcher(object):
 		# self.header = request_settings.header
 
 	def fetch(self):
-		response = requests.get(self.CURRENT_PACKAGE_LIST_URL) # , header = 
+		response = requests.get(self.CURRENT_PACKAGE_LIST_URL) # , header =
 		if response.status_code == 200:
 			return response.json()
 		return response.status_code
 
 
-	def _store(self, data):
-		print(data["success"])
-		if not "success" in data:
-			print("json_invalid_error")
+	def _store(self, data_frame:pd.DataFrame) -> bool:
+		if not isinstance(data_frame, pd.DataFrame):
+			print(f"Expected DataFrame, got {type(data_frame)}")
 			return False
 
 		try:
-			with open(CURRENT_PACKAGE_LIST_FILE, "w", encoding='utf-8') as package_list_file:
-				json.dump(data, package_list_file, ensure_ascii=False, indent=4)
+			data_frame.to_csv(CURRENT_PACKAGE_LIST_FILE, encoding='utf-8')
 			return True
 		except Exception as writing_file_error:
-			print("writing_file_error")
+			print(writing_file_error)
 			return False
 
 
@@ -43,21 +42,19 @@ class DataSetUrlFetcher(object):
 			return False
 
 		results = data["result"][0]
-		out = {
-			"unix_time" : time.time(),
-			"success" : data["success"],
-			"datasets" : []
-		}
+
+		out = list()
 		for item in tqdm(results):
-			out["datasets"].append({
+			out.append({
 				"id" : item["id"],
-                "name" : item["name"], 
                 "title" : item["title"],
-                "state" : item["state"],
+                "source" : item["url"],
                 "url" : "https://offenedaten-konstanz.de/api/3/action/package_show?id="+item["id"],
-                "notes" : item["notes"]
+				"created": item["metadata_created"],
+				"modified": item["metadata_modified"],
+                "notes" : BeautifulSoup(item["notes"], "lxml").text
 			})
-		return out
+		return pd.DataFrame.from_dict(out)
 
 
 	def update(self):
@@ -66,15 +63,17 @@ class DataSetUrlFetcher(object):
 			print(f"Error: status_code = {resp}")
 			return False
 
-		data = self._parse_data(resp)
+		data_frame = self._parse_data(resp)
+		print(data_frame)
 
-		store_status = self._store(data)
+		store_status = self._store("st")
+		store_status = self._store(data_frame)
 		if not store_status:
-			print("Error while storing json")
+			print("Error while storing data")
 			return False
 
 		return True
-			
+
 
 dsuf = DataSetUrlFetcher()
 s = dsuf.update()
