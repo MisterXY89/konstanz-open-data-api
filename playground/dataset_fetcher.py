@@ -44,7 +44,7 @@ class DataSetFetcher(object):
 
 	def load_data(self, p_id):
 		print(f"Loading data for {p_id=}\n")
-		for url, title, format in dsf.fetch_dataset_urls(p_id):
+		for url, title, format in self.fetch_dataset_urls(p_id):
 			if self.verify_url(url):
 				df = self.parse_csv(url)
 				print(f"> Successfully read data for dataset '{title}':\n> {url}")
