@@ -1,44 +1,44 @@
-id;title;name
-8b85886b-1760-48a7-8497-c2642f2f2095;Parkplaetze und Parkleitsystem;parkplaetze
-10c7469e-1cde-4c4e-a0d3-5759a1dbf31e;Wahlergebnisse Konstanzer Landtagswahlen;wahlergebnisse_landtag
-26dd23be-679c-4e16-900a-a59650d95331;Außenwanderung bei Stadtteil;aussenwanderung
-5d78bac6-4f76-4648-bf4a-3239d50a5404;Mängelmelder;maengelmelder
-be007cbd-d9f5-4556-ac5a-81cb31948cd6;Wahlergebnisse Konstanzer Oberbürgermeisterwahlen;wahlergebnisse_OB
-b0135807-8d4a-439e-a0de-6d358eef051f;Grenzübergänge Kraftfahrzeuge Deutschland Schweiz;grenzuebergaenge_kfz
-71f1f691-2acb-4d9c-a86c-74ca7d337d33;Historische Wetterdaten;historische_wetterdaten
-9b439a59-62b0-4ada-9976-08a631a96b82;Baumkataster Konstanz;baumkataster
-afc99849-8eb0-4c1b-8902-fd19db2a9ac7;Kleiner Waffenschein;kleiner_waffenschein
-8743fd11-8f6b-46cb-8815-d942b9a45653;BICO2 Bilanzierung;bico2_bilanzierung
-22c08d05-c9cb-4af2-ae0d-bed37503ab39;Mobile Verkehrszählungen Rad- und Fußverkehr;verkehrszaehlung
-db8d5dc2-b740-45cf-9c42-c0fa8e271051;Modal Split;modal_split
-2ae41c2c-6001-47a3-80b5-3ba437308ec8;Städtische Umfrage im Projekt "Klimaschutzdaten für Konstanz";umfrage_klimaschutz
-d5e0cdd2-c32a-45a3-a177-748b19928b9b;Straßenverkehrsunfälle;strassenverkehrsunfaelle
-e6c98d3b-0e42-4297-97e0-e6197a358500;Alte Wahlbezirkseinteilung bis 2018;wahlbezirke_alt
-ba32f547-4403-4abf-9fe0-83642c4b3fd8;Konstanzer Stadtteilprofile;stadtteilprofil
-a47fac75-1d4d-4dc4-9b76-b400d483f73f;Abfallstatistik Eigenbetriebe Konstanz;abfallstatistik
-61204ad3-9e46-4562-9cbc-3cf6c26dcd22;Gesamtübersicht Maßnahmenpaket 2019 Klimaschutzbericht Stadt Konstanz;klimamassnahmen_2019
-44e196d3-6028-4371-9c4b-45268d61b330;Kohlendioxid-Emissionen: Kommunale CO2 Bilanzen Stadt Konstanz;co2_bilanz_konstanz
-5f0134ec-41af-4907-b997-a783c175ab04;Abfallplaner Müllabfuhrtermine 2020;muellabfuhrtermine_2020
-dc37dce2-1550-4257-a896-e1056062b37c;Geschwindigkeitsüberwachung Jahresstatistik;geschwindigkeitsueberwachung
-2cece95e-1dc8-4d56-8125-c1c152eb96c2;Öffentliche Papiereimer - Stadt Konstanz;oeffentliche_papiereimer
-2e012bc8-20c8-4057-8e64-f3c775f0ff21;Städtische Einrichtungen/ Behörden;staedtische_einrichtungen
-c405d8cd-2a27-49fb-af39-88f4700f4142;Kleinräumige Gliederung Stadtviertelfläche;stadtviertel_konstanz
-20401185-a5f1-4a8c-b762-66a8fd9a2ad2;Georeferenzierte Standorte Sportanlagen;standorte_sportanlagen
-a1cafd20-93f3-448c-9c38-bc69bda8a54c;Georeferenzierte Standorte Spielplätze;standorte_spielplaetze
-f5b3f6d3-9c5d-485e-8e1c-bb9cdc068b51;Georeferenzierte Standorte Glascontainer;standorte_glascontainer
-0b38d63c-4a76-4e28-b9a8-609924aaa24e;Bildungseinrichtungen - 2019;bildungseinrichtungen_2019
-13b021a3-916a-492e-b48e-fcb79e32c649;Kindertagesbetreuung - 2019;kindertagesbetreuung_2019
-1fd6d20a-44c5-4dc8-994f-305a723e5511;Georeferenzierte Standorte Parkhäuser;standorte_parkhaeuser
-a7d3a81d-4dce-41fc-a61b-844ed232e85a;Wahlbezirke;wahlbezirke
-ab233046-76eb-4d25-97ec-5b6ba27c7706;Stadtteilgrenzen / Stadtteilfläche;stadtteilgrenzen_flaechen
-c6ed879e-9a2c-41ca-a168-a88d449a24c1;Georeferenzierte Standorte Fahrradmietsytsem (konrad, TINK);standorte_fahrradmietsystem
-75395570-1de4-4227-ad43-ecdc2cf0e74d;KFZ-Statistik Konstanz;kfz_statistik
-474b11ad-9948-4a03-8da8-73bdfc9fdbdb;Busverkehr;busverkehr
-b5ddf98d-52bc-4677-ad72-939192a5d5a9;Standorte Konstanz WLAN;standorte_wlan
-67e37de3-ba6e-44fc-8e07-0884b1b4d61c;Einwohnerentwicklung Stadt Konstanz;einwohnerentwicklung
-6ebde3b5-333e-4d94-85f7-d37763493b8c;Dauerzählstellen Radverkehr;dauerzaehlstelle_radverkehr
-1bb1b823-e059-422f-839b-d59043a2c5eb;Gesamtnutzung Fahrrad-Mietsystem;gesamtnutzung_fahrradmietsystem
-23683041-b9ee-4a70-add4-42e5930b4d1d;Konstanzer Gebäude nach Baujahren;gebaeude_baujahr
-f28f68ae-301f-4a7f-9974-fd1f6ab3effa;Kinderbetreuung nach Stadtteilen;kinderbetreuung
-fdbf2c18-c926-46ad-991f-68aa8de80ce7;Bodenrichtwertkarte;bodenrichtwertkarte
-591d86a9-9626-46af-8d93-a25da74040bc;Konstanzer Einwohner nach Stadtvierteln;einwohner
+id;name
+8b85886b-1760-48a7-8497-c2642f2f2095;parkplaetze
+10c7469e-1cde-4c4e-a0d3-5759a1dbf31e;wahlergebnisse_landtag
+26dd23be-679c-4e16-900a-a59650d95331;aussenwanderung
+5d78bac6-4f76-4648-bf4a-3239d50a5404;maengelmelder
+be007cbd-d9f5-4556-ac5a-81cb31948cd6;wahlergebnisse_OB
+b0135807-8d4a-439e-a0de-6d358eef051f;grenzuebergaenge_kfz
+71f1f691-2acb-4d9c-a86c-74ca7d337d33;historische_wetterdaten
+9b439a59-62b0-4ada-9976-08a631a96b82;baumkataster
+afc99849-8eb0-4c1b-8902-fd19db2a9ac7;kleiner_waffenschein
+8743fd11-8f6b-46cb-8815-d942b9a45653;bico2_bilanzierung
+22c08d05-c9cb-4af2-ae0d-bed37503ab39;verkehrszaehlung
+db8d5dc2-b740-45cf-9c42-c0fa8e271051;modal_split
+2ae41c2c-6001-47a3-80b5-3ba437308ec8;umfrage_klimaschutz
+d5e0cdd2-c32a-45a3-a177-748b19928b9b;strassenverkehrsunfaelle
+e6c98d3b-0e42-4297-97e0-e6197a358500;wahlbezirke_alt
+ba32f547-4403-4abf-9fe0-83642c4b3fd8;stadtteilprofil
+a47fac75-1d4d-4dc4-9b76-b400d483f73f;abfallstatistik
+61204ad3-9e46-4562-9cbc-3cf6c26dcd22;klimamassnahmen_2019
+44e196d3-6028-4371-9c4b-45268d61b330;co2_bilanz_konstanz
+5f0134ec-41af-4907-b997-a783c175ab04;muellabfuhrtermine_2020
+dc37dce2-1550-4257-a896-e1056062b37c;geschwindigkeitsueberwachung
+2cece95e-1dc8-4d56-8125-c1c152eb96c2;oeffentliche_papiereimer
+2e012bc8-20c8-4057-8e64-f3c775f0ff21;staedtische_einrichtungen
+c405d8cd-2a27-49fb-af39-88f4700f4142;stadtviertel_konstanz
+20401185-a5f1-4a8c-b762-66a8fd9a2ad2;standorte_sportanlagen
+a1cafd20-93f3-448c-9c38-bc69bda8a54c;standorte_spielplaetze
+f5b3f6d3-9c5d-485e-8e1c-bb9cdc068b51;standorte_glascontainer
+0b38d63c-4a76-4e28-b9a8-609924aaa24e;bildungseinrichtungen_2019
+13b021a3-916a-492e-b48e-fcb79e32c649;kindertagesbetreuung_2019
+1fd6d20a-44c5-4dc8-994f-305a723e5511;standorte_parkhaeuser
+a7d3a81d-4dce-41fc-a61b-844ed232e85a;wahlbezirke
+ab233046-76eb-4d25-97ec-5b6ba27c7706;stadtteilgrenzen_flaechen
+c6ed879e-9a2c-41ca-a168-a88d449a24c1;standorte_fahrradmietsystem
+75395570-1de4-4227-ad43-ecdc2cf0e74d;kfz_statistik
+474b11ad-9948-4a03-8da8-73bdfc9fdbdb;busverkehr
+b5ddf98d-52bc-4677-ad72-939192a5d5a9;standorte_wlan
+67e37de3-ba6e-44fc-8e07-0884b1b4d61c;einwohnerentwicklung
+6ebde3b5-333e-4d94-85f7-d37763493b8c;dauerzaehlstelle_radverkehr
+1bb1b823-e059-422f-839b-d59043a2c5eb;gesamtnutzung_fahrradmietsystem
+23683041-b9ee-4a70-add4-42e5930b4d1d;gebaeude_baujahr
+f28f68ae-301f-4a7f-9974-fd1f6ab3effa;kinderbetreuung
+fdbf2c18-c926-46ad-991f-68aa8de80ce7;bodenrichtwertkarte
+591d86a9-9626-46af-8d93-a25da74040bc;einwohner
