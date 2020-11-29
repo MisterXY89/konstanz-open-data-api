@@ -35,6 +35,7 @@ class DataSetUrlFetcher(object):
 			name_list = pd.read_csv(parent_dir, sep=';')
 			merged_list = pd.merge(data_frame, name_list, how='left', on='id')
 			merged_list.to_csv(CURRENT_PACKAGE_LIST_FILE, encoding='utf-8')
+			#print(merged_list)
 			return True
 		except Exception as writing_file_error:
 			print(writing_file_error)
@@ -68,7 +69,7 @@ class DataSetUrlFetcher(object):
 			return False
 
 		data_frame = self._parse_data(resp)
-		print(data_frame)
+		#print(data_frame)
 
 		#store_status = self._store("st")
 		store_status = self._store(data_frame)
