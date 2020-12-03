@@ -5,6 +5,7 @@ import requests
 import pandas as pd
 from tqdm import tqdm
 from bs4 import BeautifulSoup
+import math
 
 from config import CURRENT_PACKAGE_LIST_FILE
 
@@ -34,8 +35,9 @@ class DataSetUrlFetcher(object):
 			parent_dir = os.path.join(os.getcwd(), '..', 'names.csv')
 			name_list = pd.read_csv(parent_dir, sep=';')
 			merged_list = pd.merge(data_frame, name_list, how='left', on='id')
+			if merged_list['name'].isnull().sum() != 0:
+				print('missing names, apparently new dataset added. please check')
 			merged_list.to_csv(CURRENT_PACKAGE_LIST_FILE, encoding='utf-8')
-			#print(merged_list)
 			return True
 		except Exception as writing_file_error:
 			print(writing_file_error)
