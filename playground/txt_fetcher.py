@@ -136,14 +136,14 @@ class txtFetcher(object):
 
     def load_data(self, url):
 
-        if self.verify_url(url) and self.get_file_ending(url) == "txt":
+        if self.verify_url(url) and self.get_file_ending(url).lower() == "txt":
             data = self.get_data(url)
         else:
             print(f"> 3rd-Party Url/Dataset detected and therefore skipped:\n> {url}")
         return self.convert_df(data), self.flag_final
 
-url = "https://offenedaten-konstanz.de/sites/default/files/FAHRPLAENE.txt"
-#url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTEN.Txt" # dauert ca 1 min
+#url = "https://offenedaten-konstanz.de/sites/default/files/FAHRPLAENE.txt"
+url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTEN.Txt" # dauert ca 1 min
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTHALTEZEITEN.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRWEGE.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRZEITEN.txt"
