@@ -4,9 +4,9 @@ import requests
 from config import *
 from io import StringIO
 from pandas import pandas as pd
-from detect_delimiter import detect
+#from detect_delimiter import detect
 
-class CSVFetcher:
+class csvFetcher:
 	"""
 	docstring for DataSetFetcher
 	"""
@@ -74,16 +74,16 @@ class CSVFetcher:
 		"""
 		return url.split(".")[::-1][0]
 
-	def load_data(self, p_id):
-		print(f"Loading data for {p_id=}\n")
-		for url, title, format in self.fetch_dataset_urls(p_id):
-			if self.verify_url(url) and self.get_file_ending(url) == "csv":
-				df = self.parse_csv(url)
-				print(df)
-				print(f"> Successfully read data for dataset '{title}':\n> {url}")
-			else:
-				print(f"> 3rd-Party Url/Dataset detected for '{title}' and therefore skipped:\n> {url}")
-			print("----")
+	def load_data(self, url):
+		#print(f"Loading data for {p_id=}\n")
+		#for url, title, format in self.fetch_dataset_urls(p_id):
+		#	if self.verify_url(url) and self.get_file_ending(url) == "csv":
+		return self.parse_csv(url), True
+				#print(df)
+				#print(f"> Successfully read data for dataset '{title}':\n> {url}")
+			#else:
+				#print(f"> 3rd-Party Url/Dataset detected for and therefore skipped:\n> {url}")
+			#print("----")
 
 
 

@@ -143,7 +143,7 @@ class txtFetcher(object):
         return self.convert_df(data), self.flag_final
 
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRPLAENE.txt"
-url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTEN.Txt" # dauert ca 1 min
+#url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTEN.Txt" # dauert ca 1 min
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTHALTEZEITEN.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRWEGE.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRZEITEN.txt"
@@ -152,7 +152,5 @@ url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTEN.Txt" # dauert
 #url = "https://offenedaten-konstanz.de/sites/default/files/ORTE.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/VERBINDUNGEN.txt"
 
-dsf_txt = txtFetcher()
-result, flag = dsf_txt.load_data(url)
-print(flag)
-print(result)
+#dsf_txt = txtFetcher()
+#result, flag = dsf_txt.load_data(url)
