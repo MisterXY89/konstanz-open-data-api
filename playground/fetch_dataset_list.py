@@ -52,15 +52,22 @@ class DataSetUrlFetcher(object):
 
 		out = list()
 		for item in tqdm(results):
-			out.append({
-				"id" : item["id"],
-                "title" : item["title"],
-                "source" : item["url"],
-                "url" : "https://offenedaten-konstanz.de/api/3/action/package_show?id="+item["id"],
-				"created": item["metadata_created"],
-				"modified": item["metadata_modified"],
-                "notes" : BeautifulSoup(item["notes"], "lxml").text
-			})
+			tags = []
+			try:
+				for tag_item in item["tags"]:
+					tags.append(tag_item["name"])
+				out.append({
+					"id" : item["id"],
+                	"title" : item["title"],
+                	"source" : item["url"],
+                	"url" : "https://offenedaten-konstanz.de/api/3/action/package_show?id="+item["id"],
+					"created": item["metadata_created"],
+					"modified": item["metadata_modified"],
+                	"notes" : BeautifulSoup(item["notes"], "lxml").text,
+					"tags" : tags
+				})
+			except:
+				print("item has not all information needed") # concerns data set 'test' on OpenData website
 		return pd.DataFrame.from_dict(out)
 
 
