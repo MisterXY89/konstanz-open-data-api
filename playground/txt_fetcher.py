@@ -26,7 +26,7 @@ class txtFetcher(object):
         """
         extract file ending from an url
         """
-        return url.split(".")[::-1][0]
+        return url.split(".")[::-1][0].lower()
 
     def get_encoding(self, file):
         """
@@ -128,6 +128,7 @@ class txtFetcher(object):
                     df.iloc[i, j] = "NaN"
                 else:
                     df.iloc[i, j] = value
+                print(f"row {i}")
 
             col_names.append(col_name_ref)
         df.columns = col_names
@@ -135,10 +136,10 @@ class txtFetcher(object):
         return df
 
     def load_data(self, url):
-
-        if self.verify_url(url) and self.get_file_ending(url).lower() == "txt":
+        if self.verify_url(url) and self.get_file_ending(url) == "txt":
             data = self.get_data(url)
         else:
+            data = ""
             print(f"> 3rd-Party Url/Dataset detected and therefore skipped:\n> {url}")
         return self.convert_df(data), self.flag_final
 
@@ -146,9 +147,9 @@ class txtFetcher(object):
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTEN.Txt" # dauert ca 1 min
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTHALTEZEITEN.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/FAHRWEGE.txt"
-#url = "https://offenedaten-konstanz.de/sites/default/files/FAHRZEITEN.txt"
+# url = "https://offenedaten-konstanz.de/sites/default/files/FAHRZEITEN.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/FIRMENKALENDER.txt"
-#url = "https://offenedaten-konstanz.de/sites/default/files/LINIEN.txt"
+# url = "https://offenedaten-konstanz.de/sites/default/files/LINIEN.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/ORTE.txt"
 #url = "https://offenedaten-konstanz.de/sites/default/files/VERBINDUNGEN.txt"
 

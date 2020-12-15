@@ -1,26 +1,16 @@
 
-import os
-import requests
-from config import *
-from io import StringIO
+# import os
+# from config import *
 from pandas import pandas as pd
-#from detect_delimiter import detect
+from basic_fetcher import BasicFetcher
 
-class csvFetcher:
+class CSVFetcher(BasicFetcher):
 	"""
 	docstring for DataSetFetcher
 	"""
 	def __init__(self):
+		super(CSVFetcher, self).__init__()
 		self.fallback_seperator = ";"
-
-	def fetch_dataset_urls(self, p_id):
-		response = requests.get(PACKAGE_BASE_URL + p_id) # , header=
-		if response.status_code == 200:
-			resources = response.json()["result"][0]["resources"]
-			for resource in resources:
-				yield resource["url"], resource["name"], resource["format"]
-		return response.status_code
-
 
 	def verify_df(self, df1, url, encoding, sep):
 		try:
@@ -52,27 +42,18 @@ class csvFetcher:
 									)
 			if self.verify_df(df, url, encoding, sep):
 				return df
-			raise Exception("SeperatorExpection: expected after")
+			raise Exception("SeperatorException: expected after")
 		except Exception as read_error:
+			print(40*"#")
 			print(read_error)
+			print(40*"#")
 			if not decode_flag and isinstance(read_error, UnicodeDecodeError):
 				# iso-8859-1
 				return self.parse_csv(url, encoding='latin1', decode_flag=True, sep=sep)
-			if not det_flag and "expected after" in str(read_error):
+			if not det_flag and "expected" in str(read_error).lower():
 				return self.parse_csv(url, encoding=encoding, det_flag=True, sep=",")
 			return False
 
-	def verify_url(self, url):
-		"""
-		check if an url belongs to offene-daten-konstanz.de
-		"""
-		return "offenedaten-konstanz.de" in url
-
-	def get_file_ending(self, url):
-		"""
-		extract file ending from an url
-		"""
-		return url.split(".")[::-1][0]
 
 	def load_data(self, url):
 		#print(f"Loading data for {p_id=}\n")
@@ -90,7 +71,12 @@ class csvFetcher:
 #
 # p_id = "6ebde3b5-333e-4d94-85f7-d37763493b8c"
 #
-# dsf = CSVFetcher()
+dsf = CSVFetcher()
+gen = dsf.fetch_resource_urls("1fd6d20a-44c5-4dc8-994f-305a723e5511")
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
 # generator = dsf.load_data(p_id)
 #
 # print(next(generator))
