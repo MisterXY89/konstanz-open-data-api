@@ -32,7 +32,7 @@ class SHPFetcher:
     def load_data(self, p_id):
         print(f"Loading data for {p_id}")
         url = self.fetch_dataset_urls(p_id)
-        if self.verify_url(url) and self.get_file_ending(url) == "zip" or self.verify_url(url) and self.get_file_ending(url) == "json":
+        if self.verify_url(url) and self.get_file_ending(url) == "zip" or self.verify_url(url) or self.get_file_ending(url) == "json":
             data = gpd.read_file(url)
             return data
 #
