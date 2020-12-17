@@ -46,7 +46,7 @@ class SHPFetcher:
 #             return data
 #
 # import matplotlib.pyplot as plt
-# tink_id = "c6ed879e-9a2c-41ca-a168-a88d449a24c1"
+# tink_url = "https://offenedaten-konstanz.de/sites/default/files/Fahrradmietsytsem_Konrad_TINK.zip"
 # dsf = SHPFetcher()
 # data = dsf.load_data(tink_id)
 # data.plot()
