@@ -29,7 +29,7 @@ class CSVFetcher(BasicFetcher):
 		return True
 
 
-	def parse_csv(self, url, encoding="iso-8859-1", det_flag=False, decode_flag=False, sep=";"):
+	def parse_csv(self, url, encoding="utf-8", det_flag=False, decode_flag=False, sep=";"):
 		try:
 			df = pd.read_table(url, sep=sep,
 									encoding=encoding,
@@ -41,7 +41,7 @@ class CSVFetcher(BasicFetcher):
 									# quotechar='"',
 									)
 			if self.verify_df(df, url, encoding, sep):
-				return df
+				return df, True
 			raise Exception("SeperatorException: expected after")
 		except Exception as read_error:
 			print(40*"#")
@@ -52,14 +52,14 @@ class CSVFetcher(BasicFetcher):
 				return self.parse_csv(url, encoding='latin1', decode_flag=True, sep=sep)
 			if not det_flag and "expected" in str(read_error).lower():
 				return self.parse_csv(url, encoding=encoding, det_flag=True, sep=",")
-			return False
+			return None, False
 
 
 	def load_data(self, url):
 		#print(f"Loading data for {p_id=}\n")
 		#for url, title, format in self.fetch_dataset_urls(p_id):
 		#	if self.verify_url(url) and self.get_file_ending(url) == "csv":
-		return self.parse_csv(url), True
+		return self.parse_csv(url)
 				#print(df)
 				#print(f"> Successfully read data for dataset '{title}':\n> {url}")
 			#else:
