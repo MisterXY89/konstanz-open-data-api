@@ -1,11 +1,30 @@
-
+import requests
 from config import PACKAGE_BASE_URL
+
+from csv_fetcher import csvFetcher
+from shp_fetcher import shpFetcher # applies for json as well
+from xls_fetcher import xlsFetcher
+from txt_fetcher import txtFetcher
+
+formats = {
+            "csv": csvFetcher,
+            "txt": txtFetcher,
+            "xls": xlsFetcher,
+            "shp": shpFetcher,
+            "json": shpFetcher
+        }
 
 class FetchHelper:
     def __init__(self):
         pass
 
+    def get_instance(format):
+        return formats[format]
+
     def fetch_dataset_urls(id):
+        """
+        get urls corresponding to id
+        """
         response = requests.get(PACKAGE_BASE_URL + id)
         if response.status_code == 200:
             resources = response.json()["result"][0]["resources"]
