@@ -1,3 +1,4 @@
+import requests
 
 from config import PACKAGE_BASE_URL
 

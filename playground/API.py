@@ -3,7 +3,9 @@ import numpy as np
 import requests
 import urllib.request
 import os
+
 from config import *
+from fetch_helper import FetchHelper
 
 from csv_fetcher import CSVFetcher 
 #import shp_fetcher
@@ -20,19 +22,7 @@ __formats = {
     "csv": CSVFetcher
 }
 
-def __fetch_dataset_urls(id):
-    response = requests.get(PACKAGE_BASE_URL + id)
-    if response.status_code == 200:
-        resources = response.json()["result"][0]["resources"]
-        for resource in resources:
-            yield resource["url"], resource["format"], resource["name"]
-    return response.status_code
 
-def __get_url_ending(url):
-    '''
-    helper function to get the file ending of a url
-    '''
-    return url.split(".")[::-1][0].lower()
 
 # made a separate function for this because it is needed in both, get_data() and save_data() 
 def __create_id_list(data, tag = False):
@@ -53,11 +43,6 @@ def __create_id_list(data, tag = False):
     
     return id_list
 
-def __verify_url(url):
-    """
-    helper function to check if an url belongs to offenedaten-konstanz.de
-    """
-    return "offenedaten-konstanz.de" in url.lower()
 
 def get_data(data, tag = False, external = False):
     """
@@ -69,8 +54,8 @@ def get_data(data, tag = False, external = False):
     result_dict = {}
     final_flag = True
     for i in range(len(id_list)):
-        for url, format, name in __fetch_dataset_urls(id_list[i]):
-            ending = __get_url_ending(url) # works also with Kn Gis Hub?
+        for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]): #__fetch_dataset_urls(id_list[i]):
+            ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
             instance = __formats[ending]()
             df, flag = instance.load_data(url)
             if not flag:
@@ -110,13 +95,17 @@ def save_data(data, tag = False, folder=""):
 
     # create list containing urls: (could possibly be made more compact if you used the __fetch_dataset_urls() function, but not sure how to use it)
     url_list = []
-    for id in id_list: 
-        response = requests.get(PACKAGE_BASE_URL + id)
-        if response.status_code == 200:
-            resources = response.json()["result"][0]["resources"]
-            for resource in resources:
-                if __get_url_ending(resource["url"]) in formats: # if url leads to a file
-                    url_list.append(resource["url"])
+    for i in range(len(id_list)):
+        for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]): #__fetch_dataset_urls(id_list[i]):
+            url_list.append(url)
+
+    #for id in id_list:
+    #    response = requests.get(PACKAGE_BASE_URL + id)
+    #    if response.status_code == 200:
+    #        resources = response.json()["result"][0]["resources"]
+    #        for resource in resources:
+    #            if FetchHelper.get_url_ending(resource["url"]) in formats: # if url leads to a file
+    #                url_list.append(resource["url"])
 
     # save all the files indicated by the urls: 
     for url in url_list: 
@@ -128,9 +117,9 @@ def save_data(data, tag = False, folder=""):
         urllib.request.urlretrieve (url, file_name) # command to actually save the data
         print("Finished saving requested data to " + file_name)
 
-# test = get_data(["Geo"], tag=True)
-# test = get_data(["standorte_glascontainer"])
-# test = get_data(["historische_wetterdaten"])
+#test = get_data(["Geo"], tag=True)
+#test = get_data(["standorte_glascontainer"])
+#test = get_data(["muellabfuhrtermine_2020"])
 # print(test)
-save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
-# save_data(["standorte_sportanlagen"])
+#save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
+save_data(["muellabfuhrtermine_2020"])

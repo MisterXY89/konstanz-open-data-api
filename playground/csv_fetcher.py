@@ -73,9 +73,9 @@ class CSVFetcher(BasicFetcher):
 #
 dsf = CSVFetcher()
 gen = dsf.fetch_resource_urls("1fd6d20a-44c5-4dc8-994f-305a723e5511")
-print(next(gen))
-print(next(gen))
-print(next(gen))
+#print(next(gen))
+#print(next(gen))
+#print(next(gen))
 
 # generator = dsf.load_data(p_id)
 #
