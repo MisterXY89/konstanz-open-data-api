@@ -96,9 +96,11 @@ def save_data(data, tag = False, folder=""):
         urllib.request.urlretrieve (url, file_name) # command to actually save the data
         print("Finished saving requested data to " + file_name)
 
+
 test = get_data(["Geo"], tag=True)
 #test = get_data(["standorte_glascontainer"])
 #test = get_data(["historische_wetterdaten"])
 # print(test)
 #save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
 #save_data(["standorte_sportanlagen"])
+
