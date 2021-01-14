@@ -4,15 +4,28 @@
 from pandas import pandas as pd
 from basic_fetcher import BasicFetcher
 
-class CSVFetcher(BasicFetcher):
+class csvFetcher(BasicFetcher):
 	"""
-	docstring for DataSetFetcher
+	csvFetcher. fetches csv Data 
 	"""
 	def __init__(self):
-		super(CSVFetcher, self).__init__()
+		self.flag_final = False
 		self.fallback_seperator = ";"
 
 	def verify_df(self, df1, url, encoding, sep):
+		"""
+		INPUT: 
+		df1:
+
+		url: Data ID based link
+
+		encoding
+
+		sep:
+
+		OUTPUT: 
+		Boolean 
+		"""
 		try:
 			anti_sep = "," if sep == ";" else ";"
 			df2 = pd.read_table(url, sep=anti_sep,
@@ -30,6 +43,23 @@ class CSVFetcher(BasicFetcher):
 
 
 	def parse_csv(self, url, encoding="utf-8", det_flag=False, decode_flag=False, sep=";"):
+		"""
+		parses data from url to dataframe 
+
+		INPUT:
+		url: Data ID based link 
+
+		encoding:
+
+		det_flag: 
+
+		decode_flag: 
+
+		sep:
+
+		OUTPUT:
+		data as pandas DataFrame, object 
+		"""
 		try:
 			df = pd.read_table(url, sep=sep,
 									encoding=encoding,
@@ -41,7 +71,8 @@ class CSVFetcher(BasicFetcher):
 									# quotechar='"',
 									)
 			if self.verify_df(df, url, encoding, sep):
-				return df, True
+				self.flag_final = True
+				return df
 			raise Exception("SeperatorException: expected after")
 		except Exception as read_error:
 			print(40*"#")
@@ -56,27 +87,14 @@ class CSVFetcher(BasicFetcher):
 
 
 	def load_data(self, url):
-		#print(f"Loading data for {p_id=}\n")
-		#for url, title, format in self.fetch_dataset_urls(p_id):
-		#	if self.verify_url(url) and self.get_file_ending(url) == "csv":
-		return self.parse_csv(url)
-				#print(df)
-				#print(f"> Successfully read data for dataset '{title}':\n> {url}")
-			#else:
-				#print(f"> 3rd-Party Url/Dataset detected for and therefore skipped:\n> {url}")
-			#print("----")
+		"""
+        function to load the data 
 
+        INPUT:
+        url: Data ID based link
 
-
-#
-# p_id = "6ebde3b5-333e-4d94-85f7-d37763493b8c"
-#
-dsf = CSVFetcher()
-gen = dsf.fetch_resource_urls("1fd6d20a-44c5-4dc8-994f-305a723e5511")
-#print(next(gen))
-#print(next(gen))
-#print(next(gen))
-
-# generator = dsf.load_data(p_id)
-#
-# print(next(generator))
+        OUTPUT: 
+        data as a pandas DataFrame object 
+        flag_final 
+        """
+		return self.parse_csv(url), self.flag_final
