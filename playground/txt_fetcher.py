@@ -1,11 +1,11 @@
-import pandas as pd
+from pandas import pandas as pd
 from urllib.request import urlopen
 from urllib.error import HTTPError
 import re
 
 class txtFetcher(object):
     """
-    docstring tbd
+    txtFetcher: fetches txt-Data 
     """
     def __init__(self):
         self.encoding = ["utf-8", "ISO-8859-1", "latin1"]
@@ -16,21 +16,12 @@ class txtFetcher(object):
         self.lines_list = []
         self.first_line = False
 
-    def verify_url(self, url):
-        """
-        check if an url belongs to offene-daten-konstanz.de
-        """
-        return "offenedaten-konstanz.de" in url
-
-    def get_file_ending(self, url):
-        """
-        extract file ending from an url
-        """
-        return url.split(".")[::-1][0].lower()
-
     def get_encoding(self, file):
         """
         extract encoding from first line if applicable
+
+        INPUT: 
+        file: 
         """
         try:
             first_line = file.readline().decode(self.encoding[self.encoding_idx])
@@ -52,6 +43,9 @@ class txtFetcher(object):
     def read_line(self, line):
         """
         read single line
+
+        INPUT:
+        line: 
         """
         decoded_line = line.decode(self.encoding_final)
         for quoted_part in re.findall(r'\"(.*?)\"', decoded_line):  # replace 'space' in quotes with '@'
@@ -64,7 +58,15 @@ class txtFetcher(object):
         self.lines_list.append(split_lines)
 
     def get_data(self, url):
+        """
+        gets the data from url 
 
+        INPUT:
+        url: Data ID based link
+
+        OUTPUT: 
+        lines_list
+        """
         try:
             file = urlopen(url)
         except HTTPError:
@@ -87,14 +89,21 @@ class txtFetcher(object):
                             self.read_line(line)
                         else:
                             print("no matching encoding found. please review")
-
             except:
                 self.flag_final = True
 
             return self.lines_list
 
     def convert_df(self, data):
+        """
+        converts the data to a Dataframe
 
+        INPUT:
+        data: txt. data 
+
+        OUTPUT:
+        panda dataframe object with data
+        """
         df = pd.DataFrame(data)
         row, col = df.shape
         drop_cols = []
@@ -132,26 +141,18 @@ class txtFetcher(object):
 
             col_names.append(col_name_ref)
         df.columns = col_names
-
         return df
 
     def load_data(self, url):
-        if self.verify_url(url) and self.get_file_ending(url) == "txt":
-            data = self.get_data(url)
-        else:
-            data = ""
-            print(f"> 3rd-Party Url/Dataset detected and therefore skipped:\n> {url}")
+        """
+        function to load the data 
+
+        INPUT:
+        url: Data ID based link
+
+        OUTPUT: 
+        data as a pandas DataFrame object 
+        flag_final 
+        """
+        data = self.get_data(url)
         return self.convert_df(data), self.flag_final
-
-#url = "https://offenedaten-konstanz.de/sites/default/files/FAHRPLAENE.txt"
-#url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTEN.Txt" # dauert ca 1 min
-#url = "https://offenedaten-konstanz.de/sites/default/files/FAHRTHALTEZEITEN.txt"
-#url = "https://offenedaten-konstanz.de/sites/default/files/FAHRWEGE.txt"
-# url = "https://offenedaten-konstanz.de/sites/default/files/FAHRZEITEN.txt"
-#url = "https://offenedaten-konstanz.de/sites/default/files/FIRMENKALENDER.txt"
-# url = "https://offenedaten-konstanz.de/sites/default/files/LINIEN.txt"
-#url = "https://offenedaten-konstanz.de/sites/default/files/ORTE.txt"
-#url = "https://offenedaten-konstanz.de/sites/default/files/VERBINDUNGEN.txt"
-
-#dsf_txt = txtFetcher()
-#result, flag = dsf_txt.load_data(url)
