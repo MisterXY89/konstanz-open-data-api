@@ -1,56 +1,46 @@
-import pandas as pd
-import numpy as np
+
 import urllib.request
 import os
 
-from config import *
-from fetch_helper import *
-
-from csv_fetcher import csvFetcher
-from shp_fetcher import shpFetcher # applies for json as well
-from xls_fetcher import xlsFetcher
-from txt_fetcher import txtFetcher
+from API_helper import *
 
 current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
-
-def __create_id_list(data, tag = False):
-    '''
-    helper function to create a list of ids for the datasets indicated by the names/tags given
-    '''
-    id_list = []
-    if tag:
-        for i in range(len(data)):
-            for j in range(len(current_list)):
-                if data[i] in current_list.loc[j,"tags"]:
-                    id_list.append(current_list.loc[j,"id"])
-    else:
-        for i in range(len(data)):
-            if data[i] in current_list["name"].values:
-                id_element = np.array2string(current_list[current_list['name'] == data[i]]['id'].values)
-                id_list.append(id_element[2:-2])
-    
-    return id_list
+formats = ["csv","json","shp","xls","txt"]
 
 def get_data(data, tag = False, external = False):
     """
     input : list containing names or tags (string)
     return : single df or dict containing df
     """
-    id_list = __create_id_list(data)
+    id_list = IdHelper.create_id_list(data, tag)
 
     result_dict = {}
-    final_flag = True
-    for i in range(len(id_list)):
-        for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
-            ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
-            instance = FetchHelper.get_instance(ending)()
-            df, flag = instance.load_data(url)
-            if not flag:
-                final_flag = False
-            result_dict[name] = df
+    #final_flag = True
 
-    if not final_flag:
-        print("Oopsie, something went wrong")
+    if external:
+        print("These are external data sets. Please refer to ...")
+    else:
+        for i in range(len(id_list)):
+            for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
+                ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
+                if ending in formats:
+                    instance = FetchHelper.get_instance(ending)()
+                    df, flag = instance.load_data(url)
+                else:
+                    df = {}
+                    flag = False
+                key = name + " " + format
+                result_dict[key] = df
+                if flag:
+                    print("Successfully loaded data set: " + key)
+                else:
+                    print("Data set was omitted: " + key)
+
+                #if not flag:
+                #    final_flag = False
+
+        #if not final_flag:
+        #print("Oopsie, something went wrong")
 
     if len(result_dict) == 1:
         key = list(result_dict.keys())[0]
@@ -78,9 +68,8 @@ def save_data(data, tag = False, folder=""):
     '''
     #doesn't work for links leading to jsons 
 
-    id_list = __create_id_list(data)
+    id_list = IdHelper.create_id_list(data)
 
-    # create list containing urls: (could possibly be made more compact if you used the __fetch_dataset_urls() function, but not sure how to use it)
     url_list = []
     for i in range(len(id_list)):
         for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
@@ -97,10 +86,10 @@ def save_data(data, tag = False, folder=""):
         print("Finished saving requested data to " + file_name)
 
 
-test = get_data(["Geo"], tag=True)
 #test = get_data(["standorte_glascontainer"])
 #test = get_data(["historische_wetterdaten"])
-# print(test)
+#test = get_data(["Geo"], tag=True)
+#test = get_data(["Umwelt und Klima"], tag=True)
 #save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
 #save_data(["standorte_sportanlagen"])
 

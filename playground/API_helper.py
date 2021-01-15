@@ -1,5 +1,7 @@
 import requests
-from config import PACKAGE_BASE_URL
+import pandas as pd
+import numpy as np
+from config import *
 
 from csv_fetcher import csvFetcher
 from shp_fetcher import shpFetcher # applies for json as well
@@ -14,7 +16,12 @@ formats = {
             "json": shpFetcher
         }
 
+current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
+
 class FetchHelper:
+    """
+    helper class containing functions for fetching
+    """
     def __init__(self):
         pass
 
@@ -33,10 +40,37 @@ class FetchHelper:
         return response.status_code
 
     def get_url_ending(url):
-        return url.split(".")[::-1][0].lower()
+        if url[-4:] == "json":
+            return "json"
+        else:
+            return url.split(".")[::-1][0].lower()
 
     def verify_url(self, url):
         """
         check if an url belongs to offenedaten-konstanz.de
         """
         return "offenedaten-konstanz.de" in url.lower()
+
+class IdHelper:
+    """
+    helper class for creating id list
+    """
+    def __init__(self):
+        pass
+
+    def create_id_list(data, tag = False):
+        '''
+        helper function to create a list of ids for the datasets indicated by the names/tags given
+        '''
+        id_list = []
+        if tag:
+            for i in range(len(data)):
+                for j in range(len(current_list)):
+                    if data[i] in current_list.loc[j,"tags"]:
+                        id_list.append(current_list.loc[j,"id"])
+        else:
+            for i in range(len(data)):
+                if data[i] in current_list["name"].values:
+                    id_element = np.array2string(current_list[current_list['name'] == data[i]]['id'].values)
+                    id_list.append(id_element[2:-2])
+        return id_list

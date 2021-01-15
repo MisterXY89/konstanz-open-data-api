@@ -35,10 +35,11 @@ class csvFetcher(BasicFetcher):
 									skip_blank_lines=True
 									)
 			if len(list(df2.columns)) > len(list(df1.columns)):
-				print("+++ False")
+				#print("+++ False")
 				return False
 		except:
-			print("*** TRUE")
+			pass
+			#print("*** TRUE")
 		return True
 
 

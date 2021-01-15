@@ -77,6 +77,7 @@ class DataSetUrlFetcher(object):
 			return False
 
 		data_frame = self._parse_data(resp)
+		# check if names are missing !!!!
 		#print(data_frame)
 
 		#store_status = self._store("st")
