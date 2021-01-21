@@ -68,7 +68,7 @@ def save_data(data, tag = False, folder=""):
     '''
     #doesn't work for links leading to jsons 
 
-    id_list = IdHelper.create_id_list(data)
+    id_list = IdHelper.create_id_list(data, tag)
 
     url_list = []
     for i in range(len(id_list)):
