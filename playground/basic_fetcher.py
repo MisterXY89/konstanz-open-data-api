@@ -24,12 +24,6 @@ class BasicFetcher:
                 yield resource["url"], resource["name"], resource["format"]
         return resp.status_code
 
-    def verify_url(self, url):
-        """
-        check if an url belongs to offenedaten-konstanz.de
-        """
-        return "offenedaten-konstanz.de" in url
-
     def get_file_ending(self, url):
         """
         extract file ending from an url
