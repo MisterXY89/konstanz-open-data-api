@@ -4,16 +4,18 @@ import numpy as np
 from config import *
 
 from csv_fetcher import csvFetcher
-from shp_fetcher import shpFetcher # applies for json as well
+from shp_fetcher import shpFetcher # applies for some jsons as well
 from xls_fetcher import xlsFetcher
 from txt_fetcher import txtFetcher
+from json_fetcher import jsonFetcher
 
 formats = {
             "csv": csvFetcher,
             "txt": txtFetcher,
             "xls": xlsFetcher,
-            "shp": shpFetcher,
-            "json": shpFetcher
+            "zip": shpFetcher,
+            "geojson": shpFetcher,
+            "json": jsonFetcher
         }
 
 current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
@@ -40,8 +42,8 @@ class FetchHelper:
         return response.status_code
 
     def get_url_ending(url):
-        if url[-4:] == "json":
-            return "json"
+        if url[-4:] == "json" and url[-5:] != ".json":
+            return "geojson"
         else:
             return url.split(".")[::-1][0].lower()
 

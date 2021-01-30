@@ -20,7 +20,7 @@ class shpFetcher:
         url: Data ID based link
 
         OUPUT: 
-        data as a pandas GeoDatFrame object
+        data as a pandas GeoDataFrame object
         """
         try: 
             df = gpd.read_file(url)

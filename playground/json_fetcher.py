@@ -7,7 +7,7 @@ class jsonFetcher(object):
     """
 
     def __init__(self):
-        self.flag_final = False
+        self.flag_final = True
 
     def parse_json(self, url):
         """
@@ -24,7 +24,7 @@ class jsonFetcher(object):
             # TO DO : different encodings
             return df
         except:
-            self.flag_final = True
+            self.flag_final = False
             return pd.DataFrame()
 
     def load_data(self, url):
