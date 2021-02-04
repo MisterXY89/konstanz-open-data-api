@@ -6,7 +6,7 @@ from basic_fetcher import BasicFetcher
 
 class csvFetcher(BasicFetcher):
 	"""
-	csvFetcher. fetches csv Data 
+	csvFetcher. fetches csv Data
 	"""
 	def __init__(self):
 		self.flag_final = False
@@ -14,7 +14,7 @@ class csvFetcher(BasicFetcher):
 
 	def verify_df(self, df1, url, encoding, sep):
 		"""
-		INPUT: 
+		INPUT:
 		df1:
 
 		url: Data ID based link
@@ -23,8 +23,8 @@ class csvFetcher(BasicFetcher):
 
 		sep:
 
-		OUTPUT: 
-		Boolean 
+		OUTPUT:
+		Boolean
 		"""
 		try:
 			anti_sep = "," if sep == ";" else ";"
@@ -45,24 +45,24 @@ class csvFetcher(BasicFetcher):
 
 	def parse_csv(self, url, encoding="utf-8", det_flag=False, decode_flag=False, sep=";"):
 		"""
-		parses data from url to dataframe 
+		parses data from url to dataframe
 
 		INPUT:
-		url: Data ID based link 
+		url: Data ID based link
 
 		encoding:
 
-		det_flag: 
+		det_flag:
 
-		decode_flag: 
+		decode_flag:
 
 		sep:
 
 		OUTPUT:
-		data as pandas DataFrame, object 
+		data as pandas DataFrame, object
 		"""
 		try:
-			df = pd.read_table(url, sep=sep,
+			df = pd.read_csv(url, sep=sep,
 									encoding=encoding,
 									engine="python",
 									keep_default_na=False,
@@ -76,9 +76,6 @@ class csvFetcher(BasicFetcher):
 				return df
 			raise Exception("SeperatorException: expected after")
 		except Exception as read_error:
-			print(40*"#")
-			print(read_error)
-			print(40*"#")
 			if not decode_flag and isinstance(read_error, UnicodeDecodeError):
 				# iso-8859-1
 				return self.parse_csv(url, encoding='latin1', decode_flag=True, sep=sep)
@@ -89,13 +86,13 @@ class csvFetcher(BasicFetcher):
 
 	def load_data(self, url):
 		"""
-        function to load the data 
+        function to load the data
 
         INPUT:
         url: Data ID based link
 
-        OUTPUT: 
-        data as a pandas DataFrame object 
-        flag_final 
+        OUTPUT:
+        data as a pandas DataFrame object
+        flag_final
         """
 		return self.parse_csv(url), self.flag_final
