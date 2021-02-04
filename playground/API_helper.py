@@ -8,6 +8,7 @@ from shp_fetcher import shpFetcher # applies for some jsons as well
 from xls_fetcher import xlsFetcher
 from txt_fetcher import txtFetcher
 from json_fetcher import jsonFetcher
+from kml_fetcher import kmlFetcher
 
 formats = {
             "csv": csvFetcher,
@@ -15,7 +16,8 @@ formats = {
             "xls": xlsFetcher,
             "zip": shpFetcher,
             "geojson": shpFetcher,
-            "json": jsonFetcher
+            "json": jsonFetcher,
+            "kml": kmlFetcher
         }
 
 current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)

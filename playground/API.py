@@ -5,7 +5,7 @@ import os
 from API_helper import *
 
 current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
-formats = ["csv","json","zip","xls","txt","geojson"]
+formats = ["csv","json","zip","xls","txt","geojson", "kml"]
 
 def get_data(data, tag = False, external = False):
     """
@@ -88,7 +88,7 @@ def save_data(data, tag = False, folder=""):
 
 #test = get_data(["standorte_glascontainer"])
 #test = get_data(["historische_wetterdaten"])
-#test = get_data(["Geo"], tag=True)
+test = get_data(["Geo"], tag=True)
 #test = get_data(["Umwelt und Klima"], tag=True)
 #save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
 #save_data(["standorte_sportanlagen"])
