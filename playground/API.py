@@ -1,6 +1,14 @@
 
-import urllib.request
 import os
+import urllib.request
+from tqdm import tqdm
+from colorama import init, Fore, Back, Style
+
+init()
+
+# for prod only!
+import warnings
+warnings.filterwarnings("ignore")
 
 from API_helper import *
 
@@ -20,7 +28,8 @@ def get_data(data, tag = False, external = False):
     if external:
         print("These are external data sets. Please refer to ...")
     else:
-        for i in range(len(id_list)):
+        length = len(id_list)
+        for i in tqdm(range(length), total=length, desc=f"[#] "):
             for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
                 ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
                 if ending in formats:
@@ -32,9 +41,11 @@ def get_data(data, tag = False, external = False):
                 key = name + " " + format
                 result_dict[key] = df
                 if flag:
-                    print("Successfully loaded data set: " + key)
+                    # print("Successfully loaded data set: " + key)
+                    tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set: {key}")
                 else:
-                    print("Data set was omitted: " + key)
+                    # print("Data set was omitted: " + key)
+                    tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted: {key}")
 
                 #if not flag:
                 #    final_flag = False
@@ -50,13 +61,13 @@ def get_data(data, tag = False, external = False):
 
     return result
 
-def save_data(data, tag = False, folder=""): 
+def save_data(data, tag = False, folder=""):
     '''
     function to save the indicated data (or data fitting the indicated tags) to your local disk
-    
+
     INPUT:
-    data: list of Strings 
-        list containing names of the datasets you want to store 
+    data: list of Strings
+        list containing names of the datasets you want to store
         or tags for which you want to save the respective datasets
     tag: Boolean
         default: False
@@ -66,7 +77,7 @@ def save_data(data, tag = False, folder=""):
         if you wanted to save the data to a different folder than the one from which you are executing the python file,
         you could indicate the respective folder here (use either forward slashes '/' or double backward slashes '\\')
     '''
-    #doesn't work for links leading to jsons 
+    #doesn't work for links leading to jsons
 
     id_list = IdHelper.create_id_list(data, tag)
 
@@ -75,8 +86,8 @@ def save_data(data, tag = False, folder=""):
         for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
             url_list.append(url)
 
-    # save all the files indicated by the urls: 
-    for url in url_list: 
+    # save all the files indicated by the urls:
+    for url in url_list:
         file_name = ""
         if len(folder)>0: # if a specific folder was given:
             file_name = os.path.join(folder, url.rsplit('/', 1)[1])
@@ -93,6 +104,3 @@ test = get_data(["Geo"], tag=True)
 #save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
 #save_data(["standorte_sportanlagen"])
 #test = get_data(["wahlbezirke"])
-
-
-
