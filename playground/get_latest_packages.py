@@ -9,6 +9,14 @@ CURRENT_PACKAGE_LIST_FILE = "CURRENT_PACKAGE_LIST.csv"
 MAX_DAY_DELTA = 14
 
 def check():
+    """
+    checks if the local version of the current packages is up to date:
+    has it been modified/updated in the last 14 days
+    if no, ask the user if he wants to update and the proceed
+
+    INPUT: None
+    RETURN: void
+    """
     modified_time = os.path.getmtime(CURRENT_PACKAGE_LIST_FILE)
     delta = time.time() - modified_time
     day_delta = delta/60/60/24

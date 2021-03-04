@@ -12,14 +12,18 @@ from config import CURRENT_PACKAGE_LIST_FILE
 
 class DataSetUrlFetcher(object):
 	"""
-	docstring for DataSetFetcher
+	Handles the fetching and storing of all available datasets
 	"""
+
 	def __init__(self):
 		self.CURRENT_PACKAGE_LIST_URL = "https://offenedaten-konstanz.de/api/3/action/current_package_list_with_resources"
 		# self.CURRENT_PACKAGE_LIST_FILE = "CURRENT_PACKAGE_LIST.json"
 		# self.header = request_settings.header
 
 	def fetch(self):
+		"""
+		basic fetch method for the CURRENT_PACKAGE_LIST_URL
+		"""
 		response = requests.get(self.CURRENT_PACKAGE_LIST_URL) # , header =
 		if response.status_code == 200:
 			return response.json()
@@ -27,6 +31,16 @@ class DataSetUrlFetcher(object):
 
 
 	def _store(self, data_frame:pd.DataFrame) -> bool:
+		"""
+		write dataframe to file
+
+		INPUT:
+		data_frame: pd.DataFrame
+			the respective DataFrame to store
+		RETURN:
+		sucess: bool
+			indicates wether the storing was successfull
+		"""
 		if not isinstance(data_frame, pd.DataFrame):
 			print(f"Expected DataFrame, got {type(data_frame)}")
 			return False
@@ -44,6 +58,16 @@ class DataSetUrlFetcher(object):
 
 
 	def _parse_data(self, data):
+		"""
+		parse data from json into DataFrame
+
+		INPUT:
+		data: string
+			json string fetched for a resource
+
+		RETURN:
+			DataFrame with all info
+		"""
 		if not "success" in data:
 			return False
 
@@ -71,6 +95,15 @@ class DataSetUrlFetcher(object):
 
 
 	def update(self):
+		"""
+		update method which handles the fetching, parsing
+		and storing of the info
+
+		INPUT: None
+		RETURN:
+		success: bool
+			wether the operation was successfull
+		"""
 		resp = self.fetch()
 		if isinstance(resp, int):
 			print(f"Error: status_code = {resp}")
