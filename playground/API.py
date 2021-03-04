@@ -28,6 +28,7 @@ def get_data(data, tag = False, external = False):
     if external:
         print("These are external data sets. Please refer to ...")
     else:
+        print("Loading data")
         length = len(id_list)
         for i in tqdm(range(length), total=length, desc=f"[#] "):
             for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
@@ -42,10 +43,10 @@ def get_data(data, tag = False, external = False):
                 result_dict[key] = df
                 if flag:
                     # print("Successfully loaded data set: " + key)
-                    tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set: {key}")
+                    tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set:\t {key}")
                 else:
                     # print("Data set was omitted: " + key)
-                    tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted: {key}")
+                    tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted:\t\t {key}")
 
                 #if not flag:
                 #    final_flag = False
@@ -99,7 +100,9 @@ def save_data(data, tag = False, folder=""):
 
 #test = get_data(["standorte_glascontainer"])
 #test = get_data(["historische_wetterdaten"])
+
 test = get_data(["Geo"], tag=True)
+
 #test = get_data(["Umwelt und Klima"], tag=True)
 #save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
 #save_data(["standorte_sportanlagen"])
