@@ -89,5 +89,5 @@ class DataSetUrlFetcher(object):
 		return True
 
 
-dsuf = DataSetUrlFetcher()
-s = dsuf.update()
+# dsuf = DataSetUrlFetcher()
+# s = dsuf.update()
