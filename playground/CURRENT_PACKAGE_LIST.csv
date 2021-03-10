@@ -1,4 +1,43 @@
 id,title,source,url,created,modified,notes,tags,name
+5941f554-47b7-4eed-a0bc-9dd8486bef33,Solarpotenzial,https://offenedaten-konstanz.de/dataset/solarpotenzial,https://offenedaten-konstanz.de/api/3/action/package_show?id=5941f554-47b7-4eed-a0bc-9dd8486bef33,2020-12-23 14:48:20,2020-12-23 14:48:20,"Solarpotenzial der Gebäudeflächen in der Stadt Konstanz.
+Die Analyse beinhaltet den Neigungswinkel, die Ausrichtung sowie die nutzbare Dachfläche aller berücksichtigten Gebäude als Basiswerte. Abschattungseffekte, die infolge umliegender Gebäude oder topographischer Gegebenheiten entstehen, fließen als Kennzahl in die Ertragsberechnung mit ein. Diese geht von der lokalen Globalstrahlung aus und wird entsprechend den oben genannten Parametern beeinflusst. Die Leistung der Photovoltaikanlagen, der voraussichtliche Stromertrag sowie die jährliche CO2 -Einsparung werden als Ergebnis ausgegeben.
+Die Daten wurden 2018 durch das Ingenieur Büro Smart Geomatics Informationssysteme GmbH im Auftrage der Stadt Konstanz erhoben.
+","['Umwelt und Klima', 'Geo', 'Infrastruktur, Bauen und Wohnen']",solarpotenzial
+5d78bac6-4f76-4648-bf4a-3239d50a5404,Mängelmelder,https://offenedaten-konstanz.de/dataset/m-ngelmelder,https://offenedaten-konstanz.de/api/3/action/package_show?id=5d78bac6-4f76-4648-bf4a-3239d50a5404,2020-11-02 16:25:40,2020-11-02 16:25:40,"Zusammenstellung aller über den Mängelmelder (https://konstanz-mitgestalten.de/bms/search#portal-bms) gemeldeten Probleme.
+","['Verwaltung, Haushalt und Steuern', 'Soziales']",maengelmelder
+c6ed879e-9a2c-41ca-a168-a88d449a24c1,"Georeferenzierte Standorte Fahrradmietsytsem (konrad, TINK)",https://offenedaten-konstanz.de/dataset/georeferenzierte-standorte-fahrradmietsytsem-konrad-tink,https://offenedaten-konstanz.de/api/3/action/package_show?id=c6ed879e-9a2c-41ca-a168-a88d449a24c1,2019-05-02 13:54:24,2019-05-02 13:54:24,"Konstanz Fahrradmietsystem
+In Konstanz steht Ihnen ein vielfältiges Fahrrad-Mietsystem zur Verfügung: 150 konräder (konrad = Konstanz + Rad) und 26 Transporträder von TINK. So können Sie sich einfach und jederzeit ein Fahrrad an einer der 15 konrad-Mietstationen oder ein Transportrad an den zusätzlichen 13 TINK-Stationen ausleihen.
+Lesen Sie mehr
+(Quelle: Stadtwerke Konstanz GmbH)
+","['Transport und Verkehr', 'Geo']",standorte_fahrradmietsystem
+61204ad3-9e46-4562-9cbc-3cf6c26dcd22,Gesamtübersicht Maßnahmenpaket 2019 Klimaschutzbericht Stadt Konstanz,https://offenedaten-konstanz.de/dataset/gesamt-bersicht-ma-nahmenpaket-2019-klimaschutzbericht-stadt-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=61204ad3-9e46-4562-9cbc-3cf6c26dcd22,2020-03-02 18:11:57,2020-03-02 18:11:57,"Die Stadt Konstanz hat am 02. Mai 2019 als erste deutsche Stadt den kommunalen Klimanotstand ausgerufen. Am 2. Mai 2019 beschloss der Konstanzer Gemeinderat einstimmig die Resolution zum Klimanotstand. Die Resolution fordert, dem Thema Klimaschutz in Konstanz ""höchste Priorität"" einzuräumen. Was hat sich seit dem 2. Mai 2019 im kommunalen Klimaschutz getan? 
+Dieser Datensatz gibt einen Gesamtüberblick über die vielfältige klimarelevante Maßnahmen in der Stadtverwaltung und ihren Beteiligungen. Innerhalb der städtischen Handlungsfelder ""Gebäude und Energieversorgung"", ""Stadtplanung und Mobilität"", ""Wirken nach außen"" und ""Wirken nach innen"" sowie bei den städtischen Beteiligungen (ohne definierten Beginn) wurden 2019 über 70 zusätzliche Klimaschutz-Maßnahmen gesammelt. Mehr Informationen finden sie im 1. Klimaschutzbericht der Stadt Konstanz. vom 23.01.2020.
+ 
+",['Umwelt und Klima'],klimamassnahmen_2019
+23683041-b9ee-4a70-add4-42e5930b4d1d,Konstanzer Gebäude nach Baujahren,https://offenedaten-konstanz.de/dataset/konstanzer-geb-ude-nach-baujahren,https://offenedaten-konstanz.de/api/3/action/package_show?id=23683041-b9ee-4a70-add4-42e5930b4d1d,2018-11-27 14:27:50,2018-11-27 14:27:50,"Gebäudebestand mit Baujahr aus dem Jahr 2016. Der Datensatz enthält die Gebäude in Konstanz mit Koordinaten sowie den Merkmalen Baujahr (gruppiert) und Anzahl der Wohnungen (gruppiert).
+Ausgewiesen wird das Baujahr des Gebäudes, spätere Umbaut- /Sanierungsjahre sind nicht ausgewiesen.
+(Quelle: Stadt Konstanz, Referat Oberbürgermeister - Statistik und Steuerungsunterstützung)
+","['Infrastruktur, Bauen und Wohnen']",gebaeude_baujahr
+a47fac75-1d4d-4dc4-9b76-b400d483f73f,Abfallstatistik Entsorgungsbetriebe Konstanz,https://offenedaten-konstanz.de/dataset/abfallstatistik-entsorgungsbetriebe-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=a47fac75-1d4d-4dc4-9b76-b400d483f73f,2020-03-03 16:02:55,2020-03-03 16:02:55,"Dieser Datensatz gibt Auskunft über die Abfallmenge der von den Entsorgungsbetrieben Konstanz (EBK) eingesammelten Abfällen in Konstanz. Wie hat sich die Abfallmenge der einzelnen Müllarten seit 2014 verändert? Der Datensatz enthält folgende Müllarten: Restmüll, Biomüll, Altpapier, Wertstoffe*, Altglas, Gelber Sack, Grünabfälle, Sperrmüll.
+Zu den Wertstoffen gehören bspw.: Holz, Metall, E-Schrott, Kühlschränke,Mineral. Stoffe, Hartkunststoffe
+(Quelle: Entsorgungsbetriebe Stadt Konstanz)
+","['Umwelt und Klima', 'Infrastruktur, Bauen und Wohnen']",abfallstatistik
+6ebde3b5-333e-4d94-85f7-d37763493b8c,Dauerzählstellen Radverkehr,https://offenedaten-konstanz.de/dataset/dauerz-hlstellen-radverkehr,https://offenedaten-konstanz.de/api/3/action/package_show?id=6ebde3b5-333e-4d94-85f7-d37763493b8c,2019-03-21 13:05:14,2019-03-21 13:05:14,"Der Datensatz enthält die Messergebnisse der Fahrradzählungen aller städtischen Dauerzählstellen im Konstanzer Stadtgebiet. Mit diesen Daten kann genau festgestellt werden, wann wie viele Radfahrerinnen und Radfahrer an diesen Orten unterwegs gewesen sind. Die Messergebnisse sind im 15 Minuten-Rhythmus erfasst. 
+Aktuell befindet sich eine Dauerzählstelle im Konstanzer Stadtgebiet. Die Fahrradzählstelle befindet sich am Ende der Fahrradbrücke an Herosépark und fungiert als wichtige Datengrundlage für die städtische Radpolitik. 
+Wer die Daten der Konstanzer Fahrradzählstelle für einen bestimmten Tag abrufen will, kann das auf einer interaktiven Karte des Herstellers Eco Counter (http://eco-public.com/ParcPublic/?id=4586#) tun.
+(Quelle: Stadt Konstanz, Amt für Stadtplanung und Umwelt)
+",['Transport und Verkehr'],dauerzaehlstelle_radverkehr
+26dd23be-679c-4e16-900a-a59650d95331,Außenwanderung bei Stadtteil,https://offenedaten-konstanz.de/dataset/au-enwanderung-bei-stadtteil,https://offenedaten-konstanz.de/api/3/action/package_show?id=26dd23be-679c-4e16-900a-a59650d95331,2020-11-17 17:21:06,2020-11-17 17:21:06,"Außenwanderung in den 15 Stadtteile und der Gesamtstadt.
+Quelle: Stadt Konstanz – eigene Einwohnerfortschreibung.
+","['Bevölkerung', 'Soziales']",aussenwanderung
+f3c8b9b8-994f-4c1c-9bb2-af6688256e95,Stromverbrauch Entsorgungsbetriebe Konstanz,https://offenedaten-konstanz.de/dataset/stromverbrauch-entsorgungsbetriebe-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=f3c8b9b8-994f-4c1c-9bb2-af6688256e95,2020-12-09 13:30:42,2020-12-09 13:30:42,"Der Datensatz enthält den Stromverbrauch der Entsorgungsbetriebe Konstanz (EBK), sowie den prozentualen Anteil der jeweiligen Anlagen.
+Derzeit liegen die Daten seit 2014 im CSV Format vor.
+",['Umwelt und Klima'],stromverbrauch_ebk
+474b11ad-9948-4a03-8da8-73bdfc9fdbdb,Busverkehr,https://offenedaten-konstanz.de/dataset/busverkehr,https://offenedaten-konstanz.de/api/3/action/package_show?id=474b11ad-9948-4a03-8da8-73bdfc9fdbdb,2019-04-15 14:03:11,2019-04-15 14:03:11,"Dieser Datensatz entält Daten zu den Konstanzer Busverkehrsnetz, dem Mobilitätsangebot der Stadtwerke Konstanz. Weitere Informationen und Neuigkeiten zum Busverkehr finden Sie hier
+(Quelle: Stadtwerke Konstanz GmbH)
+Fahrplandaten nach Landkreisen in Baden-Württemberg gibt es auch hier, auch für den Landkreis Konstanz: 
+https://www.nvbw.de/open-data/fahrplandaten/fahrplandaten-nach-landkreisen
+",['Transport und Verkehr'],busverkehr
 5f0134ec-41af-4907-b997-a783c175ab04,Abfallplaner Müllabfuhrtermine,https://offenedaten-konstanz.de/dataset/abfallplaner-m-llabfuhrtermine,https://offenedaten-konstanz.de/api/3/action/package_show?id=5f0134ec-41af-4907-b997-a783c175ab04,2020-01-10 13:07:16,2020-01-10 13:07:16,"Auflistung der Müllabfuhrtermine der EBK für Biomüll, Restmüll, Gelbersack, Papiertonne, Christbaumabholung im Stadtgebiet Konstanz seit dem Jahr 2020.
 (Quelle: Entsorgungsbetriebe Stadt Konstanz)
 ","['Umwelt und Klima', 'Infrastruktur, Bauen und Wohnen']",muellabfuhrtermine_2020
@@ -7,11 +46,6 @@ Für einen besseren Überblick über die Anzahl der Radfahrer, Autos und Fußgä
 Unter diesem Datensatz finden Sie verschiedene Ressourcen zu den mobilen Verkehrszählungen. Sie interessieren sich für die städtische Verkehrsplanung? Hier gibt's mehr Informationen.
 (Quelle, Stadt Konstanz, Amt für Stadtplanung und Umwelt)
 ","['Transport und Verkehr', 'Umwelt und Klima']",verkehrszaehlung
-5941f554-47b7-4eed-a0bc-9dd8486bef33,Solarpotenzial,https://offenedaten-konstanz.de/dataset/solarpotenzial,https://offenedaten-konstanz.de/api/3/action/package_show?id=5941f554-47b7-4eed-a0bc-9dd8486bef33,2020-12-23 14:48:20,2020-12-23 14:48:20,"Solarpotenzial der Gebäudeflächen in der Stadt Konstanz.
-Die Analyse beinhaltet den Neigungswinkel, die Ausrichtung sowie die nutzbare Dachfläche aller berücksichtigten Gebäude als Basiswerte. Abschattungseffekte, die infolge umliegender Gebäude oder topographischer Gegebenheiten entstehen, fließen als Kennzahl in die Ertragsberechnung mit ein. Diese geht von der lokalen Globalstrahlung aus und wird entsprechend den oben genannten Parametern beeinflusst. Die Leistung der Photovoltaikanlagen, der voraussichtliche Stromertrag sowie die jährliche CO2 -Einsparung werden als Ergebnis ausgegeben.
- 
-Die Daten wurden 2018 durch das Ingenieur Büro Smart Geomatics Informationssysteme GmbH im Auftrage der Stadt Konstanz erhoben.
-","['Umwelt und Klima', 'Geo', 'Infrastruktur, Bauen und Wohnen']",
 9b439a59-62b0-4ada-9976-08a631a96b82,Baumkataster Konstanz,https://offenedaten-konstanz.de/dataset/baumkataster-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=9b439a59-62b0-4ada-9976-08a631a96b82,2020-09-07 11:20:51,2020-09-07 11:20:51,"Auf Konstanzer Stadtgebiet befinden sich rund 15.500 Bäume. Davon sind 1.400 mindestens 100 Jahre alt. Doch wie gelingt die allgemeine Überwachung und aufwendige Pflege der städtischen Bäume? Dabei hilft das Baumkataster. Dieser Datensatz beinhaltet ein Verzeichnis, in dem Bäume der Stadt Konstanz enthalten sind. Zuständig für die städtische Baumpflege sind die Technischen Betriebe der Stadt Konstanz (TBK). Sie interessieren sich für das vielfältige Aufgabengebiet der TBK? Mehr dazu
 (Quelle: Technische Betriebe Stadt Konstanz)
 ","['Umwelt und Klima', 'Geo', 'Infrastruktur, Bauen und Wohnen']",baumkataster
@@ -44,9 +78,6 @@ Die Gesamtstadt Fläche der Stadt Konstanz ist in 15 Bezirke aufgeteilt. 
 Die folgende Datenbank hat den Stadtteilgrenzen Namen  (STT-Name), Stastteilgrenzen Nummer (STT-Nummer), Shape typ information (Shape), Länge jedes Stadtteilgrenzen in Meter (SHAPE Length) und Fläche jedes Stadtteilgrenzen in Meter (SHAPE Area).
 (Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)
 ",['Geo'],stadtteilgrenzen_flaechen
-f3c8b9b8-994f-4c1c-9bb2-af6688256e95,Stromverbrauch Entsorgungsbetriebe Konstanz,https://offenedaten-konstanz.de/dataset/stromverbrauch-entsorgungsbetriebe-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=f3c8b9b8-994f-4c1c-9bb2-af6688256e95,2020-12-09 13:30:42,2020-12-09 13:30:42,"Der Datensatz enthält den Stromverbrauch der Entsorgungsbetriebe Konstanz (EBK), sowie den prozentualen Anteil der jeweiligen Anlagen.
-Derzeit liegen die Daten seit 2014 im CSV Format vor.
-",['Umwelt und Klima'],stromverbrauch_ebk
 3c0e83b0-c74a-4fed-a350-04961cd49548,Kläranlage Konstanz,https://offenedaten-konstanz.de/dataset/kl-ranlage-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=3c0e83b0-c74a-4fed-a350-04961cd49548,2020-12-09 13:47:32,2020-12-09 13:47:32,"Der Datensatz umfasst Abwassermenge, Eliminationsraten und Sandfanggut der Kläranlage in Konstanz.
 Die Daten liegen teilweise seit 2014 vor.
  
@@ -72,8 +103,6 @@ c405d8cd-2a27-49fb-af39-88f4700f4142,Kleinräumige Gliederung Stadtviertelfläch
  
 (Quelle: Stadt Konstanz, Amt für Liegenschaften und Geoinformation)
 ","['Geo', 'Infrastruktur, Bauen und Wohnen']",stadtviertel_konstanz
-5d78bac6-4f76-4648-bf4a-3239d50a5404,Mängelmelder,https://offenedaten-konstanz.de/dataset/m-ngelmelder,https://offenedaten-konstanz.de/api/3/action/package_show?id=5d78bac6-4f76-4648-bf4a-3239d50a5404,2020-11-02 16:25:40,2020-11-02 16:25:40,"Zusammenstellung aller über den Mängelmelder (https://konstanz-mitgestalten.de/bms/search#portal-bms) gemeldeten Probleme.
-","['Verwaltung, Haushalt und Steuern', 'Soziales']",maengelmelder
 f28f68ae-301f-4a7f-9974-fd1f6ab3effa,Kinderbetreuung nach Stadtteilen,https://offenedaten-konstanz.de/dataset/kinderbetreuung-nach-stadtteilen,https://offenedaten-konstanz.de/api/3/action/package_show?id=f28f68ae-301f-4a7f-9974-fd1f6ab3effa,2018-11-26 14:51:17,2018-11-26 14:51:17,"Dieser Datensatz enthält eine Übersicht üder die Kinderbetreuungsplätze im Konstanzer Stadtgebiet. In welchem Stadtgebiet gibt es die größte Anzahl an Kinderbetreuungsplätzen? Dieser Datensatz gibt Auskunft darüber. Die Daten gibt es kleinräumig für jeden Staddteil von Konstanz.
 (Quelle: Stadt Konstanz, Referat Oberbürgermeister - Statistik und Steuerungsunterstützung)
 ","['Infrastruktur, Bauen und Wohnen']",kinderbetreuung
@@ -86,20 +115,12 @@ Berichte (pdf) zu den kleinräumigen Wahlergebnissen finden Sie hier: https://ww
      
 
 ",['Politik und Wahlen'],wahlergebnisse_landtag
-26dd23be-679c-4e16-900a-a59650d95331,Außenwanderung bei Stadtteil,https://offenedaten-konstanz.de/dataset/au-enwanderung-bei-stadtteil,https://offenedaten-konstanz.de/api/3/action/package_show?id=26dd23be-679c-4e16-900a-a59650d95331,2020-11-17 17:21:06,2020-11-17 17:21:06,"Außenwanderung in den 15 Stadtteile und der Gesamtstadt.
-Quelle: Stadt Konstanz – eigene Einwohnerfortschreibung.
-","['Bevölkerung', 'Soziales']",aussenwanderung
 ba32f547-4403-4abf-9fe0-83642c4b3fd8,Konstanzer Stadtteilprofile ,https://offenedaten-konstanz.de/dataset/konstanzer-stadtteilprofile,https://offenedaten-konstanz.de/api/3/action/package_show?id=ba32f547-4403-4abf-9fe0-83642c4b3fd8,2020-03-20 08:28:09,2020-03-20 08:28:09,"Die Konstanzer Stadtteilprofile stellen die 15 Stadtteile anhand ausgewählter Daten über die Bevölkerung, soziale Infrastruktur oder etwa Wahlen vor.
 Mit den Stadtteilprofilen wird die kleinräumige Vielfalt der Stadt beschrieben und vergleichbarer gemacht. Dieser Datensatz bietet eine Übersicht über Flächennutzung, soziodemografische Indikatoren, soziale Infrastruktur sowie Kaufkraft, Arbeitsmarkt, PKW-Bestand und Wahlergebnisse auf Ebenen der Stadtteile.
 Die Stadtteilgrenzen orientieren sich im Wesentlichen an historischen (Gemarkungs-)Grenzen. 
 Mehr zu den Konstanzer Stadtteilprofilen finden Sie hier.
 (Quelle: Stadt Konstanz, Referat Oberbürgermeister, Abteilung Statistik und Steuerungsunterstützung)
 ","['Bevölkerung', 'Politik und Wahlen']",stadtteilprofil
-6ebde3b5-333e-4d94-85f7-d37763493b8c,Dauerzählstellen Radverkehr,https://offenedaten-konstanz.de/dataset/dauerz-hlstellen-radverkehr,https://offenedaten-konstanz.de/api/3/action/package_show?id=6ebde3b5-333e-4d94-85f7-d37763493b8c,2019-03-21 13:05:14,2019-03-21 13:05:14,"Der Datensatz enthält die Messergebnisse der Fahrradzählungen aller städtischen Dauerzählstellen im Konstanzer Stadtgebiet. Mit diesen Daten kann genau festgestellt werden, wann wie viele Radfahrerinnen und Radfahrer an diesen Orten unterwegs gewesen sind. Die Messergebnisse sind im 15 Minuten-Rhythmus erfasst. 
-Aktuell befindet sich eine Dauerzählstelle im Konstanzer Stadtgebiet. Die Fahrradzählstelle befindet sich am Ende der Fahrradbrücke an Herosépark und fungiert als wichtige Datengrundlage für die städtische Radpolitik. 
-Wer die Daten der Konstanzer Fahrradzählstelle für einen bestimmten Tag abrufen will, kann das auf einer interaktiven Karte des Herstellers Eco Counter (http://eco-public.com/ParcPublic/?id=4586#) tun.
-(Quelle: Stadt Konstanz, Amt für Stadtplanung und Umwelt)
-",['Transport und Verkehr'],dauerzaehlstelle_radverkehr
 44e196d3-6028-4371-9c4b-45268d61b330,Kohlendioxid-Emissionen: Kommunale CO2 Bilanzen Stadt Konstanz ,https://offenedaten-konstanz.de/dataset/kohlendioxid-emissionen-kommunale-co2-bilanzen-stadt-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=44e196d3-6028-4371-9c4b-45268d61b330,2020-02-25 15:30:21,2020-02-25 15:30:21,"Quelle der Daten: Statistisches Landesamt Baden-Württemberg
 Die Angaben über CO2-Emissionen nach Sektoren beruhen auf den Energiebilanzen für Baden-Württemberg, die zunächst nur auf Landesebene vorliegen. Bei der Berechnung der Emissionswerte auf Kreis- und Gemeindeebene wird notwendigerweise auf modellhafte und damit in den verschiedenen Sektoren zum Teil verallgemeinernde Annahmen zurückgegriffen. Insbesondere wird aufgrund fehlender primärstatistischer Angaben im Sektor Haushalte, Gewerbe, Handel, Dienstleistungen und übrige Verbraucher mit einem durchschnittlichen Energieverbrauch je Wohnung bzw. je sozialversicherungspflichtig Beschäftigtem gerechnet. Regionale Minderungsmaßnahmen in diesem Sektor werden deshalb in der Modellrechnung nicht vollständig berücksichtigt.
 Jahr:
@@ -204,11 +225,6 @@ Anlage 2 zu § 2 Abs. 2 bis 4 Waffengesetz (WaffG) - Waffenliste 
 
 
 ",['Gesetze und Justiz'],kleiner_waffenschein
-c6ed879e-9a2c-41ca-a168-a88d449a24c1,"Georeferenzierte Standorte Fahrradmietsytsem (konrad, TINK)",https://offenedaten-konstanz.de/dataset/georeferenzierte-standorte-fahrradmietsytsem-konrad-tink,https://offenedaten-konstanz.de/api/3/action/package_show?id=c6ed879e-9a2c-41ca-a168-a88d449a24c1,2019-05-02 13:54:24,2019-05-02 13:54:24,"Konstanz Fahrradmietsystem
-In Konstanz steht Ihnen ein vielfältiges Fahrrad-Mietsystem zur Verfügung: 150 konräder (konrad = Konstanz + Rad) und 26 Transporträder von TINK. So können Sie sich einfach und jederzeit ein Fahrrad an einer der 15 konrad-Mietstationen oder ein Transportrad an den zusätzlichen 13 TINK-Stationen ausleihen.
-Lesen Sie mehr
-(Quelle: Stadtwerke Konstanz GmbH)
-","['Transport und Verkehr', 'Geo']",standorte_fahrradmietsystem
 dc37dce2-1550-4257-a896-e1056062b37c,Geschwindigkeitsüberwachung Jahresstatistik,https://offenedaten-konstanz.de/dataset/geschwindigkeits-berwachung-jahresstatistik,https://offenedaten-konstanz.de/api/3/action/package_show?id=dc37dce2-1550-4257-a896-e1056062b37c,2020-01-10 08:30:58,2020-01-10 08:30:58,"Erfasste Bußgeldtatbestände der städtischen Geschwindigkeitsüberwachung über die 12 Monaten eines gesamtes Jahres. Neben der Gesamtstatistik für die Stadt Konstanz, sind Statistiken für folgende stationäre Radarstationen enthalten:
 
 Untere Laube
@@ -222,27 +238,14 @@ Reichenaustraße/Neue Rheinbrücke
 
 (Quelle: Stadt Konstanz, Bürgeramt)
 ","['Gesetze und Justiz', 'Transport und Verkehr']",geschwindigkeitsueberwachung
-474b11ad-9948-4a03-8da8-73bdfc9fdbdb,Busverkehr,https://offenedaten-konstanz.de/dataset/busverkehr,https://offenedaten-konstanz.de/api/3/action/package_show?id=474b11ad-9948-4a03-8da8-73bdfc9fdbdb,2019-04-15 14:03:11,2019-04-15 14:03:11,"Dieser Datensatz entält Daten zu den Konstanzer Busverkehrsnetz, dem Mobilitätsangebot der Stadtwerke Konstanz. Weitere Informationen und Neuigkeiten zum Busverkehr finden Sie hier
-(Quelle: Stadtwerke Konstanz GmbH)
-Fahrplandaten nach Landkreisen in Baden-Württemberg gibt es auch hier, auch für den Landkreis Konstanz: 
-https://www.nvbw.de/open-data/fahrplandaten/fahrplandaten-nach-landkreisen
-",['Transport und Verkehr'],busverkehr
 b5ddf98d-52bc-4677-ad72-939192a5d5a9,Standorte Konstanz WLAN,https://offenedaten-konstanz.de/dataset/standorte-konstanz-wlan,https://offenedaten-konstanz.de/api/3/action/package_show?id=b5ddf98d-52bc-4677-ad72-939192a5d5a9,2019-04-09 15:38:49,2019-04-09 15:38:49,"An vielen Orten in Konstanz können Sie sich seit November 2015 kostenlos im ""KonstanzWLAN"" einloggen. Wo sich die kostenlose Hot-Spots befinden zeigt dieser Datensatz.
 Hier gelangen Sie zu dem Angebot der Stadtwerke Konstanz: https://www.stadtwerke-konstanz.de/telekommunikation/konstanz-wlan/
 (Quelle: Stadtwerke Konstanz GmbH)
  
 ","['Infrastruktur, Bauen und Wohnen']",standorte_wlan
-23683041-b9ee-4a70-add4-42e5930b4d1d,Konstanzer Gebäude nach Baujahren,https://offenedaten-konstanz.de/dataset/konstanzer-geb-ude-nach-baujahren,https://offenedaten-konstanz.de/api/3/action/package_show?id=23683041-b9ee-4a70-add4-42e5930b4d1d,2018-11-27 14:27:50,2018-11-27 14:27:50,"Gebäudebestand mit Baujahr aus dem Jahr 2016. Der Datensatz enthält die Gebäude in Konstanz mit Koordinaten sowie den Merkmalen Baujahr (gruppiert) und Anzahl der Wohnungen (gruppiert).
-Ausgewiesen wird das Baujahr des Gebäudes, spätere Umbaut- /Sanierungsjahre sind nicht ausgewiesen.
-(Quelle: Stadt Konstanz, Referat Oberbürgermeister - Statistik und Steuerungsunterstützung)
-","['Infrastruktur, Bauen und Wohnen']",gebaeude_baujahr
 67e37de3-ba6e-44fc-8e07-0884b1b4d61c,Einwohnerentwicklung Stadt Konstanz,https://offenedaten-konstanz.de/dataset/einwohnerentwicklung-stadt-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=67e37de3-ba6e-44fc-8e07-0884b1b4d61c,2019-04-09 14:45:22,2019-04-09 14:45:22,"Wie hat sich die Einwohnerzahl in der Stadt Konstanz seit 1975 entwickelt? Der Datensatz enthält die Einwohnerzahl (Wohnbevölkerung = Hauptwohnsitz) insgesamt und nach Staatsangehörigkeit (Deutsch, Ausländer) ab dem Jahr 1975.
 (Quelle: Stadt Konstanz, Referat Oberbürgermeister - Statistik und Steuerungsunterstützung)
 ",['Bevölkerung'],einwohnerentwicklung
-a47fac75-1d4d-4dc4-9b76-b400d483f73f,Abfallstatistik Eigenbetriebe Konstanz,https://offenedaten-konstanz.de/dataset/abfallstatistik-eigenbetriebe-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=a47fac75-1d4d-4dc4-9b76-b400d483f73f,2020-03-03 16:02:55,2020-03-03 16:02:55,"Dieser Datensatz gibt Auskunft über die Abfallmenge der von den Entsorgungsbetrieben Konstanz (EBK) eingesammelten Abfällen in Konstanz. Wie hat sich die Abfallmenge der einzelnen Müllarten seit 2014 verändert? Der Datensatz enthält folgende Müllarten: Restmüll, Biomüll, Altpapier, Wertstoffe*, Altglas, Gelber Sack, Grünabfälle, Sperrmüll.
-Zu den Wertstoffen gehören bspw.: Holz, Metall, E-Schrott, Kühlschränke,Mineral. Stoffe, Hartkunststoffe
-(Quelle: Entsorgungsbetriebe Stadt Konstanz)
-","['Umwelt und Klima', 'Infrastruktur, Bauen und Wohnen']",abfallstatistik
 2ae41c2c-6001-47a3-80b5-3ba437308ec8,"Städtische Umfrage im Projekt ""Klimaschutzdaten für Konstanz""",https://offenedaten-konstanz.de/dataset/st-dtische-umfrage-im-projekt-klimaschutzdaten-f-r-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=2ae41c2c-6001-47a3-80b5-3ba437308ec8,2020-08-12 16:18:21,2020-08-12 16:18:21,"Vom 01.07.2020 bis 17.07.2020 lief im Rahmen des Projekts «Klimaschutzdaten für Konstanz» eine Umfrage bei Mitarbeiter*innen der Stadt Konstanz, die in klimaschutzrelevanten Fachbereichen arbeiten oder in der Task Force Klima tätig sind. Die Umfrage fokussiert sich darauf, wie die Mitarbeiter*innen die Themen frei nutzbare und maschinenlesbare Daten, klimaschutzrelevante Daten und Datenverwaltung bewerten. Das Projekt wird im Rahmen des Landeswettbewerbs «Städte, Gemeinden und Landkreise 4.0 – Future Communities 2019» des Ministeriums für Inneres, Digitales und Migration Baden-Württemberg gefördert. Seit Januar 2020 wird erforscht, wie kommunale offene Daten Wirkungen im kommunalen Klimaschutz entfachen können.
 Die Umfrage wurde von einer Master-Studierenden an der Universität Konstanz im Studiengang Politik- und Verwaltungswissenschaften, die dieses Projekt wissenschaftlich begleitet, entworfen. Weitere Informationen zum Projekt «Klimaschutzdaten für Konstanz» (bspw. einen Projektflyer) finden Sie auf unserer Projektwebsite: https://www.digitales-konstanz.de/Foerderprojekte/. Dort finden Sie in Kürze auch die Ergebnisse der Umfrage.
 (Quelle: Stadt Konstanz, Referat Oberbürgermeister, Abteilung Statistik und Steuerungsunterstützung)
@@ -271,7 +274,3 @@ Datum der letzten Aktualisierung: 09.07.2019.
 Neben des KFZ-Bestandes nach Stadtteilen und Merkmalen (bspw. Schadstoffklassen und Antriebsarten) gibt es u.a. auch eine interessante Zeitreihe für die städtische Entwicklung seit 1983.
 Quelle: Kraftfahrt-Bundesamt; Stadt Konstanz Referat Oberbügermeister - Statistik und Steuerungsunterstützung. 
 ",['Transport und Verkehr'],kfz_statistik
-61204ad3-9e46-4562-9cbc-3cf6c26dcd22,Gesamtübersicht Maßnahmenpaket 2019 Klimaschutzbericht Stadt Konstanz,https://offenedaten-konstanz.de/dataset/gesamt-bersicht-ma-nahmenpaket-2019-klimaschutzbericht-stadt-konstanz,https://offenedaten-konstanz.de/api/3/action/package_show?id=61204ad3-9e46-4562-9cbc-3cf6c26dcd22,2020-03-02 18:11:57,2020-03-02 18:11:57,"Die Stadt Konstanz hat am 02. Mai 2019 als erste deutsche Stadt den kommunalen Klimanotstand ausgerufen. Am 2. Mai 2019 beschloss der Konstanzer Gemeinderat einstimmig die Resolution zum Klimanotstand. Die Resolution fordert, dem Thema Klimaschutz in Konstanz ""höchste Priorität"" einzuräumen. Was hat sich seit dem 2. Mai 2019 im kommunalen Klimaschutz getan? 
-Dieser Datensatz gibt einen Gesamtüberblick über die vielfältige klimarelevante Maßnahmen in der Stadtverwaltung und ihren Beteiligungen. Innerhalb der städtischen Handlungsfelder ""Gebäude und Energieversorgung"", ""Stadtplanung und Mobilität"", ""Wirken nach außen"" und ""Wirken nach innen"" sowie bei den städtischen Beteiligungen (ohne definierten Beginn) wurden 2019 über 70 zusätzliche Klimaschutz-Maßnahmen gesammelt. Mehr Informationen finden sie im 1. Klimaschutzbericht der Stadt Konstanz. vom 23.01.2020.
- 
-",['Umwelt und Klima'],klimamassnahmen_2019
