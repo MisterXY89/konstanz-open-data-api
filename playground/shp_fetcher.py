@@ -22,8 +22,11 @@ class shpFetcher:
         OUPUT: 
         data as a pandas GeoDataFrame object
         """
-        try: 
+        try:
+            #print("was fine")
+            #print(self.flag_final)
             df = gpd.read_file(url)
+            #print("was fine")
             return df
         except: 
             self.flag_final = False
@@ -40,4 +43,6 @@ class shpFetcher:
         data as a pandas GeoDatFrame object
         flag_final
         """
+        #print(self.flag_final)
+        #print(result)
         return self.parse_geo(url), self.flag_final

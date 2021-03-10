@@ -10,10 +10,11 @@ from txt_fetcher import txtFetcher
 from json_fetcher import jsonFetcher
 from kml_fetcher import kmlFetcher
 
-formats = {
+formats_dict = {
             "csv": csvFetcher,
             "txt": txtFetcher,
             "xls": xlsFetcher,
+            "xlsx": xlsFetcher,
             "zip": shpFetcher,
             "geojson": shpFetcher,
             "json": jsonFetcher,
@@ -30,7 +31,7 @@ class FetchHelper:
         pass
 
     def get_instance(format):
-        return formats[format]
+        return formats_dict[format]
 
     def fetch_dataset_urls(id):
         """
