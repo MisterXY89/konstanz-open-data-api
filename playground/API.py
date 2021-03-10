@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 from API_helper import *
 
 current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
-formats = ["csv","json","zip","xls","txt","geojson", "kml"]
+formats = ["csv","json","zip","xls","txt","geojson", "kml", "xlsx"]
 
 def get_data(data, tag = False, external = False):
     """
@@ -36,17 +36,28 @@ def get_data(data, tag = False, external = False):
                 if ending in formats:
                     instance = FetchHelper.get_instance(ending)()
                     df, flag = instance.load_data(url)
+                    #print(flag)
+
+                    if flag:
+                        # print("Successfully loaded data set: " + key)
+
+                        key = name + " " + format
+                        result_dict[key] = df
+
+                        tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set:\t {key}")
+
+
+                    else:
+                        # print("Data set was omitted: " + key)
+                        output_name = name + " " + format
+                        tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted:\t\t {output_name}")
                 else:
-                    df = {}
-                    flag = False
-                key = name + " " + format
-                result_dict[key] = df
-                if flag:
-                    # print("Successfully loaded data set: " + key)
-                    tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set:\t {key}")
-                else:
-                    # print("Data set was omitted: " + key)
-                    tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted:\t\t {key}")
+                    #df = {}
+                    #flag_external = True
+                    tqdm.write(f"{Fore.YELLOW}[-]{Style.RESET_ALL} External Link:\t\t\t {name}\n\t\t\t\t\t Please visit {url}")
+
+                #if flag_external:
+
 
                 #if not flag:
                 #    final_flag = False
@@ -100,9 +111,7 @@ def save_data(data, tag = False, folder=""):
 
 #test = get_data(["standorte_glascontainer"])
 #test = get_data(["historische_wetterdaten"])
-
-test = get_data(["Geo"], tag=True)
-
+#test = get_data(["Geo"], tag=True)
 #test = get_data(["Umwelt und Klima"], tag=True)
 #save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
 #save_data(["standorte_sportanlagen"])
