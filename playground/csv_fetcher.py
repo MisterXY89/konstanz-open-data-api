@@ -6,7 +6,8 @@ from basic_fetcher import BasicFetcher
 
 class csvFetcher(BasicFetcher):
 	"""
-	csvFetcher. fetches csv Data
+	csvFetcher
+	inherits basic fetcher
 	"""
 	def __init__(self):
 		self.flag_final = False
@@ -14,17 +15,23 @@ class csvFetcher(BasicFetcher):
 
 	def verify_df(self, df1, url, encoding, sep):
 		"""
-		INPUT:
-		df1:
+		checkf if csv has been correctly read into dataframe
+		-> avoid issues
 
-		url: Data ID based link
+		PARA METERS:
+	    -----------
+		df1: Dataframe
+			current df1
+		url: String
+			data ID based link
+		encoding: String
+			encoding for csv file
+		sep: String
+			csv file seperator
 
-		encoding
-
-		sep:
-
-		OUTPUT:
-		Boolean
+		RETURNS:
+	    -----------
+		Boolean: if dataframe is created correctly
 		"""
 		try:
 			anti_sep = "," if sep == ";" else ";"
@@ -47,19 +54,27 @@ class csvFetcher(BasicFetcher):
 		"""
 		parses data from url to dataframe
 
-		INPUT:
-		url: Data ID based link
+		PARAMETERS:
+	    -----------
+		url: String
+			Data ID based link
+		encoding: String
+			default: 'utf-8'
+			encoding for csv file
+		det_flag: Boolean
+			default: False
+			control max number of repetitions
+		decode_flag: Boolean
+			default: False
+			track if another encoding has been tried
+		sep: String
+			default: ';'
+			csv file seperator
 
-		encoding:
-
-		det_flag:
-
-		decode_flag:
-
-		sep:
-
-		OUTPUT:
-		data as pandas DataFrame, object
+		RETURNS:
+	    -----------
+		DataFrame: data for url
+        Boolean: flag_final (success)
 		"""
 		try:
 			df = pd.read_csv(url, sep=sep,
@@ -88,11 +103,14 @@ class csvFetcher(BasicFetcher):
 		"""
         function to load the data
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+	    -----------
+        url: String
+			Data ID based link
 
-        OUTPUT:
-        data as a pandas DataFrame object
-        flag_final
+        RETURNS:
+	    -----------
+        DataFrame: data for url
+        Boolean: flag_final (success)
         """
 		return self.parse_csv(url), self.flag_final

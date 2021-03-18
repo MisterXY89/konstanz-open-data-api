@@ -17,8 +17,22 @@ formats = ["csv","json","zip","xls","txt","geojson", "kml", "xlsx"]
 
 def get_data(data, tag = False, external = False):
     """
-    input : list containing names or tags (string)
-    return : single df or dict containing df
+    general get data function to be called by user
+
+    PARAMETERS:
+    -----------
+    data: list of Strings
+        containing names or tags (string)
+    tag: Boolean
+        default: False
+        set to True if data list contains tags
+    external: Boolean
+        default: False
+        TODO: set to True if data list contains external links
+
+    RETURNS:
+    -----------
+    DataFrame|dict: single df or dict containing df
     """
     id_list = IdHelper.create_id_list(data, tag)
 
@@ -74,10 +88,12 @@ def get_data(data, tag = False, external = False):
     return result
 
 def save_data(data, tag = False, folder=""):
-    '''
-    function to save the indicated data (or data fitting the indicated tags) to your local disk
+    """
+    function to save the indicated data (or data fitting the indicated tags)
+    to your local disk
 
-    INPUT:
+    PARAMETERS:
+    -----------
     data: list of Strings
         list containing names of the datasets you want to store
         or tags for which you want to save the respective datasets
@@ -88,7 +104,11 @@ def save_data(data, tag = False, folder=""):
         default: empty
         if you wanted to save the data to a different folder than the one from which you are executing the python file,
         you could indicate the respective folder here (use either forward slashes '/' or double backward slashes '\\')
-    '''
+
+    RETURNS:
+    -----------
+    void
+    """
     #doesn't work for links leading to jsons
 
     id_list = IdHelper.create_id_list(data, tag)
@@ -115,4 +135,6 @@ def save_data(data, tag = False, folder=""):
 #test = get_data(["Umwelt und Klima"], tag=True)
 #save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
 #save_data(["standorte_sportanlagen"])
-#test = get_data(["wahlbezirke"])
+# test = get_data(["wahlbezirke"])
+
+# TODO: check if really want to download (disable with param)

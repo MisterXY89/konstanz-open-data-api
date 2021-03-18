@@ -14,8 +14,13 @@ def check():
     has it been modified/updated in the last 14 days
     if no, ask the user if he wants to update and the proceed
 
-    INPUT: None
-    RETURN: void
+    PARAMETERS:
+    -----------
+    None
+
+    RETURNS:
+    -----------
+    void
     """
     modified_time = os.path.getmtime(CURRENT_PACKAGE_LIST_FILE)
     delta = time.time() - modified_time
@@ -31,4 +36,4 @@ def check():
 
 
 
-check()
+# check()

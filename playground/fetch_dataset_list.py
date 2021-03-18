@@ -23,6 +23,15 @@ class DataSetUrlFetcher(object):
 	def fetch(self):
 		"""
 		basic fetch method for the CURRENT_PACKAGE_LIST_URL
+
+		PARAMETERS:
+		-----------
+		None
+
+		RETURNS:
+		-----------
+		Json: current packages (success)
+		Int: Status code (error)
 		"""
 		response = requests.get(self.CURRENT_PACKAGE_LIST_URL) # , header =
 		if response.status_code == 200:
@@ -32,13 +41,16 @@ class DataSetUrlFetcher(object):
 
 	def _store(self, data_frame:pd.DataFrame) -> bool:
 		"""
-		write dataframe to file
+		writes dataframe to file
 
-		INPUT:
-		data_frame: pd.DataFrame
+		PARAMETERS:
+		-----------
+		data_frame: DataFrame
 			the respective DataFrame to store
-		RETURN:
-		sucess: bool
+
+		RETURNS:
+		-----------
+		sucess: Boolean
 			indicates wether the storing was successfull
 		"""
 		if not isinstance(data_frame, pd.DataFrame):
@@ -61,11 +73,13 @@ class DataSetUrlFetcher(object):
 		"""
 		parse data from json into DataFrame
 
-		INPUT:
-		data: string
+		PARAMETERS:
+		-----------
+		data: string (json)
 			json string fetched for a resource
 
-		RETURN:
+		RETURNS:
+		-----------
 			DataFrame with all info
 		"""
 		if not "success" in data:
@@ -99,9 +113,13 @@ class DataSetUrlFetcher(object):
 		update method which handles the fetching, parsing
 		and storing of the info
 
-		INPUT: None
-		RETURN:
-		success: bool
+		PARAMETERS:
+		-----------
+		None
+
+		RETURNS:
+		-----------
+		success: Boolean
 			wether the operation was successfull
 		"""
 		resp = self.fetch()

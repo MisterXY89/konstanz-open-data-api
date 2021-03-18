@@ -3,7 +3,7 @@ import xlrd
 
 class xlsFetcher(object):
     """
-    xlsFetcher: fetces xls-Data 
+    xlsFetcher: fetces xls-Data
     """
 
     def __init__(self):
@@ -11,13 +11,16 @@ class xlsFetcher(object):
 
     def parse_xls(self, url):
         """
-        parses data from url to dataframe 
+        parses data from url to dataframe
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+        -----------
+        url: String
+            Data ID based link
 
-        OUTPUT:
-        data as pandas DataFrame object
+        RETURNS:
+	    -----------
+        DataFrame: data for url
         """
         try:
             df = pd.read_excel(url, sheet_name=None)
@@ -28,13 +31,16 @@ class xlsFetcher(object):
 
     def load_data(self, url):
         """
-        load data set 
+        load data set
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+	    -----------
+        url: String
+			Data ID based link
 
-        OUPUT: 
-        data as a pandas DataFrame object
-        flag_final
+        RETURNS:
+	    -----------
+        DataFrame: data for url
+        Boolean: flag_final (success)
         """
         return self.parse_xls(url), self.flag_final

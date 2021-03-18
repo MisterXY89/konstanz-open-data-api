@@ -14,34 +14,38 @@ class shpFetcher:
 
     def parse_geo(self, url):
         """
-        parses data from url to dataframe 
+        parses data from url to dataframe
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+        -----------
+        url: String
+            Data ID based link
 
-        OUPUT: 
-        data as a pandas GeoDataFrame object
+        RETURNS:
+        -----------
+        DataFrame: data for url
         """
         try:
-            #print("was fine")
-            #print(self.flag_final)
             df = gpd.read_file(url)
             #print("was fine")
             return df
-        except: 
+        except:
             self.flag_final = False
             return gpd.GeoDataFrame()
 
     def load_data(self, url):
         """
-        load data set 
+        load data set for url
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+        -----------
+        url: String
+            Data ID based link
 
-        OUPUT: 
-        data as a pandas GeoDatFrame object
-        flag_final
+        RETURNS:
+        -----------
+        DataFrame: data for url
+        Boolean: flag_final (success)
         """
         #print(self.flag_final)
         #print(result)

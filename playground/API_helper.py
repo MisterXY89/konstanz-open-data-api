@@ -31,11 +31,34 @@ class FetchHelper:
         pass
 
     def get_instance(format):
+        """
+        gets instance of repective fetcher
+
+        PARAMETERS:
+        -----------
+        format: String
+            file format (e.g. csv, json, ...)
+
+        RETURNS:
+        -----------
+        Fetcher: respective fetcher
+        """
         return formats_dict[format]
 
     def fetch_dataset_urls(id):
         """
         get urls corresponding to id
+
+        PARAMETERS:
+        -----------
+        id: String
+            package id
+
+        RETURNS:
+        -----------
+        yield: url, name, format
+        if staus code not 200
+            return status code
         """
         response = requests.get(PACKAGE_BASE_URL + id)
         if response.status_code == 200:
@@ -64,9 +87,18 @@ class IdHelper:
         pass
 
     def create_id_list(data, tag = False):
-        '''
-        helper function to create a list of ids for the datasets indicated by the names/tags given
-        '''
+        """
+        helper function to create a list of ids for the datasets
+        indicated by the names/tags given
+
+        PARAMETERS:
+        -----------
+        data: list of Strings
+            containing names or tags (string)
+        tag: Boolean
+            default: False
+            set to True if data list contains tags
+        """
         id_list = []
         if tag:
             for i in range(len(data)):

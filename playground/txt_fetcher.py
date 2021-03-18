@@ -1,11 +1,11 @@
+import re
 from pandas import pandas as pd
 from urllib.request import urlopen
 from urllib.error import HTTPError
-import re
 
 class txtFetcher(object):
     """
-    txtFetcher: fetches txt-Data 
+    txtFetcher: fetches txt-Data
     """
     def __init__(self):
         self.encoding = ["utf-8", "ISO-8859-1", "latin1"]
@@ -20,8 +20,14 @@ class txtFetcher(object):
         """
         extract encoding from first line if applicable
 
-        INPUT: 
-        file: 
+        PARAMETERS:
+        -----------
+        file: String
+            path to file
+
+        RETURNS:
+        -----------
+        void
         """
         try:
             first_line = file.readline().decode(self.encoding[self.encoding_idx])
@@ -42,10 +48,16 @@ class txtFetcher(object):
 
     def read_line(self, line):
         """
-        read single line
+        read single line, cleans it and adds it to the lines_list
 
-        INPUT:
-        line: 
+        PARAMETERS:
+        -----------
+        line: String
+            line of a file
+
+        RETURNS:
+        -----------
+        void
         """
         decoded_line = line.decode(self.encoding_final)
         for quoted_part in re.findall(r'\"(.*?)\"', decoded_line):  # replace 'space' in quotes with '@'
@@ -59,13 +71,16 @@ class txtFetcher(object):
 
     def get_data(self, url):
         """
-        gets the data from url 
+        gets the data from url
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+        -----------
+        url: String
+            Data ID based link
 
-        OUTPUT: 
-        lines_list
+        RETURNS:
+        -----------
+        lines_list: list of Strings
         """
         try:
             file = urlopen(url)
@@ -99,10 +114,13 @@ class txtFetcher(object):
         converts the data to a Dataframe
 
         INPUT:
-        data: txt. data 
+        -----------
+        data: String
+            txt. data
 
         OUTPUT:
-        panda dataframe object with data
+        -----------
+        DataFrame: data as DataFrame
         """
         df = pd.DataFrame(data)
         row, col = df.shape
@@ -145,14 +163,17 @@ class txtFetcher(object):
 
     def load_data(self, url):
         """
-        function to load the data 
+        function to load the data, called by external classes
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+        -----------
+        url: String
+            Data ID based link
 
-        OUTPUT: 
-        data as a pandas DataFrame object 
-        flag_final 
+        RETURNS:
+        -----------
+        DataFrame: data for url
+        Boolean: flag_final (success)
         """
         data = self.get_data(url)
         return self.convert_df(data), self.flag_final

@@ -11,13 +11,16 @@ class jsonFetcher(object):
 
     def parse_json(self, url):
         """
-        parses data from url to dataframe 
+        parses data from url to dataframe
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+        -----------
+        url: String
+            Data ID based link
 
-        OUTPUT:
-        data as pandas DataFrame object
+        RETURNS:
+        -----------
+        DataFrame: data for url
         """
         try:
             df = pd.read_json(url)
@@ -29,14 +32,16 @@ class jsonFetcher(object):
 
     def load_data(self, url):
         """
-        load data set
+        function to load the data
 
-        INPUT:
-        url: Data ID based link
+        PARAMETERS:
+	    -----------
+        url: String
+			Data ID based link
 
-        OUTPUT: 
-        data as a pandas DataFrame object 
-        flag_final 
+        RETURNS:
+	    -----------
+        DataFrame: data for url
+        Boolean: flag_final (success)
         """
         return self.parse_json(url), self.flag_final
-
