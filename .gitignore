@@ -6,12 +6,4 @@ __pycache__/
 env/
 venv/
 
-.Rhistory
-.Rapp.history
-
-.RData
-
-.Ruserdata
-
-.Rproj.user/
-.Renviron
+*.egg-info
