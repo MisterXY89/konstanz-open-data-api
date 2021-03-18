@@ -1,15 +1,17 @@
-import pandas as pd
+import json
+import requests
+from pandas import pandas as pd
+import geopandas as gpd  # install
 
-
-class jsonFetcher(object):
+class shpFetcher:
     """
-    jsonFetcher: fetches json-Data
+    SHPFetcher: fetches GeoData
     """
 
     def __init__(self):
         self.flag_final = True
 
-    def parse_json(self, url):
+    def parse_geo(self, url):
         """
         parses data from url to dataframe
 
@@ -23,25 +25,27 @@ class jsonFetcher(object):
         DataFrame: data for url
         """
         try:
-            df = pd.read_json(url)
-            # TO DO : different encodings
+            df = gpd.read_file(url)
+            #print("was fine")
             return df
         except:
             self.flag_final = False
-            return pd.DataFrame()
+            return gpd.GeoDataFrame()
 
     def load_data(self, url):
         """
-        function to load the data
+        load data set for url
 
         PARAMETERS:
-	    -----------
+        -----------
         url: String
-			Data ID based link
+            Data ID based link
 
         RETURNS:
-	    -----------
+        -----------
         DataFrame: data for url
         Boolean: flag_final (success)
         """
-        return self.parse_json(url), self.flag_final
+        #print(self.flag_final)
+        #print(result)
+        return self.parse_geo(url), self.flag_final

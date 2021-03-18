@@ -1,6 +1,5 @@
 import json
 import requests
-from config import *
 from pandas import pandas as pd
 import geopandas as gpd  # install
 import fiona

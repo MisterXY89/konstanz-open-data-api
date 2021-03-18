@@ -1,8 +1,7 @@
 
 # import os
-# from config import *
 from pandas import pandas as pd
-from basic_fetcher import BasicFetcher
+from .basic_fetcher import BasicFetcher
 
 class csvFetcher(BasicFetcher):
 	"""

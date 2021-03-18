@@ -7,7 +7,7 @@ from tqdm import tqdm
 from bs4 import BeautifulSoup
 import math
 
-from config import CURRENT_PACKAGE_LIST_FILE
+from .config import CURRENT_PACKAGE_LIST_FILE
 
 
 class DataSetUrlFetcher(object):

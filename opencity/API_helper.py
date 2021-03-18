@@ -1,14 +1,21 @@
+import os
 import requests
 import pandas as pd
 import numpy as np
-from config import *
 
-from csv_fetcher import csvFetcher
-from shp_fetcher import shpFetcher # applies for some jsons as well
-from xls_fetcher import xlsFetcher
-from txt_fetcher import txtFetcher
-from json_fetcher import jsonFetcher
-from kml_fetcher import kmlFetcher
+
+from .config import (
+        PKG_FOLDER,
+        CURRENT_PACKAGE_LIST_FILE,
+        PACKAGE_BASE_URL
+        )
+
+from .fetcher.csv_fetcher import csvFetcher
+from .fetcher.shp_fetcher import shpFetcher # applies for some jsons as well
+from .fetcher.xls_fetcher import xlsFetcher
+from .fetcher.txt_fetcher import txtFetcher
+from .fetcher.json_fetcher import jsonFetcher
+from .fetcher.kml_fetcher import kmlFetcher
 
 formats_dict = {
             "csv": csvFetcher,

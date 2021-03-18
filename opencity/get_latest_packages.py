@@ -2,7 +2,7 @@
 import os
 import time
 
-from fetch_dataset_list import DataSetUrlFetcher
+from .fetch_dataset_list import DataSetUrlFetcher
 
 dsuf = DataSetUrlFetcher()
 CURRENT_PACKAGE_LIST_FILE = "CURRENT_PACKAGE_LIST.csv"
