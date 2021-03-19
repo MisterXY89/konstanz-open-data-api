@@ -12,7 +12,7 @@ warnings.filterwarnings("ignore")
 
 from .API_helper import *
 
-current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
+# current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
 formats = ["csv","json","zip","xls","txt","geojson", "kml", "xlsx"]
 
 def get_data(data, tag = False, external = False):

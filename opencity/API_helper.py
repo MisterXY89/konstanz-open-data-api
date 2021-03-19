@@ -1,14 +1,15 @@
 import os
+import sys
 import requests
 import pandas as pd
 import numpy as np
+from colorama import init, Fore, Back, Style
 
+init() # colorama
 
-from .config import (
-        PKG_FOLDER,
-        CURRENT_PACKAGE_LIST_FILE,
-        PACKAGE_BASE_URL
-        )
+from .config import Config as cf
+
+from .fetch_dataset_list import DataSetUrlFetcher
 
 from .fetcher.csv_fetcher import csvFetcher
 from .fetcher.shp_fetcher import shpFetcher # applies for some jsons as well
@@ -28,7 +29,10 @@ formats_dict = {
             "kml": kmlFetcher
         }
 
-current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
+dsuf = DataSetUrlFetcher()
+
+
+# current_list = read_curr_packages()
 
 class FetchHelper:
     """
@@ -67,7 +71,7 @@ class FetchHelper:
         if staus code not 200
             return status code
         """
-        response = requests.get(PACKAGE_BASE_URL + id)
+        response = requests.get(cf.PACKAGE_BASE_URL + id)
         if response.status_code == 200:
             resources = response.json()["result"][0]["resources"]
             for resource in resources:
@@ -75,6 +79,18 @@ class FetchHelper:
         return response.status_code
 
     def get_url_ending(url):
+        """
+        get ending of url/file
+
+        PARAMETERS:
+        -----------
+        url: String
+            respective url
+
+        RETURNS:
+        -----------
+        String: file type/url ending
+        """
         if url[-4:] == "json" and url[-5:] != ".json":
             return "geojson"
         else:
@@ -83,6 +99,15 @@ class FetchHelper:
     def verify_url(self, url):
         """
         check if an url belongs to offenedaten-konstanz.de
+
+        PARAMETERS:
+        -----------
+        id: String
+            respective url
+
+        RETURNS:
+        -----------
+        Boolean: if url has offene-daten as domain
         """
         return "offenedaten-konstanz.de" in url.lower()
 
@@ -91,7 +116,7 @@ class IdHelper:
     helper class for creating id list
     """
     def __init__(self):
-        pass
+        self.current_list = dsuf.read_curr_packages()
 
     def create_id_list(data, tag = False):
         """
@@ -105,6 +130,10 @@ class IdHelper:
         tag: Boolean
             default: False
             set to True if data list contains tags
+
+        RETURNS:
+        -----------
+        List<String>: list of ids
         """
         id_list = []
         if tag:

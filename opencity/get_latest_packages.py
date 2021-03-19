@@ -2,10 +2,11 @@
 import os
 import time
 
+from .config import Config as cf
 from .fetch_dataset_list import DataSetUrlFetcher
 
 dsuf = DataSetUrlFetcher()
-CURRENT_PACKAGE_LIST_FILE = "CURRENT_PACKAGE_LIST.csv"
+
 MAX_DAY_DELTA = 14
 
 def check():
@@ -22,7 +23,10 @@ def check():
     -----------
     void
     """
-    modified_time = os.path.getmtime(CURRENT_PACKAGE_LIST_FILE)
+    if not dsuf.current_list:
+        dsuf.update()
+        return 1
+    modified_time = os.path.getmtime(cf.CURRENT_PACKAGE_LIST_FILE)
     delta = time.time() - modified_time
     day_delta = delta/60/60/24
     # print(day_delta)
