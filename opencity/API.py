@@ -1,4 +1,3 @@
-
 import os
 import urllib.request
 from tqdm import tqdm
@@ -13,9 +12,10 @@ warnings.filterwarnings("ignore")
 from .API_helper import *
 
 # current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
-formats = ["csv","json","zip","xls","txt","geojson", "kml", "xlsx"]
+formats = ["csv", "json", "zip", "xls", "txt", "geojson", "kml", "xlsx"]
 
-def get_data(data, tag = False, external = False):
+
+def get_data(data, tag=False, external=False):
     """
     general get data function to be called by user
 
@@ -45,8 +45,10 @@ def get_data(data, tag = False, external = False):
         print("Loading data")
         length = len(id_list)
         for i in tqdm(range(length), total=length, desc=f"[#] "):
-            for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
-                ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
+            for url, format, name in FetchHelper.fetch_dataset_urls(
+                    id_list[i]):
+                ending = FetchHelper.get_url_ending(
+                    url)  # works also with Kn Gis Hub?
                 if ending in formats:
                     instance = FetchHelper.get_instance(ending)()
                     df, flag = instance.load_data(url)
@@ -58,20 +60,24 @@ def get_data(data, tag = False, external = False):
                         key = name + " " + format
                         result_dict[key] = df
 
-                        tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set:\t {key}")
-
+                        tqdm.write(
+                            f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set:\t {key}"
+                        )
 
                     else:
                         # print("Data set was omitted: " + key)
                         output_name = name + " " + format
-                        tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted:\t\t {output_name}")
+                        tqdm.write(
+                            f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted:\t\t {output_name}"
+                        )
                 else:
                     #df = {}
                     #flag_external = True
-                    tqdm.write(f"{Fore.YELLOW}[-]{Style.RESET_ALL} External Link:\t\t\t {name}\n\t\t\t\t\t Please visit {url}")
+                    tqdm.write(
+                        f"{Fore.YELLOW}[-]{Style.RESET_ALL} External Link:\t\t\t {name}\n\t\t\t\t\t Please visit {url}"
+                    )
 
                 #if flag_external:
-
 
                 #if not flag:
                 #    final_flag = False
@@ -87,7 +93,8 @@ def get_data(data, tag = False, external = False):
 
     return result
 
-def save_data(data, tag = False, folder=""):
+
+def save_data(data, tag=False, folder=""):
     """
     function to save the indicated data (or data fitting the indicated tags)
     to your local disk
@@ -121,11 +128,12 @@ def save_data(data, tag = False, folder=""):
     # save all the files indicated by the urls:
     for url in url_list:
         file_name = ""
-        if len(folder)>0: # if a specific folder was given:
+        if len(folder) > 0:  # if a specific folder was given:
             file_name = os.path.join(folder, url.rsplit('/', 1)[1])
-        else: #if no local path is given: save to current working directory
+        else:  #if no local path is given: save to current working directory
             file_name = os.path.join(os.getcwd(), url.rsplit('/', 1)[1])
-        urllib.request.urlretrieve (url, file_name) # command to actually save the data
+        urllib.request.urlretrieve(
+            url, file_name)  # command to actually save the data
         print("Finished saving requested data to " + file_name)
 
 

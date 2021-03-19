@@ -1,4 +1,3 @@
-
 from API import get_data
 
 test = get_data(["Geo"], tag=True)
