@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 from tabulate import tabulate
 import re
+import tkinter as tk
+import tksheet
 
 from .config import (
         PKG_FOLDER,
@@ -141,6 +143,13 @@ class ShowDataHelper:
         print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Token', 'Tags']))
 
     def meta(df): #TODO Output als HTML
-        print(
-            tabulate(df[['title', 'name', 'id', 'modified', 'source', 'notes', 'tags']], 
-            headers = ['Title', 'Token', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']))
+        df = df[['title', 'name', 'id', 'modified', 'source', 'notes', 'tags']]
+        df = df.values.tolist()
+        headers = ['Title', 'Token', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']
+        app = tk.Tk()
+        table = tksheet.Sheet(app, height=1000, width = 2000)
+        table.grid()
+        table.headers(headers)
+        table.set_sheet_data(data = df, reset_highlights = True, reset_col_positions=True, reset_row_positions=True)
+        table.set_all_cell_sizes_to_text(redraw = True)
+        app.mainloop()
