@@ -135,18 +135,18 @@ def show_data(overview = False, meta = False, tag = ""):
         + "Use either the parameter 'overview' or the parameter 'meta'.\n" 
         + "Use the parameter 'tag' if needed.\n" 
         + "Default settings will be used now: \n")
-        ShowDataHelper.overview()
+        ShowDataHelper.summary()
 
     # show number of data sets, tags and what those tags are: 
     elif overview == False and meta == False and len(tag) == 0: 
-        ShowDataHelper.overview()
+        ShowDataHelper.summary()
 
     # if no tag is given: 
     elif len(tag) == 0: 
         if overview == True: 
             ShowDataHelper.short(current_list)
         if meta == True:
-            ShowDataHelper.overview()
+            ShowDataHelper.summary()
             print("In the following you will see detailed information on all the datasets:\n")
             ShowDataHelper.meta(current_list)
 

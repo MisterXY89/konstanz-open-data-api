@@ -2,7 +2,7 @@ import os
 import requests
 import pandas as pd
 import numpy as np
-import tabulate
+from tabulate import tabulate
 import re
 
 from .config import (
@@ -128,7 +128,7 @@ class ShowDataHelper:
     def __init__(self):
         pass
 
-    def overview():
+    def summary():
         tags = []
         for taglist in current_list.tags:
             clean = re.findall(r"\'(.*?)\'", taglist) #find everything enclosed by '...'
