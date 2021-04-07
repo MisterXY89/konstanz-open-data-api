@@ -2,7 +2,7 @@ import os
 import requests
 import pandas as pd
 import numpy as np
-
+from tabulate import tabulate
 
 from .config import (
         PKG_FOLDER,
@@ -118,3 +118,30 @@ class IdHelper:
                     id_element = np.array2string(current_list[current_list['name'] == data[i]]['id'].values)
                     id_list.append(id_element[2:-2])
         return id_list
+
+class ShowDataHelper: 
+    """
+    helper class for the show_data() function
+    """
+
+    def __init__(self):
+        pass
+
+    def overview():
+        tags = []
+        for taglist in current_list['tags']:
+            single = taglist.split(", ")      #TODO nochmal bearbeiten
+            for entry in single: 
+                clean = [c for c in entry if c.isalnum() or c.isspace()]
+                clean = "".join(clean)
+                if clean not in tags:
+                    tags.append(clean)        
+        print('There are {} data sets available. These are in {} categories. They are: {}'.format(len(current_list), len(tags), tags)) 
+    
+    def short(df):
+        print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Token', 'Tags']))
+
+    def meta(df): #TODO Output als HTML
+        print(
+            tabulate(df[['title', 'name', 'id', 'modified', 'source', 'notes', 'tags']], 
+            headers = ['Title', 'Token', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']))

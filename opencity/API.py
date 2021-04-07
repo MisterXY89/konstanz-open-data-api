@@ -128,6 +128,39 @@ def save_data(data, tag = False, folder=""):
         urllib.request.urlretrieve (url, file_name) # command to actually save the data
         print("Finished saving requested data to " + file_name)
 
+def show_data(data = False, meta = False, tag = ""):
+
+    if data == True and meta == True: 
+        print("You did not use the function correctly.\n" 
+        + "Use either the parameter 'data' or the parameter 'meta'.\n" 
+        + "Use the parameter 'tag' if needed.\n" 
+        + "Default settings will be used now: \n")
+        ShowDataHelper.overview()
+
+    # show number of data sets, tags and what those tags are: 
+    elif data == False and meta == False and len(tag) == 0: 
+        ShowDataHelper.overview()
+
+    # if no tag is given: 
+    elif len(tag) == 0: 
+        if data == True: 
+            ShowDataHelper.short(current_list)
+        if meta == True:
+            ShowDataHelper.overview()
+            print("In the following you will see detailed information on all the data sets:\n")
+            ShowDataHelper.meta(current_list)
+
+    # if a tag is given: 
+    elif len(tag) > 0: 
+        tag_df = current_list[current_list.tags.str.contains(tag)] # create df containing only the data sets with that tag
+        if data == True: 
+            ShowDataHelper.short(tag_df)
+        if meta == True:
+            print("In the following you will see detailed information on data sets with the tag {}:\n".format(tag))
+            ShowDataHelper.meta(tag_df)
+
+
+
 
 #test = get_data(["standorte_glascontainer"])
 #test = get_data(["historische_wetterdaten"])
@@ -138,3 +171,5 @@ def save_data(data, tag = False, folder=""):
 # test = get_data(["wahlbezirke"])
 
 # TODO: check if really want to download (disable with param)
+
+
