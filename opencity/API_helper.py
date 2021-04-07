@@ -2,7 +2,8 @@ import os
 import requests
 import pandas as pd
 import numpy as np
-from tabulate import tabulate
+import tabulate
+import re
 
 from .config import (
         PKG_FOLDER,
@@ -129,14 +130,12 @@ class ShowDataHelper:
 
     def overview():
         tags = []
-        for taglist in current_list['tags']:
-            single = taglist.split(", ")      #TODO nochmal bearbeiten
-            for entry in single: 
-                clean = [c for c in entry if c.isalnum() or c.isspace()]
-                clean = "".join(clean)
-                if clean not in tags:
-                    tags.append(clean)        
-        print('There are {} data sets available. These are in {} categories. They are: {}'.format(len(current_list), len(tags), tags)) 
+        for taglist in current_list.tags:
+            clean = re.findall(r"\'(.*?)\'", taglist) #find everything enclosed by '...'
+            for entry in clean: 
+                if entry not in tags:
+                    tags.append(entry)        
+        print('There are in total {} datasets available.\nThese datasets belong to {} different categories.These categories are: {}'.format(len(current_list), len(tags), tags)) 
     
     def short(df):
         print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Token', 'Tags']))
