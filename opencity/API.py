@@ -3,6 +3,7 @@ import os
 import urllib.request
 from tqdm import tqdm
 from colorama import init, Fore, Back, Style
+import re
 
 init()
 
@@ -114,30 +115,62 @@ def save_data(data, tag = False, folder=""):
     id_list = IdHelper.create_id_list(data, tag)
 
     url_list = []
+    key_list = []
     for i in range(len(id_list)):
         for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
-            url_list.append(url)
+            ending = FetchHelper.get_url_ending(url) 
+            if ending in formats:
+                url_list.append(url)
+                key_list.append(re.sub("[*:/<>?\|]", "-", name) + "." + ending) # removing special characters not appropriate for file names
 
-    # save all the files indicated by the urls:
-    for url in url_list:
+    for url, key in zip(url_list, key_list):
         file_name = ""
-        if len(folder)>0: # if a specific folder was given:
-            file_name = os.path.join(folder, url.rsplit('/', 1)[1])
-        else: #if no local path is given: save to current working directory
-            file_name = os.path.join(os.getcwd(), url.rsplit('/', 1)[1])
-        urllib.request.urlretrieve (url, file_name) # command to actually save the data
-        print("Finished saving requested data to " + file_name)
+        # if a specific folder was given:
+        if len(folder)>0: 
+            file_name = os.path.join(folder, key)
+        # if no folder was given: save to current working directory
+        else:
+            file_name = os.path.join(os.getcwd(), key)
+        # if the url leads to a file: 
+        if url[-5:] != "=json":
+            urllib.request.urlretrieve(url, file_name) 
+            print("Finished saving requested data to " + file_name)
+        # if the url is the result of a get query for a geojson: 
+        else:                
+            geodf = shpFetcher()
+            geodf.parse_geo(url).to_file(file_name, driver="GeoJSON")
+            print("Finished saving requested data to " + file_name)
 
-def show_data(overview = False, meta = False, tag = ""):
+def show_data(overview = False, meta = False, tag = ""): 
+    """
+    function to get an overview of the data sets available
 
-    if overview == True and meta == True: 
+    PARAMETERS:
+    -----------
+    overview: Boolean
+        default: False
+        set to True if you wanted to get a short overview (title, short name, tags)
+        of the datasets in your console
+    meta: Boolean
+        default: False
+        set to True if you wanted more detailed information on the datasets in a table (popup)
+    tag: String
+        default: empty
+        if you wanted to see the overview or the meta data only for datasets belonging
+        to a specific tag, you could indicate the tag here
+
+    RETURNS:
+    -----------
+    void
+    """
+    if overview == True and meta == True or overview == False and meta == False and len(tag) > 0: 
         print("You did not use the function correctly.\n" 
         + "Use either the parameter 'overview' or the parameter 'meta'.\n" 
-        + "Use the parameter 'tag' if needed.\n" 
+        + "Use the parameter 'tag' in addition if needed.\n" 
         + "Default settings will be used now: \n")
         ShowDataHelper.summary()
 
-    # show number of data sets, tags and what those tags are: 
+    # if no input is given: 
     elif overview == False and meta == False and len(tag) == 0: 
         ShowDataHelper.summary()
 
@@ -147,7 +180,7 @@ def show_data(overview = False, meta = False, tag = ""):
             ShowDataHelper.short(current_list)
         if meta == True:
             ShowDataHelper.summary()
-            print("In the following you will see detailed information on all the datasets:\n")
+            print("\nIn the following you will see detailed information on all the datasets:")
             ShowDataHelper.meta(current_list)
 
     # if a tag is given: 
@@ -156,7 +189,7 @@ def show_data(overview = False, meta = False, tag = ""):
         if overview == True: 
             ShowDataHelper.short(tag_df)
         if meta == True:
-            print("In the following you will see detailed information on datasets with the tag {}:\n".format(tag))
+            print("In the following you will see detailed information on datasets with the tag {}:".format(tag))
             ShowDataHelper.meta(tag_df)
 
 

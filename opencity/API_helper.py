@@ -78,7 +78,7 @@ class FetchHelper:
         return response.status_code
 
     def get_url_ending(url):
-        if url[-4:] == "json" and url[-5:] != ".json":
+        if url[-5:] == "=json":
             return "geojson"
         else:
             return url.split(".")[::-1][0].lower()
