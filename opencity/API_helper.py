@@ -142,7 +142,7 @@ class ShowDataHelper:
     def short(df):
         print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Token', 'Tags']))
 
-    def meta(df): #TODO Output als HTML
+    def meta(df):
         df = df[['title', 'name', 'id', 'modified', 'source', 'notes', 'tags']]
         df = df.values.tolist()
         headers = ['Title', 'Token', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']
@@ -150,6 +150,21 @@ class ShowDataHelper:
         table = tksheet.Sheet(app, height=1000, width = 2000)
         table.grid()
         table.headers(headers)
+        table.enable_bindings(("single_select",
+                       "row_select",
+                       "column_width_resize",
+                       "arrowkeys",
+                       "right_click_popup_menu",
+                       "rc_select",
+                       "rc_insert_row",
+                       "rc_delete_row",
+                       "copy",
+                       "cut",
+                       "paste",
+                       "delete",
+                       "undo",
+                       "edit_cell"))
+        table.change_theme(theme = "light blue")
         table.set_sheet_data(data = df, reset_highlights = True, reset_col_positions=True, reset_row_positions=True)
         table.set_all_cell_sizes_to_text(redraw = True)
         app.mainloop()
