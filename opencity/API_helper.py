@@ -29,7 +29,6 @@ formats_dict = {
     "kml": kmlFetcher
 }
 
-dsuf = DataSetUrlFetcher()
 
 # current_list = read_curr_packages()
 
@@ -116,10 +115,14 @@ class IdHelper:
     """
     helper class for creating id list
     """
-    def __init__(self):
-        self.current_list = dsuf.read_curr_packages()
+    def __init__(self, dsuf):
+        self.dsuf = dsuf
+        if hasattr(self.dsuf, "current_list"):
+            self.current_list = self.dsuf.current_list
+        else:
+            self.current_list = read_curr_packages()
 
-    def create_id_list(data, tag=False):
+    def create_id_list(self, data, tag=False):
         """
         helper function to create a list of ids for the datasets
         indicated by the names/tags given
@@ -139,13 +142,13 @@ class IdHelper:
         id_list = []
         if tag:
             for i in range(len(data)):
-                for j in range(len(current_list)):
-                    if data[i] in current_list.loc[j, "tags"]:
-                        id_list.append(current_list.loc[j, "id"])
+                for j in range(len(self.current_list)):
+                    if data[i] in self.current_list.loc[j, "tags"]:
+                        id_list.append(self.current_list.loc[j, "id"])
         else:
             for i in range(len(data)):
-                if data[i] in current_list["name"].values:
-                    id_element = np.array2string(current_list[
-                        current_list['name'] == data[i]]['id'].values)
+                if data[i] in self.current_list["name"].values:
+                    id_element = np.array2string(self.current_list[
+                        self.current_list['name'] == data[i]]['id'].values)
                     id_list.append(id_element[2:-2])
         return id_list

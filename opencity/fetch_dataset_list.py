@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import math
 import requests
@@ -9,25 +10,26 @@ from colorama import init, Fore, Back, Style
 
 init()  # colorama
 
-from .config import Config as cf
+# from .config import Config as cf
 
 
-class DataSetUrlFetcher(object):
+class DataSetUrlFetcher:
     """
 	Handles the fetching and storing of all available datasets
 	"""
-    def __init__(self):
+    def __init__(self, cf):
+        self.cf = cf
         self.current_list = self.read_curr_packages()
 
     def read_curr_packages(self):
         try:
-            result = pd.read_csv(cf.CURRENT_PACKAGE_LIST_FILE)
+            data_frame = pd.read_csv(self.cf.CURRENT_PACKAGE_LIST_FILE)
         except Exception as e:
             print(
-                f"{Fore.RED}There is no file with name {cf.CURRENT_PACKAGE_LIST_FILENAME} in the current directory: {cf.CWD}.{Style.RESET_ALL}"
+                f"{Fore.RED}There is no file with name {self.cf.CURRENT_PACKAGE_LIST_FILENAME} in the directory: {self.cf.PKG_FOLDER}{Style.RESET_ALL}"
             )
             inp = input(
-                "The file is needed, do you wish to proceed (and let it be created)? [y/N]"
+                "The file is needed, do you wish to proceed (and let it be created)? [y/N]\n> "
             )
             if inp == "N":
                 print(f"{Fore.RED}> EXITING")
@@ -40,11 +42,11 @@ class DataSetUrlFetcher(object):
 
             data_frame = self._parse_data(resp)
             self._store(data_frame)
-            return data_frame
+        return data_frame
 
     def fetch(self):
         """
-		basic fetch method for the cf.CURRENT_PACKAGE_LIST_URL
+		basic fetch method for the self.cf.CURRENT_PACKAGE_LIST_URL
 
 		PARAMETERS:
 		-----------
@@ -55,11 +57,24 @@ class DataSetUrlFetcher(object):
 		Json: current packages (success)
 		Int: Status code (error)
 		"""
-        response = requests.get(cf.CURRENT_PACKAGE_LIST_URL)  # , header =
+        response = requests.get(self.cf.CURRENT_PACKAGE_LIST_URL)  # , header =
         if response.status_code == 200:
             return response.json()
         return response.status_code
-
+        
+    def _get_names(self):
+        try:
+            # os.path.join(self.cf.CWD, 'names.csv')
+            names = pd.read_csv(self.cf.GH_NAMES_FILE_URL, sep=";")
+        except Exception as e:
+            print(
+                f"{Fore.RED}An error occured while trying to read the names to id file: {Style.RESET_ALL}\n {e}"
+            )
+            # names.to_csv(self.cf.NAMES_FILENAME, index=False)
+        return names
+            
+            
+            
     def _store(self, data_frame: pd.DataFrame) -> bool:
         """
 		writes dataframe to file
@@ -79,13 +94,15 @@ class DataSetUrlFetcher(object):
             return False
 
         try:
-            parent_dir = os.path.join(cf.CWD, '..', 'names.csv')
-            name_list = pd.read_csv(parent_dir, sep=';')
+            
+            name_list = self._get_names()
+
+            # name_list = pd.read_csv(names_file, sep=';')
             merged_list = pd.merge(data_frame, name_list, how='left', on='id')
-            merged_list.to_csv(cf.CURRENT_PACKAGE_LIST_FILE,
+            merged_list.to_csv(self.cf.CURRENT_PACKAGE_LIST_FILE,
                                encoding='utf-8',
                                index=False)
-            #print(merged_list)
+            # print(merged_list)
             return True
         except Exception as writing_file_error:
             print(writing_file_error)
