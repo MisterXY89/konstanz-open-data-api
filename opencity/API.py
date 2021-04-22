@@ -16,7 +16,7 @@ from .API_helper import *
 current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
 formats = ["csv","json","zip","xls","txt","geojson", "kml", "xlsx"]
 
-def get_data(data, tag = False, external = False):
+def get_data(data, tag = False, meta = False):
     """
     general get data function to be called by user
 
@@ -27,58 +27,57 @@ def get_data(data, tag = False, external = False):
     tag: Boolean
         default: False
         set to True if data list contains tags
-    external: Boolean
+    meta : Boolean
         default: False
-        TODO: set to True if data list contains external links
 
     RETURNS:
     -----------
     DataFrame|dict: single df or dict containing df
     """
-    id_list = IdHelper.create_id_list(data, tag)
+    id_list, spelling = IdHelper.create_id_list(data, tag)
 
     result_dict = {}
     #final_flag = True
+    
+    if spelling:
 
-    if external:
-        print("These are external data sets. Please refer to ...")
-    else:
-        print("Loading data")
-        length = len(id_list)
-        for i in tqdm(range(length), total=length, desc=f"[#] "):
-            for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
-                ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
-                if ending in formats:
-                    instance = FetchHelper.get_instance(ending)()
-                    df, flag = instance.load_data(url)
+        if meta:
+            print("Loading meta data")
+            length = len(id_list)
+            df_meta = pd.DataFrame(columns=['id', 'url', 'format', 'name', 'created', 'last_modified', 'description'])
+            for i in range(length):#tqdm(range(length), total=length, desc=f"[#] "):
+                for id, url, format, name, created, last_modified, description in FetchHelper.fetch_dataset_meta(id_list[i]):
+                    df_meta = df_meta.append({'id': id, 'url': url, 'format': format, 'name': name, 'created': created, 'last_modified': last_modified, 'description': description}, ignore_index=True)
+            result_dict["meta"] = df_meta
+                
+        else:
+            print("Loading data")
+            length = len(id_list)
+            for i in tqdm(range(length), total=length, desc=f"[#] "):
+                for url, format, name in FetchHelper.fetch_dataset_urls(id_list[i]):
+                    ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
+                    if ending in formats:
+                        instance = FetchHelper.get_instance(ending)()
+                        df, flag = instance.load_data(url)
                     #print(flag)
 
-                    if flag:
+                        if flag:
                         # print("Successfully loaded data set: " + key)
 
-                        key = name + " " + format
-                        result_dict[key] = df
+                            key = name + "_" + format
+                            result_dict[key] = df
 
-                        tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set:\t {key}")
+                            tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set:\t {key}")
 
 
-                    else:
+                        else:
                         # print("Data set was omitted: " + key)
-                        output_name = name + " " + format
-                        tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted:\t\t {output_name}")
-                else:
-                    #df = {}
-                    #flag_external = True
-                    tqdm.write(f"{Fore.YELLOW}[-]{Style.RESET_ALL} External Link:\t\t\t {name}\n\t\t\t\t\t Please visit {url}")
+                            output_name = name + "_" + format
+                            tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} Data set was omitted:\t\t {output_name}")
+                    else:
+ 
+                        tqdm.write(f"{Fore.YELLOW}[-]{Style.RESET_ALL} External Link:\t\t\t {name}\n\t\t\t\t\t Please visit {url}")
 
-                #if flag_external:
-
-
-                #if not flag:
-                #    final_flag = False
-
-        #if not final_flag:
-        #print("Oopsie, something went wrong")
 
     if len(result_dict) == 1:
         key = list(result_dict.keys())[0]
@@ -112,7 +111,7 @@ def save_data(data, tag = False, folder=""):
     """
     #doesn't work for links leading to jsons
 
-    id_list = IdHelper.create_id_list(data, tag)
+    id_list, spelling = IdHelper.create_id_list(data, tag)
 
     url_list = []
     key_list = []
@@ -195,7 +194,7 @@ def show_data(overview = False, meta = False, tag = ""):
 
 
 
-#test = get_data(["standorte_glascontainer"])
+#get_data(["staedtische_einrichtunge"], meta = True)
 #test = get_data(["historische_wetterdaten"])
 #test = get_data(["Geo"], tag=True)
 #test = get_data(["Umwelt und Klima"], tag=True)
