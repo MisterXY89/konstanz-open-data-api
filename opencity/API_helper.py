@@ -3,6 +3,11 @@ import sys
 import requests
 import pandas as pd
 import numpy as np
+from tabulate import tabulate
+import re
+import tkinter as tk
+import tksheet
+
 from colorama import init, Fore, Back, Style
 
 init()  # colorama
@@ -90,7 +95,7 @@ class FetchHelper:
         -----------
         String: file type/url ending
         """
-        if url[-4:] == "json" and url[-5:] != ".json":
+        if url[-5:] == "=json":
             return "geojson"
         else:
             return url.split(".")[::-1][0].lower()
@@ -152,3 +157,50 @@ class IdHelper:
                         self.current_list['name'] == data[i]]['id'].values)
                     id_list.append(id_element[2:-2])
         return id_list
+
+class ShowDataHelper: 
+    """
+    helper class for the show_data() function
+    """
+
+    def __init__(self):
+        pass
+
+    def summary():
+        tags = []
+        for taglist in current_list.tags:
+            clean = re.findall(r"\'(.*?)\'", taglist) #find everything enclosed by '...'
+            for entry in clean: 
+                if entry not in tags:
+                    tags.append(entry)        
+        print('There are in total {} datasets available.\nThese datasets belong to {} different categories.These categories are: {}'.format(len(current_list), len(tags), tags)) 
+    
+    def short(df):
+        print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Token', 'Tags']))
+
+    def meta(df):
+        df = df[['title', 'name', 'id', 'modified', 'source', 'notes', 'tags']]
+        df = df.values.tolist()
+        headers = ['Title', 'Token', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']
+        app = tk.Tk()
+        table = tksheet.Sheet(app, height=1000, width = 2000)
+        table.grid()
+        table.headers(headers)
+        table.enable_bindings(("single_select",
+                       "row_select",
+                       "column_width_resize",
+                       "arrowkeys",
+                       "right_click_popup_menu",
+                       "rc_select",
+                       "rc_insert_row",
+                       "rc_delete_row",
+                       "copy",
+                       "cut",
+                       "paste",
+                       "delete",
+                       "undo",
+                       "edit_cell"))
+        table.change_theme(theme = "light blue")
+        table.set_sheet_data(data = df, reset_highlights = True, reset_col_positions=True, reset_row_positions=True)
+        table.set_all_cell_sizes_to_text(redraw = True)
+        app.mainloop()
