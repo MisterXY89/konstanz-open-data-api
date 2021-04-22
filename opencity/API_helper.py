@@ -81,6 +81,28 @@ class FetchHelper:
             for resource in resources:
                 yield resource["url"], resource["format"], resource["name"]
         return response.status_code
+    
+    def fetch_dataset_meta(id):
+        """
+        get meta data corresponding to id
+
+        PARAMETERS:
+        -----------
+        id: String
+            package id
+
+        RETURNS:
+        -----------
+        yield: id, url, format, name, created, last_modified, description
+        if staus code not 200
+            return status code
+        """
+        response = requests.get(PACKAGE_BASE_URL + id)
+        if response.status_code == 200:
+            resources = response.json()["result"][0]["resources"]
+            for resource in resources:
+                yield resource["id"], resource["url"], resource["format"], resource["name"], resource["created"], resource["last_modified"], resource["description"]
+        return response.status_code
 
     def get_url_ending(url):
         """
@@ -156,7 +178,13 @@ class IdHelper:
                     id_element = np.array2string(self.current_list[
                         self.current_list['name'] == data[i]]['id'].values)
                     id_list.append(id_element[2:-2])
-        return id_list
+        if len(id_list) == 0:
+            print("The provided names or tags are incorrect. Please check spelling. Note that the names for data sets is written in lower case, whereas tags are wirtten wit capital letters.")
+            spelling = False
+        else:
+            spelling = True
+            
+        return id_list, spelling
 
 class ShowDataHelper: 
     """
