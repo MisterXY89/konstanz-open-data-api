@@ -69,7 +69,7 @@ class OpenCity:
                 for i in tqdm(range(length), total=length, desc=f"[#] "):
                     for url, format, name in FetchHelper.fetch_dataset_urls(self.id_list[i]):
                         ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
-                        if ending in formats:
+                        if ending in self.formats:
                             instance = FetchHelper.get_instance(ending)()
                             df, flag = instance.load_data(url)
                         #print(flag)
@@ -133,7 +133,7 @@ class OpenCity:
         for i in range(len(self.id_list)):
             for url, format, name in FetchHelper.fetch_dataset_urls(self.id_list[i]):
                 ending = FetchHelper.get_url_ending(url) 
-                if ending in formats:
+                if ending in self.formats:
                     url_list.append(url)
                     key_list.append(re.sub("[*:/<>?\|]", "-", name) + "." + ending) # removing special characters not appropriate for file names
 
