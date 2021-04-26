@@ -191,22 +191,22 @@ class ShowDataHelper:
     helper class for the show_data() function
     """
 
-    def __init__(self):
-        pass
+    def __init__(self, current_list):
+        self.current_list = current_list
 
-    def summary():
+    def summary(self):
         tags = []
-        for taglist in current_list.tags:
+        for taglist in self.current_list.tags:
             clean = re.findall(r"\'(.*?)\'", taglist) #find everything enclosed by '...'
             for entry in clean: 
                 if entry not in tags:
                     tags.append(entry)        
-        print('There are in total {} datasets available.\nThese datasets belong to {} different categories.These categories are: {}'.format(len(current_list), len(tags), tags)) 
+        print('There are in total {} datasets available.\nThese datasets belong to {} different categories.These categories are: {}'.format(len(self.current_list), len(tags), tags)) 
     
-    def short(df):
+    def short(self, df):
         print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Token', 'Tags']))
 
-    def meta(df):
+    def meta(self, df):
         df = df[['title', 'name', 'id', 'modified', 'source', 'notes', 'tags']]
         df = df.values.tolist()
         headers = ['Title', 'Token', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']

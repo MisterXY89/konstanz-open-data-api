@@ -19,13 +19,16 @@ class OpenCity:
     """
 
     # current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
-    def __init__(self, cf):
+    def __init__(self, cf=None):
         self.formats = ["csv", "json", "zip", "xls", "txt", "geojson", "kml", "xlsx"]
         self.names_file = "" 
         self.current_packages_file = ""
+        if not cf:
+            cf = Config()
         self.cf = cf
         self.dsuf = DataSetUrlFetcher(cf)
         self.id_helper = IdHelper(self.dsuf)
+        self.show_data_helper = ShowDataHelper(self.dsuf.current_list)
 
 
     def get_data(self, data, tag=False, meta=False):
@@ -156,7 +159,7 @@ class OpenCity:
                 print("Finished saving requested data to " + file_name)
 
 
-    def show_data(overview = False, meta = False, tag = ""): 
+    def show_data(self, overview = False, meta = False, tag = ""): 
         """
         function to get an overview of the data sets available
 
@@ -178,34 +181,35 @@ class OpenCity:
         -----------
         void
         """
+                
         if overview == True and meta == True or overview == False and meta == False and len(tag) > 0: 
             print("You did not use the function correctly.\n" 
             + "Use either the parameter 'overview' or the parameter 'meta'.\n" 
             + "Use the parameter 'tag' in addition if needed.\n" 
             + "Default settings will be used now: \n")
-            ShowDataHelper.summary()
+            self.show_data_helper.summary()
 
         # if no input is given: 
         elif overview == False and meta == False and len(tag) == 0: 
-            ShowDataHelper.summary()
+            self.show_data_helper.summary()
 
         # if no tag is given: 
         elif len(tag) == 0: 
             if overview == True: 
-                ShowDataHelper.short(current_list)
+                self.show_data_helper.short(self.dsuf.current_list)
             if meta == True:
-                ShowDataHelper.summary()
+                self.show_data_helper.summary()
                 print("\nIn the following you will see detailed information on all the datasets:")
-                ShowDataHelper.meta(current_list)
+                self.show_data_helper.meta(self.dsuf.current_list)
 
         # if a tag is given: 
         elif len(tag) > 0: 
-            tag_df = current_list[current_list.tags.str.contains(tag)] # create df containing only the data sets with that tag
+            tag_df = self.dsuf.current_list[self.dsuf.current_list.tags.str.contains(tag)] # create df containing only the data sets with that tag
             if overview == True: 
-                ShowDataHelper.short(tag_df)
+                self.show_data_helper.short(tag_df)
             if meta == True:
                 print("In the following you will see detailed information on datasets with the tag {}:".format(tag))
-                ShowDataHelper.meta(tag_df)
+                self.show_data_helper.meta(tag_df)
 
 
 #test = get_data(["standorte_glascontainer"])
