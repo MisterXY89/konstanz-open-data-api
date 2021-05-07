@@ -204,12 +204,19 @@ class ShowDataHelper:
         print('There are in total {} datasets available.\nThese datasets belong to {} different categories.These categories are: {}'.format(len(self.current_list), len(tags), tags)) 
     
     def short(self, df):
-        print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Token', 'Tags']))
+        print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Shortname', 'Tags']))
 
+    def long(self, df):
+        long = pd.melt(df,id_vars = 'title')
+        titles = long.title.unique()
+        for element in titles: 
+            df_element = long.loc[long['title'] == element]
+            print(" \n" + element + " :\n" + tabulate(df_element[['variable', 'value']], headers = ['Variable', 'Value'], showindex=False))
+    
     def meta(self, df):
         df = df[['title', 'name', 'id', 'modified', 'source', 'notes', 'tags']]
         df = df.values.tolist()
-        headers = ['Title', 'Token', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']
+        headers = ['Title', 'Shortname', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']
         app = tk.Tk()
         table = tksheet.Sheet(app, height=1000, width = 2000)
         table.grid()
@@ -219,15 +226,7 @@ class ShowDataHelper:
                        "column_width_resize",
                        "arrowkeys",
                        "right_click_popup_menu",
-                       "rc_select",
-                       "rc_insert_row",
-                       "rc_delete_row",
-                       "copy",
-                       "cut",
-                       "paste",
-                       "delete",
-                       "undo",
-                       "edit_cell"))
+                       "copy"))
         table.change_theme(theme = "light blue")
         table.set_sheet_data(data = df, reset_highlights = True, reset_col_positions=True, reset_row_positions=True)
         table.set_all_cell_sizes_to_text(redraw = True)

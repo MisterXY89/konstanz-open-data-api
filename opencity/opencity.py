@@ -159,7 +159,7 @@ class OpenCity:
                 print("Finished saving requested data to " + file_name)
 
 
-    def show_data(self, overview = False, meta = False, tag = ""): 
+    def show_data(self, overview = False, meta = False, data = [], tag = False, terminal = False): 
         """
         function to get an overview of the data sets available
 
@@ -171,45 +171,76 @@ class OpenCity:
             of the datasets in your console
         meta: Boolean
             default: False
-            set to True if you wanted more detailed information on the datasets in a table (popup)
-        tag: String
-            default: empty
-            if you wanted to see the overview or the meta data only for datasets belonging
-            to a specific tag, you could indicate the tag here
+            set to True if you wanted more detailed information on the datasets
+            depending on paremeter 'terminal', whether you get the output in your console or as a popup
+        data: list of Strings
+            list containing names of the datasets you want to store
+            or tags for which you want to save the respective datasets
+        tag: Boolean
+            default: False
+            set to True if data list contains tags
+        terminal: Boolean
+            default: False
+            set to True if you want to print the meta data in your console instead of a popup
 
         RETURNS:
         -----------
         void
         """
-                
-        if overview == True and meta == True or overview == False and meta == False and len(tag) > 0: 
-            print("You did not use the function correctly.\n" 
-            + "Use either the parameter 'overview' or the parameter 'meta'.\n" 
-            + "Use the parameter 'tag' in addition if needed.\n" 
-            + "Default settings will be used now: \n")
-            self.show_data_helper.summary()
+
+        #TODO: include check for whether the indicated names / tags are correct (already implemented in other functions?)
+
+        if overview == True and meta == True or overview == False and meta == False and len(data) > 0 : 
+            # print("You did not use the function correctly.\n" 
+            # + "Use either the parameter 'overview' or the parameter 'meta'.\n" 
+            # + "Use the parameter 'data' in addition if you only want to ....") #TODO adapt
+            tqdm.write(f"{Fore.RED}You did not use the function correctly.")
+            tqdm.write(f"{Fore.RED}Use either the parameter 'overview' OR the parameter 'meta'.")
+            tqdm.write(f"{Fore.RED}Use the parameter 'data' in addition if you only want to get an overview or the metadata for specific datasets or tags.")
+            tqdm.write(f"{Fore.RED}Set the parameter 'tag' to True if you indicated tags instead of single datasets under the 'data' parameter.{Style.RESET_ALL} ")
 
         # if no input is given: 
-        elif overview == False and meta == False and len(tag) == 0: 
+        elif overview == False and meta == False and len(data) == 0: 
             self.show_data_helper.summary()
 
-        # if no tag is given: 
-        elif len(tag) == 0: 
+        # if no dataset or tag is given: 
+        elif len(data) == 0: 
             if overview == True: 
                 self.show_data_helper.short(self.dsuf.current_list)
             if meta == True:
                 self.show_data_helper.summary()
-                print("\nIn the following you will see detailed information on all the datasets:")
-                self.show_data_helper.meta(self.dsuf.current_list)
+                if terminal: 
+                    print("\nIn the following you will see detailed information on all the datasets:\n")
+                    self.show_data_helper.long(self.dsuf.current_list)
+                else: 
+                    print("\nIn the following popup you will see detailed information on all the datasets:")
+                    self.show_data_helper.meta(self.dsuf.current_list)
 
-        # if a tag is given: 
-        elif len(tag) > 0: 
-            tag_df = self.dsuf.current_list[self.dsuf.current_list.tags.str.contains(tag)] # create df containing only the data sets with that tag
+        # if a dataset or a tag is given: show only the indicated datasets
+        elif len(data) > 0: 
+            tag_df = pd.DataFrame(columns = ['title', 'name', 'tags'])
+            if tag: #if a tag is given
+                for element in data: 
+                    tag_df = pd.concat([tag_df, self.dsuf.current_list[self.dsuf.current_list.tags.str.contains(element)]], axis = 0) # create df containing only the data sets with that tag
+            else: #if a dataset is given
+                for element in data: 
+                    tag_df = pd.concat([tag_df, self.dsuf.current_list[self.dsuf.current_list.name.str.contains(element)]], axis = 0)
+            tag_df = tag_df.drop_duplicates(subset = "title")
             if overview == True: 
                 self.show_data_helper.short(tag_df)
             if meta == True:
-                print("In the following you will see detailed information on datasets with the tag {}:".format(tag))
-                self.show_data_helper.meta(tag_df)
+                if terminal: 
+                    print("In the following you will see detailed information on {}:".format(data))
+                    self.show_data_helper.long(tag_df)
+                else: 
+                    print("In the following popup you will see detailed information on {}:".format(data))
+                    self.show_data_helper.meta(tag_df)
+
+
+
+
+
+            
 
 
 #test = get_data(["standorte_glascontainer"])
