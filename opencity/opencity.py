@@ -83,7 +83,7 @@ class OpenCity:
                                 key = name + "_" + format
                                 result_dict[key] = df
 
-                                tqdm.write(f"{Fore.GREEN}[✓]{Style.RESET_ALL} Successfully loaded data set:\t {key}")
+                                tqdm.write(f"{Fore.GREEN}[+]{Style.RESET_ALL} Successfully loaded data set:\t {key}")
 
 
                             else:
