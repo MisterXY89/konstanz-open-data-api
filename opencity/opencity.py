@@ -11,6 +11,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 from .API_helper import *
+from .config import Config
 
 
 class OpenCity:
