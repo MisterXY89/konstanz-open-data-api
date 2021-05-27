@@ -1,55 +1,58 @@
 # Opencity
 
-`Opencity` is an interface for the open data portal of the city of Constance.
+`Opencity` is an interface for the open data portal of Constance. This package allows you to directly inspect and download data and can be easily used by practioniers, members of the civil society and academics. Technically, it relies on the DKAN API.
 
 ## Capabilities
-- Search by tags, name and ID
-- Returns pandas DataFrame
-- easy install and workflow
+- get an overview of data sets via `show_data()`
+- load data directly into Python via `get_data()`
+- download data sets onto your local machine via `save_data()`
+
+Generally, each functionality can be filtered by names and tags of the different data sets and returns pandas.DataFrames. It is easy to install, use, and work with.
 
 #### _class_ `opencity.OpenCity`_(cf = None)_
 > TODO
 
-#### `OpenCity.get_data`_(data, tag=False, meta=False)_
-> Retrieves data from OpenData.
+#### `OpenCity.show_data`_(data=[], tag=False, overview=False, meta=False, terminal=False)_
+> displays an overview of the available and indicated data sets to the terminal or as a popup
 
 > Parameters: 
-> - **data: list of Strings** <br /> 
->   containing names or tags (string)
+> - **data: list of Strings, default: empty list** <br /> 
+>   containing names or tags
+> - **tag: Boolean, default: False** <br /> 
+>   set to True if data list contains tags
+> - **overview: Boolean, default: False** <br /> 
+>   set to True if a short overview of the data sets (title, short name, tags) is desired in the console
+> - **meta: Boolean, default: False** <br /> 
+>   set to True if more detailed information on the datasets is desired
+>   depending on parameter 'terminal'
+> - **terminal: Boolean, default: False** <br /> 
+>   set to True if meta data should be printed in the console instead of a popup
+
+> Returns: void
+> 
+#### `OpenCity.get_data`_(data=[], tag=False, meta=False)_
+> retrieves the indicated data from the open data portal of Constance https://offenedaten-konstanz.de
+
+> Parameters: 
+> - **data: list of Strings, default: empty list** <br /> 
+>   containing names or tags
 > - **tag: Boolean, default: False** <br /> 
 >   set to True if data list contains tags
 > - **meta : Boolean, default: False** <br /> 
+>   set to True if meta data should be returned
 
-> Returns: DataFrame|dict: single df or dict containing df
+> Returns: pandas.DataFrame | dict containing pandas.DataFrames
 
 #### `OpenCity.save_data`_(data, tag=False, folder="")_
-
-> Saves the indicated data (or data fitting the indicated tags) to the local disk.
+> saves the indicated data to the local disk
 
 > Parameters: 
 > - **data: list of Strings** <br /> 
->   A list containing names of the datasets you want to store or tags for which you want to save the respective datasets.
-> - **tag: Boolean, default: False** <br /> 
->   Set this parameter to True if the *data* list contains tags.
-> - **folder: String, default: empty** <br /> 
->   If you wanted to save the data to a different folder than the one from which you are executing the python file, you could indicate the respective folder here (use either forward slashes '/' or double backward slashes '\\').
-
-> Returns: void
-
-#### `OpenCity.show_data`_(overview = False, meta = False, data = [], tag = False, terminal = False)_
-> Returns an overview of the data sets available to the terminal or as a popup.
-
-> Parameters: 
-> - **overview: Boolean, default: False** <br /> 
->   set to True if you wanted to get a short overview (title, short name, tags) of the datasets in your console
-> - **meta: Boolean, default: False** <br /> 
->   set to True if you wanted more detailed information on the datasets depending on paremeter 'terminal', whether you get the output in your console or as a popup
-> - **data: list of Strings** <br /> 
->   list containing names of the datasets you want to store or tags for which you want to save the respective datasets
+>   containing names or tags
 > - **tag: Boolean, default: False** <br /> 
 >   set to True if data list contains tags
-> - **terminal: Boolean, default: False** <br /> 
->   set to True if you want to print the meta data in your console instead of a popup
+> - **folder: String, default: empty** <br /> 
+>   If you want to save the data to a different folder than the one from which you are executing the python file, indicate the respective folder here (use either forward slashes '/' or double backward slashes '\\')
 
 > Returns: void
 
@@ -107,3 +110,12 @@ pip install opencity
 
 ## Found a bug?
 Open an issue including OS, package- and python version, executed code and error message!
+
+## Author Information
+
+Birke Pfeifle
+Rahkakavee Baskaran
+Tilman Kerl
+Silke Husse
+
+Email: konstanz@correlaid.org
