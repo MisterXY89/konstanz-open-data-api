@@ -135,6 +135,7 @@ class OpenCity:
 
         url_list = []
         key_list = []
+        file_return = []
         for i in range(len(self.id_list)):
             for url, format, name in FetchHelper.fetch_dataset_urls(self.id_list[i]):
                 ending = FetchHelper.get_url_ending(url) 
@@ -154,11 +155,14 @@ class OpenCity:
             if url[-5:] != "=json":
                 urllib.request.urlretrieve(url, file_name) 
                 print("Finished saving requested data to " + file_name)
+                file_return.append(file_name)
             # if the url is the result of a get query for a geojson: 
             else:                
                 geodf = shpFetcher()
                 geodf.parse_geo(url).to_file(file_name, driver="GeoJSON")
                 print("Finished saving requested data to " + file_name)
+                file_return.append(file_name)
+        return file_return
 
 
     def show_data(self, data = [], tag = False, overview = False, meta = False, terminal = False): 
