@@ -113,9 +113,9 @@ Open an issue including OS, package- and python version, executed code and error
 
 ## Author Information
 
-Birke Pfeifle
-Rahkakavee Baskaran
-Tilman Kerl
-Silke Husse
+Birke Pfeifle <br />
+Rahkakavee Baskaran <br />
+Tilman Kerl <br />
+Silke Husse <br />
 
 Email: konstanz@correlaid.org
