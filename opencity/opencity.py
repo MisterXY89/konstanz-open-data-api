@@ -66,6 +66,7 @@ class OpenCity:
                     for id, url, format, name, created, last_modified, description in FetchHelper.fetch_dataset_meta(self.id_list[i]):
                         df_meta = df_meta.append({'id': id, 'url': url, 'format': format, 'name': name, 'created': created, 'last_modified': last_modified, 'description': description}, ignore_index=True)
                 result_dict["meta"] = df_meta
+                tqdm.write(f"{Fore.GREEN}[+]{Style.RESET_ALL} Successfully loaded meta data of {df_meta.shape[0]} data sets")
                     
             else:
                 print("Loading data")
@@ -81,7 +82,7 @@ class OpenCity:
                             if flag:
                             # print("Successfully loaded data set: " + key)
 
-                                key = name + "_" + format
+                                key = (name + "_" + format).replace(" - ", "_").replace(" ", "_").lower()
                                 result_dict[key] = df
 
                                 tqdm.write(f"{Fore.GREEN}[+]{Style.RESET_ALL} Successfully loaded data set:\t {key}")

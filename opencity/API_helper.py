@@ -97,7 +97,7 @@ class FetchHelper:
         if staus code not 200
             return status code
         """
-        response = requests.get(PACKAGE_BASE_URL + id)
+        response = requests.get(cf.PACKAGE_BASE_URL + id)
         if response.status_code == 200:
             resources = response.json()["result"][0]["resources"]
             for resource in resources:
@@ -179,7 +179,7 @@ class IdHelper:
                         self.current_list['name'] == data[i]]['id'].values)
                     id_list.append(id_element[2:-2])
         if len(id_list) == 0:
-            print("The provided names or tags are incorrect. Please check spelling. Note that the names for data sets is written in lower case, whereas tags are wirtten wit capital letters.")
+            print("The provided names or tags are incorrect. Please check spelling. Note that the names for data sets is written in lower case, whereas tags are written with capital letters.")
             spelling = False
         else:
             spelling = True

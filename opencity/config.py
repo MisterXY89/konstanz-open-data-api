@@ -15,7 +15,7 @@ class Config:
     NAMES_FILENAME: str = "names.csv"
     PACKAGE_BASE_URL: str = "https://offenedaten-konstanz.de/api/3/action/package_show?id="
     CURRENT_PACKAGE_LIST_URL: str = "https://offenedaten-konstanz.de/api/3/action/current_package_list_with_resources"
-    GH_NAMES_FILE_URL: str = "https://raw.githubusercontent.com/MisterXY89/konstanz-open-data-api/master/names.csv?token=AEBZQOUMQJGRYYPJLD4CBSLAU5WRA"
+    GH_NAMES_FILE_URL: str = "https://raw.githubusercontent.com/MisterXY89/konstanz-open-data-api/master/names.csv?token=ANPFL6UHIMIXFYZCESI2STLAXCKZQ"
     PATH_SEP: str = "/"
     
     CURRENT_PACKAGE_LIST_FILE: str = field(init=False)

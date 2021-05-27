@@ -42,6 +42,7 @@ class DataSetUrlFetcher:
 
             data_frame = self._parse_data(resp)
             self._store(data_frame)
+            
         return data_frame
 
     def fetch(self):
@@ -95,14 +96,16 @@ class DataSetUrlFetcher:
 
         try:
             
-            name_list = self._get_names()
+            #name_list = self._get_names()
 
             # name_list = pd.read_csv(names_file, sep=';')
-            merged_list = pd.merge(data_frame, name_list, how='left', on='id')
-            merged_list.to_csv(self.cf.CURRENT_PACKAGE_LIST_FILE,
+            #merged_list = pd.merge(data_frame, name_list, how='left', on='id')
+            #if merged_list['name'].isnull().values.any():
+            #    idx = merged_list.index[merged_list['name'].isnull()].tolist()
+            #    print(idx)
+            data_frame.to_csv(self.cf.CURRENT_PACKAGE_LIST_FILE,
                                encoding='utf-8',
                                index=False)
-            # print(merged_list)
             return True
         except Exception as writing_file_error:
             print(writing_file_error)
@@ -125,7 +128,7 @@ class DataSetUrlFetcher:
             return False
 
         results = data["result"][0]
-
+        
         out = list()
         for item in tqdm(results):
             tags = []
@@ -147,14 +150,27 @@ class DataSetUrlFetcher:
                     "modified":
                     item["metadata_modified"],
                     "notes":
-                    BeautifulSoup(item["notes"], "lxml").text,
+                    item["notes"],
+                    #BeautifulSoup(item["notes"], "lxml").text,
                     "tags":
                     tags
                 })
             except:
-                print("item has not all information needed"
-                      )  # concerns data set 'test' on OpenData website
-        return pd.DataFrame.from_dict(out)
+                item_name = item["name"]
+                print(item["name"] + " item has not all information needed, hence omitted."
+                      )  # concerns unvollständige data sets on OpenData website
+        
+        data_frame = pd.DataFrame.from_dict(out)
+        name_list = self._get_names()
+
+            # name_list = pd.read_csv(names_file, sep=';')
+        merged_list = pd.merge(data_frame, name_list, how='left', on='id')
+        if merged_list['name'].isnull().values.any():
+            idx = merged_list.index[merged_list['name'].isnull()].tolist()
+            for i in idx:
+                merged_list['name'][i] = merged_list['title'][i]
+            
+        return merged_list
 
     def update(self):
         """
