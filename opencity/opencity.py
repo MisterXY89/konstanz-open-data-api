@@ -32,7 +32,7 @@ class OpenCity:
         self.show_data_helper = ShowDataHelper(self.dsuf.current_list)
 
 
-    def get_data(self, data, tag=False, meta=False):
+    def get_data(self, data=[], tag=False, meta=False):
         """
         general get data function to be called by user
 
@@ -161,7 +161,7 @@ class OpenCity:
                 print("Finished saving requested data to " + file_name)
 
 
-    def show_data(self, overview = False, meta = False, data = [], tag = False, terminal = False): 
+    def show_data(self, data = [], tag = False, overview = False, meta = False, terminal = False): 
         """
         function to get an overview of the data sets available
 

@@ -6,7 +6,7 @@ open_city = oc.OpenCity(cf=cf)
 
 #open_city = oc.OpenCity()
 
-open_city.get_data(["oeffentliche_papiereimer"])
+open_city.get_data([])
 
 #open_city.show_data()
 #open_city.show_data(overview=True)
