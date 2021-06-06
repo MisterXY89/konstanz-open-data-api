@@ -67,6 +67,7 @@ class OpenCity:
                         df_meta = df_meta.append({'id': id, 'url': url, 'format': format, 'name': name, 'created': created, 'last_modified': last_modified, 'description': description}, ignore_index=True)
                 result_dict["meta"] = df_meta
                 tqdm.write(f"{Fore.GREEN}[+]{Style.RESET_ALL} Successfully loaded meta data of {df_meta.shape[0]} data sets")
+
                     
             else:
                 print("Loading data")

@@ -179,7 +179,7 @@ class IdHelper:
                         self.current_list['name'] == data[i]]['id'].values)
                     id_list.append(id_element[2:-2])
         if len(id_list) == 0:
-            print("The provided names or tags are incorrect. Please check spelling. Note that the names for data sets is written in lower case, whereas tags are written with capital letters.")
+            print("The provided names or tags are incorrect. Please check spelling. Note that the names for data sets is written in lower case, whereas tags are written with capital letters. Additionally, make sure to set the parameter 'tag' to True if you specified a tag.")
             spelling = False
         else:
             spelling = True
