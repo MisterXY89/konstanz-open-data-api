@@ -5,8 +5,8 @@ import pandas as pd
 import numpy as np
 from tabulate import tabulate
 import re
-import tkinter as tk
-import tksheet
+# import tkinter as tk
+# import tksheet
 
 from colorama import init, Fore, Back, Style
 

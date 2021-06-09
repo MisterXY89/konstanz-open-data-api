@@ -12,5 +12,9 @@ open_city.get_data(["Politik und Wahlen"], tag = True, meta = True)
 #open_city.show_data()
 #open_city.show_data(overview=True)
 
-# res = open_city.get_data("parkplaetze")
+
+res = open_city.get_data(["oeffentliche_papiereimer"])
+# print(res)
+# print(type(res))
+# res = open_city.save_data(["parkplaetze"], folder="test_folder/")
 # print(res)

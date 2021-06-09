@@ -107,7 +107,7 @@ class OpenCity:
         return result
 
 
-    def save_data(self, data, tag=False, folder=""):
+    def save_data(self, data, tag=False, folder="", file_ret=False):
         """
         function to save the indicated data (or data fitting the indicated tags)
         to your local disk
@@ -124,6 +124,9 @@ class OpenCity:
             default: empty
             if you wanted to save the data to a different folder than the one from which you are executing the python file,
             you could indicate the respective folder here (use either forward slashes '/' or double backward slashes '\\')
+        file_ret: Boolean
+            default: False
+            for testing purposes
 
         RETURNS:
         -----------
@@ -163,7 +166,9 @@ class OpenCity:
                 geodf.parse_geo(url).to_file(file_name, driver="GeoJSON")
                 print("Finished saving requested data to " + file_name)
                 file_return.append(file_name)
-        return file_return
+        if file_ret:
+            return file_return
+        return ""
 
 
     def show_data(self, data = [], tag = False, overview = False, meta = False, terminal = False): 
