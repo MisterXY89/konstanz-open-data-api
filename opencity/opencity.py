@@ -97,7 +97,6 @@ class OpenCity:
      
                             tqdm.write(f"{Fore.YELLOW}[-]{Style.RESET_ALL} External Link:\t\t\t {name}\n\t\t\t\t\t Please visit {url}")
 
-
         if len(result_dict) == 1:
             key = list(result_dict.keys())[0]
             result = result_dict[key]
@@ -132,40 +131,57 @@ class OpenCity:
         -----------
         void
         """
-        #doesn't work for links leading to jsons
-
         # if not self.id_list:            
         self.id_list, spelling = self.id_helper.create_id_list(data, tag)
 
         url_list = []
         key_list = []
         file_return = []
-        for i in range(len(self.id_list)):
-            for url, format, name in FetchHelper.fetch_dataset_urls(self.id_list[i]):
-                ending = FetchHelper.get_url_ending(url) 
-                if ending in self.formats:
-                    url_list.append(url)
-                    key_list.append(re.sub("[*:/<>?\|]", "-", name) + "." + ending) # removing special characters not appropriate for file names
+        if spelling: 
+            for i in range(len(self.id_list)):
+                for url, format, name in FetchHelper.fetch_dataset_urls(self.id_list[i]):
+                    ending = FetchHelper.get_url_ending(url) 
+                    if ending in self.formats:
+                        url_list.append(url)
+                        key_list.append(re.sub("[*:/<>?\|]", "-", name) + "." + ending) # removing special characters not appropriate for file names
 
-        for url, key in zip(url_list, key_list):
-            file_name = ""
-            # if a specific folder was given:
-            if len(folder)>0: 
-                file_name = os.path.join(folder, key)
-            # if no folder was given: save to current working directory
-            else:
-                file_name = os.path.join(os.getcwd(), key)
-            # if the url leads to a file: 
-            if url[-5:] != "=json":
-                urllib.request.urlretrieve(url, file_name) 
-                print("Finished saving requested data to " + file_name)
-                file_return.append(file_name)
-            # if the url is the result of a get query for a geojson: 
-            else:                
-                geodf = shpFetcher()
-                geodf.parse_geo(url).to_file(file_name, driver="GeoJSON")
-                print("Finished saving requested data to " + file_name)
-                file_return.append(file_name)
+            for url, key in zip(url_list, key_list):
+                file_name = ""
+                # if a specific folder was given:
+                if len(folder)>0: 
+                    #if the indicated directory exists
+                    if os.path.isdir(folder): 
+                        file_name = os.path.join(folder, key)
+                    #if the indicated directory doesn't exist already
+                    else: 
+                        print(
+                            f"{Fore.RED}There is no folder with the name {folder}.{Style.RESET_ALL}"
+                        )
+                        inp = input(
+                            "Do you wish to proceed (and let it be created)? [y/N]\n> "
+                        )
+                        if inp == "N":
+                            print(f"{Fore.RED}> EXITING{Style.RESET_ALL}")
+                            #sys.exit(0) #TODO is it necessary to throw the user out of python?
+                            break
+                        elif inp == "y":
+                            print(f"{Fore.RED}> CREATING DIRECTORY{Style.RESET_ALL}")
+                            os.mkdir(path = folder)
+                            file_name = os.path.join(folder, key)                    
+                # if no folder was given: save to current working directory
+                else:
+                    file_name = os.path.join(os.getcwd(), key)
+                # if the url leads to a file: 
+                if url[-5:] != "=json":
+                    urllib.request.urlretrieve(url, file_name) 
+                    print("Finished saving requested data to " + file_name)
+                    file_return.append(file_name)
+                # if the url is the result of a get query for a geojson: 
+                else:                
+                    geodf = shpFetcher()
+                    geodf.parse_geo(url).to_file(file_name, driver="GeoJSON")
+                    print("Finished saving requested data to " + file_name)
+                    file_return.append(file_name)
         if file_ret:
             return file_return
         return ""
@@ -201,7 +217,7 @@ class OpenCity:
         """
 
         #TODO: include check for whether the indicated names / tags are correct (already implemented in other functions?)
-
+        
         if overview == True and meta == True or overview == False and meta == False and len(data) > 0 : 
             # print("You did not use the function correctly.\n" 
             # + "Use either the parameter 'overview' or the parameter 'meta'.\n" 
@@ -230,37 +246,25 @@ class OpenCity:
 
         # if a dataset or a tag is given: show only the indicated datasets
         elif len(data) > 0: 
-            tag_df = pd.DataFrame(columns = ['title', 'name', 'tags'])
-            if tag: #if a tag is given
-                for element in data: 
-                    tag_df = pd.concat([tag_df, self.dsuf.current_list[self.dsuf.current_list.tags.str.contains(element)]], axis = 0) # create df containing only the data sets with that tag
-            else: #if a dataset is given
-                for element in data: 
-                    tag_df = pd.concat([tag_df, self.dsuf.current_list[self.dsuf.current_list.name.str.contains(element)]], axis = 0)
-            tag_df = tag_df.drop_duplicates(subset = "title")
-            if overview == True: 
-                self.show_data_helper.short(tag_df)
-            if meta == True:
-                if terminal: 
-                    print("In the following you will see detailed information on {}:".format(data))
-                    self.show_data_helper.long(tag_df)
-                else: 
-                    print("In the following popup you will see detailed information on {}:".format(data))
-                    self.show_data_helper.meta(tag_df)
-
-
-
-
-
-            
-
-
-#test = get_data(["standorte_glascontainer"])
-#test = get_data(["historische_wetterdaten"])
-#test = get_data(["Geo"], tag=True)
-#test = get_data(["Umwelt und Klima"], tag=True)
-#save_data(["standorte_sportanlagen"], folder = "C:/Users/bikki/Downloads")
-#save_data(["standorte_sportanlagen"])
-# test = get_data(["wahlbezirke"])
+            #check spelling first:
+            self.id_list, spelling = self.id_helper.create_id_list(data, tag)
+            if spelling: 
+                tag_df = pd.DataFrame(columns = ['title', 'name', 'tags'])
+                if tag: #if a tag is given
+                    for element in data: 
+                        tag_df = pd.concat([tag_df, self.dsuf.current_list[self.dsuf.current_list.tags.str.contains(element)]], axis = 0) # create df containing only the data sets with that tag
+                else: #if a dataset is given
+                    for element in data: 
+                        tag_df = pd.concat([tag_df, self.dsuf.current_list[self.dsuf.current_list.name.str.contains(element)]], axis = 0)
+                tag_df = tag_df.drop_duplicates(subset = "title")
+                if overview == True: 
+                    self.show_data_helper.short(tag_df)
+                if meta == True:
+                    if terminal: 
+                        print("In the following you will see detailed information on {}:".format(data))
+                        self.show_data_helper.long(tag_df)
+                    else: 
+                        print("In the following popup you will see detailed information on {}:".format(data))
+                        self.show_data_helper.meta(tag_df)
 
 # TODO: check if really want to download (disable with param)
