@@ -2,6 +2,22 @@
 
 `opencity` is an interface for the [open data portal of Constance](https://offenedaten-konstanz.de). It allows you to directly inspect, download, and work with the available data. This package can be easily used by practitioners, members of the civil society, and academics. Technically, it relies on the DKAN API.
 
+- [Capabilities](#capabilities)
+  - [Class OpenCity](#class) 
+    - [Properties](#properties)
+    - [Functions](#functions)
+      - [show_data](#show)
+      - [get_data](#get)
+      - [save_data](#save)
+- [Examples](#examples)
+  - [show_data](#ex_show)
+  - [get_data](#ex_get)
+  - [save_data](#ex_save)
+- [Installation](#install)
+  - [Potential problems](#install_prob)
+- [Author information](#authors) 
+
+<a name="capabilities"></a>
 ## Capabilities
 - get an overview of data sets via `show_data()`
 - load data directly into Python via `get_data()`
@@ -9,10 +25,12 @@
 
 Generally, each functionality can be filtered by names and tags of the different data sets and returns `pandas.DataFrame`s.
 
-#### _class_ `opencity.OpenCity`_(cf = None)_
+<a name="class"></a>
+### _class_ `opencity.OpenCity`_(cf = None)_
 class with several features described in the following
 
-> Properties :
+<a name="properties"></a>
+#### Properties :
 > - **formats** <br />
 >   list of Strings specifying formats
 > - **cf** <br />
@@ -20,13 +38,15 @@ class with several features described in the following
 > - **(various) helper classes** <br />
 >   reference to various files containing helper classes
 
-> Functions :
+<a name="functions"></a>
+#### Functions :
 > - **show_data()** <br />
 > - **get_data()** <br />
 > - **save_data()** <br />
 
 Each functionality is described in the following in detail.
 
+<a name="show"></a>
 #### `OpenCity.show_data`_(data=[], tag=False, overview=False, meta=False, terminal=False)_
 displays an overview of the available and indicated data sets to the terminal or as a popup
 
@@ -45,6 +65,7 @@ displays an overview of the available and indicated data sets to the terminal or
 
 > Returns: void
 
+<a name="get"></a>
 #### `OpenCity.get_data`_(data=[], tag=False, meta=False)_
 retrieves the indicated data from the [open data portal of Constance](https://offenedaten-konstanz.de)
 
@@ -58,6 +79,7 @@ retrieves the indicated data from the [open data portal of Constance](https://of
 
 > Returns: `pandas.DataFrame` | dict containing `pandas.DataFrame`s
 
+<a name="save"></a>
 #### `OpenCity.save_data`_(data, tag=False, folder="")_
 saves the indicated data to the local disk
 
@@ -71,23 +93,50 @@ saves the indicated data to the local disk
 
 > Returns: void
 
+<a name="examples"></a>
 ## Examples
 
 ### At first: create an instance of the class OpenCity
 ```python
 from opencity import config as conf
 from opencity import opencity as oc
-cf = conf.Config(PKG_FOLDER=path)
+cf = conf.Config(PKG_FOLDER=path) #TODO: show the two options of indicating a path and not indicating a path (Tilman)
 open_city = oc.OpenCity(cf=cf)
 ```
+<a name="ex_show"></a>
 ### show_data()
 
-#### show all available data sets
+#### show the total number of available data sets and their tags
 ```python
 open_city.show_data()
 ```
-#### TODO: other functionalities of show_data() function
+#### show an overview 
+```python
+# of all available data sets:
+open_city.show_data(overview = True)
 
+# of all indicated data sets:
+open_city.show_data(overview = True, data = ["solarpotenzial"]) #you could also indicate several data sets here
+
+# of all available data sets belonging to a certain tag:
+open_city.show_data(overview = True, data = ["Geo"], tag = True) #you could also indicate several tags here
+```
+#### show meta data in a popup table
+```python
+# of all available data sets: 
+open_city.show_data(meta = True)
+
+# of all indicated data sets:
+open_city.show_data(meta = True, data = ["solarpotenzial"]) #you could also indicate several data sets here
+
+# of all available data sets belonging to a certain tag:
+open_city.show_data(meta = True, data = ["Geo"], tag = True) #you could also indicate several tags here
+```
+#### show meta data in the terminal
+```python
+open_city.show_data(meta = True, terminal = True) #you could also specify data sets or tags
+```
+<a name="ex_get"></a>
 ### get_data()
 
 #### get data of a data set
@@ -129,6 +178,7 @@ open_city.get_data(["Politik und Wahlen"], tag = True, meta = True) #you could a
 > `Loading data` <br />
 > `[+] Successfully loaded meta data of 16 data sets` <br />
 
+<a name="ex_save"></a>
 ### save_data()
 
 #### save data of a data set
@@ -151,20 +201,26 @@ path = "C:/Users/example_path" #important to use either forward slashes or doubl
 opencity.save_data(["standorte_sportanlagen"], folder = path)
 ```
 
+<a name="install"></a>
 ## Installation
 ```bash
 pip install opencity
 ```
 
+<a name="install_prob"></a>
 ### Potential problems
 #### GeoPandas
-...
-#### something else
-...
+When installing the opencity package on a *Windows* computer, you might run into trouble during the installation due to the package requirement `geopandas`.
+This package is necessary for reading in spatial data, which is available for some of the data sets. 
+Please try [this page](https://towardsdatascience.com/geopandas-installation-the-easy-way-for-windows-31a666b3610f) for assistance in installing `geopandas`.
+
+#### tk / tkinter
+TODO (Tilman)
 
 ## Found a bug?
 Open an issue including OS, package- and python version, executed code and error message!
 
+<a name="authors"></a>
 ## Author Information
 
 Birke Pfeifle <br />
