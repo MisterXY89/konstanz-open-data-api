@@ -77,16 +77,41 @@ saves the indicated data to the local disk
 ```python
 from opencity import config as conf
 from opencity import opencity as oc
-cf = conf.Config(PKG_FOLDER=path)
+cf = conf.Config(PKG_FOLDER=path) #TODO: show the two options of indicating a path and not indicating a path (Tilman)
 open_city = oc.OpenCity(cf=cf)
 ```
 ### show_data()
 
-#### show all available data sets
+#### show the total number of available data sets and their tags
 ```python
 open_city.show_data()
 ```
-#### TODO: other functionalities of show_data() function
+#### show an overview 
+```python
+# of all available data sets:
+open_city.show_data(overview = True)
+
+# of all indicated data sets:
+open_city.show_data(overview = True, data = ["solarpotenzial"]) #you could also indicate several data sets here
+
+# of all available data sets belonging to a certain tag:
+open_city.show_data(overview = True, data = ["Geo"], tag = True) #you could also indicate several tags here
+```
+#### show meta data in a popup table
+```python
+# of all available data sets: 
+open_city.show_data(meta = True)
+
+# of all indicated data sets:
+open_city.show_data(meta = True, data = ["solarpotenzial"]) #you could also indicate several data sets here
+
+# of all available data sets belonging to a certain tag:
+open_city.show_data(meta = True, data = ["Geo"], tag = True) #you could also indicate several tags here
+```
+#### show meta data in the terminal
+```python
+open_city.show_data(meta = True, terminal = True) #you could also specify data sets or tags
+```
 
 ### get_data()
 
