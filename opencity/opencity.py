@@ -216,12 +216,7 @@ class OpenCity:
         void
         """
 
-        #TODO: include check for whether the indicated names / tags are correct (already implemented in other functions?)
-        
-        if overview == True and meta == True or overview == False and meta == False and len(data) > 0 : 
-            # print("You did not use the function correctly.\n" 
-            # + "Use either the parameter 'overview' or the parameter 'meta'.\n" 
-            # + "Use the parameter 'data' in addition if you only want to ....") #TODO adapt
+        if overview == True and meta == True or overview == False and meta == False and len(data) > 0 or isinstance(tag, list): 
             tqdm.write(f"{Fore.RED}You did not use the function correctly.")
             tqdm.write(f"{Fore.RED}Use either the parameter 'overview' OR the parameter 'meta'.")
             tqdm.write(f"{Fore.RED}Use the parameter 'data' in addition if you only want to get an overview or the metadata for specific datasets or tags.")
@@ -266,5 +261,11 @@ class OpenCity:
                     else: 
                         print("In the following popup you will see detailed information on {}:".format(data))
                         self.show_data_helper.meta(tag_df)
+        
+        else: 
+            tqdm.write(f"{Fore.RED}You did not use the function correctly.")
+            tqdm.write(f"{Fore.RED}Use either the parameter 'overview' OR the parameter 'meta'.")
+            tqdm.write(f"{Fore.RED}Use the parameter 'data' in addition if you only want to get an overview or the metadata for specific datasets or tags.")
+            tqdm.write(f"{Fore.RED}Set the parameter 'tag' to True if you indicated tags instead of single datasets under the 'data' parameter.{Style.RESET_ALL} ")
 
 # TODO: check if really want to download (disable with param)

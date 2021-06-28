@@ -5,8 +5,8 @@ import pandas as pd
 import numpy as np
 from tabulate import tabulate
 import re
-# import tkinter as tk
-# import tksheet
+import tkinter as tk
+import tksheet
 
 from colorama import init, Fore, Back, Style
 
@@ -179,7 +179,10 @@ class IdHelper:
                         self.current_list['name'] == data[i]]['id'].values)
                     id_list.append(id_element[2:-2])
         if len(id_list) == 0:
-            print("The provided names or tags are incorrect. Please check spelling. Note that the names for data sets is written in lower case, whereas tags are written with capital letters. Additionally, make sure to set the parameter 'tag' to True if you specified a tag.")
+            print("The provided names or tags are incorrect." + 
+            "\nPlease check spelling. Note that the names for data sets are written in lower case, whereas tags are written with capital letters. " + 
+            "\nAdditionally, make sure to set the parameter 'tag' to True if you specified a tag." + 
+            "\nFurthermore, make sure to always provide the names of the data sets or tags as a list of strings.")
             spelling = False
         else:
             spelling = True
