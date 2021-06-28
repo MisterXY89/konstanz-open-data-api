@@ -210,9 +210,12 @@ pip install opencity
 <a name="install_prob"></a>
 ### Potential problems
 #### GeoPandas
-...
-#### something else
-...
+When installing the opencity package on a *Windows* computer, you might run into trouble during the installation due to the package requirement `geopandas`.
+This package is necessary for reading in spatial data, which is available for some of the data sets. 
+Please try [this page](https://towardsdatascience.com/geopandas-installation-the-easy-way-for-windows-31a666b3610f) for assistance in installing `geopandas`.
+
+#### tk / tkinter
+TODO (Tilman)
 
 ## Found a bug?
 Open an issue including OS, package- and python version, executed code and error message!
