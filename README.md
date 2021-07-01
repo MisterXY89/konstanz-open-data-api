@@ -100,8 +100,13 @@ saves the indicated data to the local disk
 ```python
 from opencity import config as conf
 from opencity import opencity as oc
-cf = conf.Config(PKG_FOLDER=path) #TODO: show the two options of indicating a path and not indicating a path (Tilman)
+cf = conf.Config(PKG_FOLDER=path)
 open_city = oc.OpenCity(cf=cf)
+```
+Alternatively you can init an OpenCity object without specifying a path - the file holding all current datasets will then be stored in the current working directory:
+```python
+from opencity import opencity as oc
+open_city = oc.OpenCity()
 ```
 <a name="ex_show"></a>
 ### show_data()
