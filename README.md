@@ -220,7 +220,11 @@ This package is necessary for reading in spatial data, which is available for so
 Please try [this page](https://towardsdatascience.com/geopandas-installation-the-easy-way-for-windows-31a666b3610f) for assistance in installing `geopandas`.
 
 #### tk / tkinter
-TODO (Tilman)
+The show_data method has one option to show meta data of available data-sets in a popup window. 
+If you want to use this feature and run into Errors (e.g. *There is an error with your Tkinter installation, use terminal=True to show the information anyway* )
+see [this AskUbuntu Question](https://askubuntu.com/questions/1224230/how-to-install-tkinter-for-python-3-8#1236924) or [this StackOverflow Question](https://askubuntu.com/questions/1224230/how-to-install-tkinter-for-python-3-8#1236924).
+
+However, you can always use the `terminal=True` parameter to display the same information in the terminal.
 
 ## Found a bug?
 Open an issue including OS, package- and python version, executed code and error message!
