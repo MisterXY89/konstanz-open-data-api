@@ -235,9 +235,12 @@ class OpenCity:
                 if terminal: 
                     print("\nIn the following you will see detailed information on all the datasets:\n")
                     self.show_data_helper.long(self.dsuf.current_list)
-                else: 
-                    print("\nIn the following popup you will see detailed information on all the datasets:")
-                    self.show_data_helper.meta(self.dsuf.current_list)
+                else:
+                    if TK:             
+                        print("\nIn the following popup you will see detailed information on all the datasets:")
+                        self.show_data_helper.meta(self.dsuf.current_list)
+                    else:
+                        print(f"{Fore.RED}There is an error with your Tkinter installation, use terminal=True to show the information anyway.{Style.RESET_ALL}")
 
         # if a dataset or a tag is given: show only the indicated datasets
         elif len(data) > 0: 
@@ -259,8 +262,11 @@ class OpenCity:
                         print("In the following you will see detailed information on {}:".format(data))
                         self.show_data_helper.long(tag_df)
                     else: 
-                        print("In the following popup you will see detailed information on {}:".format(data))
-                        self.show_data_helper.meta(tag_df)
+                        if TK:                            
+                            print("In the following popup you will see detailed information on {}:".format(data))
+                            self.show_data_helper.meta(tag_df)
+                        else:
+                            print(f"{Fore.RED}There is an error with your Tkinter installation, use terminal=True to show the information anyway.{Style.RESET_ALL}")
         
         else: 
             tqdm.write(f"{Fore.RED}You did not use the function correctly.")

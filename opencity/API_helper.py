@@ -5,8 +5,12 @@ import pandas as pd
 import numpy as np
 from tabulate import tabulate
 import re
-import tkinter as tk
-import tksheet
+try:
+    import tkinter as tk
+    import tksheet
+    TK = True
+except Exception as e:
+    TK = False
 
 from colorama import init, Fore, Back, Style
 
