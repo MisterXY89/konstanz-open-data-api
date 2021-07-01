@@ -221,7 +221,7 @@ Please try [this page](https://towardsdatascience.com/geopandas-installation-the
 
 #### tk / tkinter
 The show_data method has one option to show meta data of available data-sets in a popup window. 
-If you want to use this feature and run into Errors (e.g. *There is an error with your Tkinter installation, use terminal=True to show the information anyway* )
+If you want to use this feature and run into errors (e.g. *There is an error with your Tkinter installation, use terminal=True to show the information anyway* )
 see [this AskUbuntu Question](https://askubuntu.com/questions/1224230/how-to-install-tkinter-for-python-3-8#1236924) or [this StackOverflow Question](https://askubuntu.com/questions/1224230/how-to-install-tkinter-for-python-3-8#1236924).
 
 However, you can always use the `terminal=True` parameter to display the same information in the terminal.
