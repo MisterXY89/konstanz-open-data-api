@@ -31,7 +31,7 @@ class DataSetUrlFetcher:
             inp = input(
                 "The file is needed, do you wish to proceed (and let it be created)? [y/N]\n> "
             )
-            if inp == "N":
+            if inp.lower() == "n":
                 print(f"{Fore.RED}> EXITING")
                 sys.exit(0)
                 return 0
