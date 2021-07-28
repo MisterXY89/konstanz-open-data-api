@@ -1,1 +1,5 @@
 include opencity/VERSION
+recursive-include opencity/tests *
+global-exclude .ipynb_checkpoints/*
+global-exclude __pycache__/*
+global-exclude .py[cod]
