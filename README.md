@@ -1,6 +1,10 @@
 # opencity
 
-`opencity` is an interface for the [open data portal of Constance](https://offenedaten-konstanz.de). It allows you to directly inspect, download, and work with the available data. This package can be easily used by practitioners, members of the civil society, and academics. Technically, it relies on the DKAN API.
+`opencity` is an interface for the [open data portal of Constance](https://offenedaten-konstanz.de). It allows you to directly inspect, download, and work with the available data. This package can be easily used by practitioners, members of the civil society, and academics. Technically, it relies on the DKAN API. <br>
+Install using pip. For potential problems see the the [Installation and Problems part](#install).
+```bash
+pip install opencity
+```
 
 - [Capabilities](#capabilities)
   - [Class OpenCity](#class) 
