@@ -20,14 +20,15 @@ class OpenCity:
     """
 
     # current_list = pd.read_csv(CURRENT_PACKAGE_LIST_FILE)
-    def __init__(self, cf=None):
+    def __init__(self, cf=None, interactive = True):
         self.formats = ["csv", "json", "zip", "xls", "txt", "geojson", "kml", "xlsx"]
         self.names_file = "" 
         self.current_packages_file = ""
+        self._interactive=interactive
         if not cf:
             cf = Config()
         self.cf = cf
-        self.dsuf = DataSetUrlFetcher(cf)
+        self.dsuf = DataSetUrlFetcher(cf,interactive=self._interactive)
         self.id_helper = IdHelper(self.dsuf)
         self.show_data_helper = ShowDataHelper(self.dsuf.current_list)
 
@@ -153,7 +154,7 @@ class OpenCity:
                     if os.path.isdir(folder): 
                         file_name = os.path.join(folder, key)
                     #if the indicated directory doesn't exist already
-                    else: 
+                    elif self._interactive: 
                         print(
                             f"{Fore.RED}There is no folder with the name {folder}.{Style.RESET_ALL}"
                         )
@@ -168,6 +169,9 @@ class OpenCity:
                             print(f"{Fore.RED}> CREATING DIRECTORY{Style.RESET_ALL}")
                             os.mkdir(path = folder)
                             file_name = os.path.join(folder, key)                    
+                    else:
+                        os.mkdir(path = folder)
+                        file_name = os.path.join(folder, key)                    
                 # if no folder was given: save to current working directory
                 else:
                     file_name = os.path.join(os.getcwd(), key)

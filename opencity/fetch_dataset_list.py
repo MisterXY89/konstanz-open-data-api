@@ -17,24 +17,26 @@ class DataSetUrlFetcher:
     """
 	Handles the fetching and storing of all available datasets
 	"""
-    def __init__(self, cf):
+    def __init__(self, cf, interactive = True):
         self.cf = cf
+        self._interactive = interactive
         self.current_list = self.read_curr_packages()
 
     def read_curr_packages(self):
         try:
             data_frame = pd.read_csv(self.cf.CURRENT_PACKAGE_LIST_FILE)
         except Exception as e:
-            print(
-                f"{Fore.RED}There is no file with name {self.cf.CURRENT_PACKAGE_LIST_FILENAME} in the directory: {self.cf.PKG_FOLDER}{Style.RESET_ALL}"
-            )
-            inp = input(
-                "The file is needed, do you wish to proceed (and let it be created)? [y/N]\n> "
-            )
-            if inp.lower() == "n":
-                print(f"{Fore.RED}> EXITING")
-                sys.exit(0)
-                return 0
+            if self._interactive:
+                print(
+                    f"{Fore.RED}There is no file with name {self.cf.CURRENT_PACKAGE_LIST_FILENAME} in the directory: {self.cf.PKG_FOLDER}{Style.RESET_ALL}"
+                )
+                inp = input(
+                    "The file is needed, do you wish to proceed (and let it be created)? [y/N]\n> "
+                )
+                if inp.lower() == "n":
+                    print(f"{Fore.RED}> EXITING")
+                    sys.exit(0)
+                    return 0
             resp = self.fetch()
             if isinstance(resp, int):
                 print(f"Error: status_code = {resp}")
