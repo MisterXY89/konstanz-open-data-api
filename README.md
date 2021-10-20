@@ -192,13 +192,12 @@ open_city.get_data(["Politik und Wahlen"], tag = True, meta = True) #you could a
 
 #### save data of a data set
 ```python
-open_city.save_data(["solarpotenzial"]) #you could also indicate several data sets here
+open_city.save_data(["standorte_sportanlagen"]) #you could also indicate several data sets here
 ```
 > The output will look something like this: <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Solarpotenzial 2018.csv` <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Solarpotenzial 2018.kml` <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Solarpotenzial 2018.zip` <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Solarpotenzial 2018.geojson` <br /> 
+> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.csv`  <br /> 
+> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.zip`  <br /> 
+> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.geojson`   <br /> 
 
 #### save data of a tag
 ```python
