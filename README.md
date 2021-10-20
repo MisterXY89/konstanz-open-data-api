@@ -125,7 +125,7 @@ open_city.show_data()
 open_city.show_data(overview = True)
 
 # of all indicated data sets:
-open_city.show_data(overview = True, data = ["solarpotenzial"]) #you could also indicate several data sets here
+open_city.show_data(overview = True, data = ["standorte_sportanlagen"]) #you could also indicate several data sets here
 
 # of all available data sets belonging to a certain tag:
 open_city.show_data(overview = True, data = ["Geo"], tag = True) #you could also indicate several tags here
@@ -136,7 +136,7 @@ open_city.show_data(overview = True, data = ["Geo"], tag = True) #you could also
 open_city.show_data(meta = True)
 
 # of all indicated data sets:
-open_city.show_data(meta = True, data = ["solarpotenzial"]) #you could also indicate several data sets here
+open_city.show_data(meta = True, data = ["standorte_sportanlagen"]) #you could also indicate several data sets here
 
 # of all available data sets belonging to a certain tag:
 open_city.show_data(meta = True, data = ["Geo"], tag = True) #you could also indicate several tags here
@@ -206,7 +206,7 @@ open_city.save_data(["Geo"], tag = True) #you could also indicate several tags h
 #### save data to another folder than your project directory
 ```python
 path = "C:/Users/example_path" #important to use either forward slashes or double backward slashes!
-opencity.save_data(["standorte_sportanlagen"], folder = path)
+open_city.save_data(["standorte_sportanlagen"], folder = path)
 ```
 
 <a name="install"></a>
