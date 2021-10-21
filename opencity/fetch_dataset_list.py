@@ -74,6 +74,7 @@ class DataSetUrlFetcher:
                 f"{Fore.RED}An error occured while trying to read the names to id file: {Style.RESET_ALL}\n {e}"
             )
             # names.to_csv(self.cf.NAMES_FILENAME, index=False)
+            raise e
         return names
             
             
