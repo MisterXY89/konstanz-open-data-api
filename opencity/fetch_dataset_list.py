@@ -113,6 +113,11 @@ class DataSetUrlFetcher:
         except Exception as writing_file_error:
             print(writing_file_error)
             return False
+        
+    def _get_notes(self, item):
+        if "notes" in item:
+            return item["notes"]
+        return "-"
 
     def _parse_data(self, data):
         """
@@ -153,7 +158,7 @@ class DataSetUrlFetcher:
                     "modified":
                     item["metadata_modified"],
                     "notes":
-                    item["notes"],
+                    self._get_notes(item),
                     #BeautifulSoup(item["notes"], "lxml").text,
                     "tags":
                     tags
