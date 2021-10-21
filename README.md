@@ -229,6 +229,13 @@ see [this AskUbuntu Question](https://askubuntu.com/questions/1224230/how-to-ins
 
 However, you can always use the `terminal=True` parameter to display the same information in the terminal.
 
+#### SSL: CERTIFICATE_VERIFY_FAILED
+For later versions of Python on OSX, certificates are not pre-installed which seems to cause this error:
+
+```urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)```
+
+See https://stackoverflow.com/a/57941428 for a solution.
+
 ## Found a bug?
 Open an issue including OS, package- and python version, executed code and error message!
 
