@@ -112,8 +112,10 @@ saves the indicated data to the local disk
 
 ### At first: create an instance of the class OpenCity
 ```python
-from opencity import config as conf
 from opencity import opencity as oc
+from opencity import config as conf
+
+path = "<path>" # specify path here
 cf = conf.Config(PKG_FOLDER=path)
 open_city = oc.OpenCity(cf=cf)
 ```
