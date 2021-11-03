@@ -1,9 +1,8 @@
-
 import pandas as pd
 
 class jsonFetcher(object):
     """
-    jsonFetcher: fetches json-Data
+    jsonFetcher: fetch json files
     """
 
     def __init__(self):
@@ -16,7 +15,7 @@ class jsonFetcher(object):
         PARAMETERS:
         -----------
         url: String
-            Data ID based link
+            data id based link
 
         RETURNS:
         -----------
@@ -37,11 +36,11 @@ class jsonFetcher(object):
         PARAMETERS:
 	    -----------
         url: String
-			Data ID based link
+			data id based link
 
         RETURNS:
 	    -----------
         DataFrame: data for url
-        Boolean: flag_final (success)
+        Boolean: flag_final (true if success)
         """
         return self.parse_json(url), self.flag_final

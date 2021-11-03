@@ -1,11 +1,11 @@
 import json
 import requests
 from pandas import pandas as pd
-import geopandas as gpd  # install
+import geopandas as gpd
 
 class shpFetcher:
     """
-    SHPFetcher: fetches GeoData
+    shpFetcher: fetches GeoData
     """
 
     def __init__(self):
@@ -18,7 +18,7 @@ class shpFetcher:
         PARAMETERS:
         -----------
         url: String
-            Data ID based link
+            data id based link
 
         RETURNS:
         -----------
@@ -26,7 +26,6 @@ class shpFetcher:
         """
         try:
             df = gpd.read_file(url)
-            #print("was fine")
             return df
         except:
             self.flag_final = False
@@ -34,18 +33,16 @@ class shpFetcher:
 
     def load_data(self, url):
         """
-        load data set for url
+        function to load data set
 
         PARAMETERS:
         -----------
         url: String
-            Data ID based link
+            data id based link
 
         RETURNS:
         -----------
         DataFrame: data for url
-        Boolean: flag_final (success)
+        Boolean: flag_final (true if success)
         """
-        #print(self.flag_final)
-        #print(result)
         return self.parse_geo(url), self.flag_final

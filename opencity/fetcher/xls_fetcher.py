@@ -1,10 +1,9 @@
-
 import pandas as pd
 import xlrd
 
 class xlsFetcher(object):
     """
-    xlsFetcher: fetces xls-Data
+    xlsFetcher: fetches xls files
     """
 
     def __init__(self):
@@ -17,7 +16,7 @@ class xlsFetcher(object):
         PARAMETERS:
         -----------
         url: String
-            Data ID based link
+            data id based link
 
         RETURNS:
 	    -----------
@@ -32,16 +31,16 @@ class xlsFetcher(object):
 
     def load_data(self, url):
         """
-        load data set
+        function to load data set
 
         PARAMETERS:
 	    -----------
         url: String
-			Data ID based link
+			data id based link
 
         RETURNS:
 	    -----------
         DataFrame: data for url
-        Boolean: flag_final (success)
+        Boolean: flag_final (true if success)
         """
         return self.parse_xls(url), self.flag_final

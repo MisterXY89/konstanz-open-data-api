@@ -1,18 +1,12 @@
-
 import requests
 
 class BasicFetcher:
     """
     BasicFetcher:
-    works as a parent class for
-    all file-specific fetcher
+    works as a parent class for all file-specific fetcher
     """
 
     def __init__(self):
-        """
-        - sets header (dict)
-        - sets package base url
-        """
         self.PACKAGE_BASE_URL = "https://offenedaten-konstanz.de/api/3/action/package_show?id="
         self.headers = {
             "User-Agent": "PythonOpenDataPackage/1.0"
@@ -20,7 +14,7 @@ class BasicFetcher:
 
     def fetch_resource_urls(self, p_id):
         """
-        Generator for requests to API
+        generator for requests to API
 
         PARAMETERS:
         -----------
@@ -47,10 +41,10 @@ class BasicFetcher:
         PARAMETERS:
         -----------
         url: String
-            any url
+            url
 
         RETURNS:
         -----------
-        file ending for any url/file
+        file ending from url/file
         """
         return url.split(".")[::-1][0].lower()
