@@ -74,6 +74,7 @@ class DataSetUrlFetcher:
                 f"{Fore.RED}An error occured while trying to read the names to id file: {Style.RESET_ALL}\n {e}"
             )
             # names.to_csv(self.cf.NAMES_FILENAME, index=False)
+            names = pd.DataFrame(list()) # empyt df
             raise e
         return names
             
@@ -170,8 +171,6 @@ class DataSetUrlFetcher:
         
         data_frame = pd.DataFrame.from_dict(out)
         name_list = self._get_names()
-
-            # name_list = pd.read_csv(names_file, sep=';')
         merged_list = pd.merge(data_frame, name_list, how='left', on='id')
         if merged_list['name'].isnull().values.any():
             idx = merged_list.index[merged_list['name'].isnull()].tolist()
