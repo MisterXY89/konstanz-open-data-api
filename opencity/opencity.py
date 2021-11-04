@@ -63,8 +63,9 @@ class OpenCity:
                 print("Loading meta data")
                 length = len(self.id_list)
                 df_meta = pd.DataFrame(columns=['id', 'url', 'format', 'name', 'created', 'last_modified', 'description'])
-                for i in range(length):#tqdm(range(length), total=length, desc=f"[#] "):
-                    for id, url, format, name, created, last_modified, description in FetchHelper.fetch_dataset_meta(self.id_list[i]):
+                for i in tqdm(range(length), total=length, desc=f"[#] "):
+                    number_files = len(requests.get(cf.PACKAGE_BASE_URL + self.id_list[i]).json()["result"][0]["resources"])
+                    for id, url, format, name, created, last_modified, description in tqdm(FetchHelper.fetch_dataset_meta(self.id_list[i]), total = number_files, desc=f"[#] "):
                         df_meta = df_meta.append({'id': id, 'url': url, 'format': format, 'name': name, 'created': created, 'last_modified': last_modified, 'description': description}, ignore_index=True)
                 result_dict["meta"] = df_meta
                 tqdm.write(f"{Fore.GREEN}[+]{Style.RESET_ALL} Successfully loaded meta data of {df_meta.shape[0]} data sets")
@@ -74,7 +75,8 @@ class OpenCity:
                 print("Loading data")
                 length = len(self.id_list)
                 for i in tqdm(range(length), total=length, desc=f"[#] "):
-                    for url, format, name in FetchHelper.fetch_dataset_urls(self.id_list[i]):
+                    number_files = len(requests.get(cf.PACKAGE_BASE_URL + self.id_list[i]).json()["result"][0]["resources"])
+                    for url, format, name in tqdm(FetchHelper.fetch_dataset_urls(self.id_list[i]), total=number_files, desc=f"[#] "):
                         ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
                         if ending in self.formats:
                             instance = FetchHelper.get_instance(ending)()
