@@ -148,7 +148,7 @@ class OpenCity:
                         url_list.append(url)
                         key_list.append(re.sub("[*:/<>?\|]", "-", name) + "." + ending) # removing special characters not appropriate for file names
 
-            for url, key in zip(url_list, key_list):
+            for url, key in tqdm(zip(url_list, key_list), total = len(url_list), desc=f"[#] "):
                 file_name = ""
                 # if a specific folder was given:
                 if len(folder)>0: 
@@ -176,18 +176,21 @@ class OpenCity:
                         file_name = os.path.join(folder, key)                    
                 # if no folder was given: save to current working directory
                 else:
-                    file_name = os.path.join(os.getcwd(), key)
+                    
+                    folder = os.getcwd()
+                    file_name = os.path.join(folder, key)
                 # if the url leads to a file: 
                 if url[-5:] != "=json":
                     urllib.request.urlretrieve(url, file_name) 
-                    print("Finished saving requested data to " + file_name)
+                    #print("Finished saving requested data to " + file_name)
                     file_return.append(file_name)
                 # if the url is the result of a get query for a geojson: 
                 else:                
                     geodf = shpFetcher()
                     geodf.parse_geo(url).to_file(file_name, driver="GeoJSON")
-                    print("Finished saving requested data to " + file_name)
+                    #print("Finished saving requested data to " + file_name)
                     file_return.append(file_name)
+        print("Finished saving requested data to " + folder)
         if file_ret:
             return file_return
         return ""
