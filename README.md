@@ -1,4 +1,14 @@
-# opencity
+opencity
+================
+
+<img src='logo_package.png' align="right" height="139" />
+
+<!-- badges: start -->
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![PyPI version shields.io](https://img.shields.io/pypi/v/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+<!-- badges: end -->
 
 `opencity` is an interface for the [open data portal of Constance](https://offenedaten-konstanz.de). It allows you to directly inspect, download, and work with the available data. This package can be easily used by practitioners, members of the civil society, and academics. Technically, it relies on the DKAN API. <br>
 Install using pip. For potential problems see the the [Installation and Problems part](#install).
@@ -6,6 +16,8 @@ Install using pip. For potential problems see the the [Installation and Problems
 pip install opencity
 ```
 
+- [Installation](#install)
+  - [Potential problems](#install_prob)
 - [Capabilities](#capabilities)
   - [Class OpenCity](#class) 
     - [Properties](#properties)
@@ -17,17 +29,43 @@ pip install opencity
   - [show_data](#ex_show)
   - [get_data](#ex_get)
   - [save_data](#ex_save)
-- [Installation](#install)
-  - [Potential problems](#install_prob)
 - [Author information](#authors) 
+
+
+<a name="install"></a>
+## Installation
+```bash
+pip install opencity
+```
+
+<a name="install_prob"></a>
+### Potential problems
+#### GeoPandas
+When installing the opencity package on a *Windows* computer, you might run into trouble during the installation due to the package requirement `geopandas`.
+This package is necessary for reading in spatial data, which is available for some of the data sets. 
+Please try [this towardsdatascience article](https://towardsdatascience.com/geopandas-installation-the-easy-way-for-windows-31a666b3610f) for assistance in installing `geopandas` and then try to install opencity again.
+
+#### tk / tkinter
+The show_data method has one option to show meta data of available data-sets in a popup window. 
+If you want to use this feature and run into errors (e.g. *There is an error with your Tkinter installation, use terminal=True to show the information anyway* )
+see [this AskUbuntu Question](https://askubuntu.com/questions/1224230/how-to-install-tkinter-for-python-3-8#1236924) or [this StackOverflow Question](https://askubuntu.com/questions/1224230/how-to-install-tkinter-for-python-3-8#1236924).
+
+However, you can always use the `terminal=True` parameter to display the same information in the terminal.
+
+#### SSL: CERTIFICATE_VERIFY_FAILED
+For later versions of Python on *macOS*, certificates are not pre-installed which seems to cause this error:
+
+```urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)```
+
+See [this StackOverflow Question](https://stackoverflow.com/a/57941428) for a solution.
 
 <a name="capabilities"></a>
 ## Capabilities
-- get an overview of data sets via `show_data()`
-- load data directly into Python via `get_data()`
-- download data sets onto your local machine via `save_data()`
+- get an overview of data sets via [`show_data()`](#show)
+- load data directly into Python via [`get_data()`](#get)
+- download data sets onto your local machine via [`save_data()`](#save)
 
-Generally, each functionality can be filtered by names and tags of the different data sets and returns `pandas.DataFrame`s.
+Generally, each functionality can be filtered by names and tags of the different data sets.
 
 <a name="class"></a>
 ### _class_ `opencity.OpenCity`_(cf = None)_
@@ -100,10 +138,16 @@ saves the indicated data to the local disk
 <a name="examples"></a>
 ## Examples
 
+In the following, we use `<shortname>` as a placeholder for the actual shortnames of each data set. To find out about the actual shortnames, you can use `open_city.show_data(overview = True)` and check the second column.
+
+As a placeholder for the actual tags we use `<Tag>`. To find out about all the available tags, you can use `open_city.show_data()` and check the third column.
+
 ### At first: create an instance of the class OpenCity
 ```python
-from opencity import config as conf
 from opencity import opencity as oc
+from opencity import config as conf
+
+path = "<path>" # specify path here
 cf = conf.Config(PKG_FOLDER=path)
 open_city = oc.OpenCity(cf=cf)
 ```
@@ -125,10 +169,10 @@ open_city.show_data()
 open_city.show_data(overview = True)
 
 # of all indicated data sets:
-open_city.show_data(overview = True, data = ["standorte_sportanlagen"]) #you could also indicate several data sets here
+open_city.show_data(overview = True, data = ["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 
 # of all available data sets belonging to a certain tag:
-open_city.show_data(overview = True, data = ["Geo"], tag = True) #you could also indicate several tags here
+open_city.show_data(overview = True, data = ["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
 ```
 #### show meta data in a popup table
 ```python
@@ -136,21 +180,21 @@ open_city.show_data(overview = True, data = ["Geo"], tag = True) #you could also
 open_city.show_data(meta = True)
 
 # of all indicated data sets:
-open_city.show_data(meta = True, data = ["standorte_sportanlagen"]) #you could also indicate several data sets here
+open_city.show_data(meta = True, data = ["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 
 # of all available data sets belonging to a certain tag:
-open_city.show_data(meta = True, data = ["Geo"], tag = True) #you could also indicate several tags here
+open_city.show_data(meta = True, data = ["<Tag>"], tag = True) #you could also indicate several tags here
 ```
 #### show meta data in the terminal
 ```python
-open_city.show_data(meta = True, terminal = True) #you could also specify data sets or tags
+open_city.show_data(meta = True, terminal = True) #indicate one or several tags as a list of Strings
 ```
 <a name="ex_get"></a>
 ### get_data()
 
 #### get data of a data set
 ```python
-open_city.get_data(["radverkehr_stadtradeln"]) #you could also indicate several data sets here
+open_city.get_data(["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -160,7 +204,7 @@ open_city.get_data(["radverkehr_stadtradeln"]) #you could also indicate several 
 
 #### get data of a tag
 ```python
-open_city.get_data(["Soziales"], tag = True) #you could also indicate several tags here
+open_city.get_data(["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -173,7 +217,7 @@ open_city.get_data(["Soziales"], tag = True) #you could also indicate several ta
 
 #### get meta data of a data set
 ```python
-open_city.get_data(["baumkataster"], meta = True) #you could also indicate several data sets here
+open_city.get_data(["<shortname>"], meta = True) #indicate one or several data sets as a list of Strings, using their shortname
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -181,7 +225,7 @@ open_city.get_data(["baumkataster"], meta = True) #you could also indicate sever
 
 #### get meta data of a tag
 ```python
-open_city.get_data(["Politik und Wahlen"], tag = True, meta = True) #you could also indicate several tags here
+open_city.get_data(["<Tag>"], tag = True, meta = True) #indicate one or several tags as a list of Strings
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -192,7 +236,7 @@ open_city.get_data(["Politik und Wahlen"], tag = True, meta = True) #you could a
 
 #### save data of a data set
 ```python
-open_city.save_data(["standorte_sportanlagen"]) #you could also indicate several data sets here
+open_city.save_data(["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 ```
 > The output will look something like this: <br /> 
 > `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.csv`  <br /> 
@@ -201,40 +245,15 @@ open_city.save_data(["standorte_sportanlagen"]) #you could also indicate several
 
 #### save data of a tag
 ```python
-open_city.save_data(["Geo"], tag = True) #you could also indicate several tags here
+open_city.save_data(["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
 ```
 #### save data to another folder than your project directory
 ```python
 path = "C:/Users/example_path" #important to use either forward slashes or double backward slashes!
-open_city.save_data(["standorte_sportanlagen"], folder = path)
+open_city.save_data(["<shortname>"], folder = path)
 ```
 
-<a name="install"></a>
-## Installation
-```bash
-pip install opencity
-```
 
-<a name="install_prob"></a>
-### Potential problems
-#### GeoPandas
-When installing the opencity package on a *Windows* computer, you might run into trouble during the installation due to the package requirement `geopandas`.
-This package is necessary for reading in spatial data, which is available for some of the data sets. 
-Please try [this page](https://towardsdatascience.com/geopandas-installation-the-easy-way-for-windows-31a666b3610f) for assistance in installing `geopandas`.
-
-#### tk / tkinter
-The show_data method has one option to show meta data of available data-sets in a popup window. 
-If you want to use this feature and run into errors (e.g. *There is an error with your Tkinter installation, use terminal=True to show the information anyway* )
-see [this AskUbuntu Question](https://askubuntu.com/questions/1224230/how-to-install-tkinter-for-python-3-8#1236924) or [this StackOverflow Question](https://askubuntu.com/questions/1224230/how-to-install-tkinter-for-python-3-8#1236924).
-
-However, you can always use the `terminal=True` parameter to display the same information in the terminal.
-
-#### SSL: CERTIFICATE_VERIFY_FAILED
-For later versions of Python on OSX, certificates are not pre-installed which seems to cause this error:
-
-```urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)```
-
-See https://stackoverflow.com/a/57941428 for a solution.
 
 ## Found a bug?
 Open an issue including OS, package- and python version, executed code and error message!

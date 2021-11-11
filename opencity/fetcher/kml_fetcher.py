@@ -1,12 +1,12 @@
 import json
 import requests
 from pandas import pandas as pd
-import geopandas as gpd  # install
+import geopandas as gpd
 import fiona
 
 class kmlFetcher:
     """
-    KMLetcher: fetches GeoData (KML)
+    klmFetcher: fetches GeoData (KML)
     """
 
     def __init__(self):
@@ -15,15 +15,6 @@ class kmlFetcher:
     def enable_KML(self):
         """
         enable KML support
-
-        PARAMETERS:
-	    -----------
-        None
-
-        RETURNS:
-	    -----------
-        void
-
         """
         fiona.drvsupport.supported_drivers['kml'] = 'rw'
         fiona.drvsupport.supported_drivers['KML'] = 'rw'
@@ -35,7 +26,7 @@ class kmlFetcher:
         PARAMETERS:
         -----------
         url: String
-            Data ID based link
+            data id based link
 
         RETURNS:
         -----------
@@ -53,16 +44,16 @@ class kmlFetcher:
 
     def load_data(self, url):
         """
-        load data set
+        function to load data set
 
         PARAMETERS:
         -----------
         url: String
-            Data ID based link
+            data id based link
 
         RETURNS:
 	    -----------
         DataFrame: data for url
-        Boolean: flag_final (success)
+        Boolean: flag_final (true if success)
         """
         return self.parse_geo(url), self.flag_final

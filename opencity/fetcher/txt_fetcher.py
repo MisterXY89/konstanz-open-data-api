@@ -5,8 +5,9 @@ from urllib.error import HTTPError
 
 class txtFetcher(object):
     """
-    txtFetcher: fetches txt-Data
+    txtFetcher: fetches txt files
     """
+    
     def __init__(self):
         self.encoding = ["utf-8", "ISO-8859-1", "latin1"]
         self.encoding_idx = 0 # default value
@@ -48,7 +49,7 @@ class txtFetcher(object):
 
     def read_line(self, line):
         """
-        read single line, cleans it and adds it to the lines_list
+        read single line, cleaning, add to lines_list
 
         PARAMETERS:
         -----------
@@ -60,23 +61,23 @@ class txtFetcher(object):
         void
         """
         decoded_line = line.decode(self.encoding_final)
-        for quoted_part in re.findall(r'\"(.*?)\"', decoded_line):  # replace 'space' in quotes with '@'
+        for quoted_part in re.findall(r'\"(.*?)\"', decoded_line):
             decoded_line = decoded_line.replace(quoted_part, quoted_part.replace(" ", "@"))
         split_lines = decoded_line.split(' ')
         for i in range(len(split_lines)):
             for quoted_part in re.findall(r'\"(.*?)\"',
-                                          split_lines[i]):  # replace '@' in quotes with 'space'
+                                          split_lines[i]):
                 split_lines[i] = split_lines[i].replace(quoted_part, quoted_part.replace("@", " "))
         self.lines_list.append(split_lines)
 
     def get_data(self, url):
         """
-        gets the data from url
+       get data from url
 
         PARAMETERS:
         -----------
         url: String
-            Data ID based link
+            data id based link
 
         RETURNS:
         -----------
@@ -85,7 +86,6 @@ class txtFetcher(object):
         try:
             file = urlopen(url)
         except HTTPError:
-            print("could not open url")
             self.flag_final = True
 
         if self.flag_final == False:
@@ -106,21 +106,20 @@ class txtFetcher(object):
                             print("no matching encoding found. please review")
             except:
                 self.flag_final = True
-
             return self.lines_list
 
     def convert_df(self, data):
         """
-        converts the data to a Dataframe
+        convert data to dataframe
 
         INPUT:
         -----------
         data: String
-            txt. data
+            txt data
 
         OUTPUT:
         -----------
-        DataFrame: data as DataFrame
+        DataFrame: data for url
         """
         df = pd.DataFrame(data)
         row, col = df.shape
@@ -163,17 +162,17 @@ class txtFetcher(object):
 
     def load_data(self, url):
         """
-        function to load the data, called by external classes
+        function to load data set
 
         PARAMETERS:
         -----------
         url: String
-            Data ID based link
+            data id based link
 
         RETURNS:
         -----------
         DataFrame: data for url
-        Boolean: flag_final (success)
+        Boolean: flag_final (true if success)
         """
         data = self.get_data(url)
         return self.convert_df(data), self.flag_final

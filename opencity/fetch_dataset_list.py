@@ -25,6 +25,23 @@ class DataSetUrlFetcher:
     def read_curr_packages(self):
         try:
             data_frame = pd.read_csv(self.cf.CURRENT_PACKAGE_LIST_FILE)
+            # check if local version of the current packages is up to date:
+            # if it has not been modified/updated in the last 14 days then ask user if he wants to update
+            modified_time = os.path.getmtime(self.cf.CURRENT_PACKAGE_LIST_FILE)
+            delta = time.time() - modified_time
+            day_delta = delta / 60 / 60 / 24
+            max_day_delta = 14
+
+            if day_delta > max_day_delta:
+                prompt = input(
+                    "Your local list of available data packages is outdated. Do you want to download the latest version? [y/N]\n>"
+                ).lower()
+                if prompt == "n":
+                    print("> Not downloading")
+                    return data_frame
+                #print("> Updating packages...")
+                self.update()
+                
         except Exception as e:
             if self._interactive:
                 print(
@@ -74,6 +91,7 @@ class DataSetUrlFetcher:
                 f"{Fore.RED}An error occured while trying to read the names to id file: {Style.RESET_ALL}\n {e}"
             )
             # names.to_csv(self.cf.NAMES_FILENAME, index=False)
+            names = pd.DataFrame(list()) # empyt df
             raise e
         return names
             
@@ -170,8 +188,6 @@ class DataSetUrlFetcher:
         
         data_frame = pd.DataFrame.from_dict(out)
         name_list = self._get_names()
-
-            # name_list = pd.read_csv(names_file, sep=';')
         merged_list = pd.merge(data_frame, name_list, how='left', on='id')
         if merged_list['name'].isnull().values.any():
             idx = merged_list.index[merged_list['name'].isnull()].tolist()

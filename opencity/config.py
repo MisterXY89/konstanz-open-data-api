@@ -1,16 +1,11 @@
-"""
-Some basic constants & general config
-"""
-
 import os
 from dataclasses import dataclass, field
-
 
 @dataclass
 class Config:
     CWD: str = os.getcwd()
     PKG_FOLDER: str = ""
-    NAMES_FILE: str = f"{PKG_FOLDER}names.csv" # todo create if not exiting
+    NAMES_FILE: str = f"{PKG_FOLDER}names.csv"
     CURRENT_PACKAGE_LIST_FILENAME: str = "CURRENT_PACKAGE_LIST.csv"
     NAMES_FILENAME: str = "names.csv"
     PACKAGE_BASE_URL: str = "https://offenedaten-konstanz.de/api/3/action/package_show?id="
@@ -30,5 +25,5 @@ class Config:
                 if not os.path.isdir(self.PKG_FOLDER):
                     os.mkdir(self.PKG_FOLDER)
                 
-        self.CURRENT_PACKAGE_LIST_FILE: str = f"{self.PKG_FOLDER}{sep}{self.CURRENT_PACKAGE_LIST_FILENAME}" # /????
+        self.CURRENT_PACKAGE_LIST_FILE: str = f"{self.PKG_FOLDER}{sep}{self.CURRENT_PACKAGE_LIST_FILENAME}"
         self.NAMES_FILE: str = f"{self.PKG_FOLDER}{sep}{self.NAMES_FILENAME}"    
