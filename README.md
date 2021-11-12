@@ -122,7 +122,7 @@ retrieves the indicated data from the [open data portal of Constance](https://of
 > Returns: `pandas.DataFrame` | dict containing `pandas.DataFrame`s
 
 <a name="save"></a>
-#### `OpenCity.save_data`_(data, tag=False, folder="")_
+#### `OpenCity.save_data`_(data, tag=False, folder="", suppress=False)_
 saves the indicated data to the local disk
 
 > Parameters: 
@@ -132,6 +132,8 @@ saves the indicated data to the local disk
 >   set to True if data list contains tags
 > - **folder: String, default: empty** <br /> 
 >   If you want to save the data to a different folder than the one from which you are executing the python file, indicate the respective folder here (use either forward slashes '/' or double backward slashes '\\')
+> - **suppress: Boolean, default: False** <br /> 
+>   set to True if you want to suppress the initial question asking whether you really want to download
 
 > Returns: void
 
