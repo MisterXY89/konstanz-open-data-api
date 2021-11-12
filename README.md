@@ -194,7 +194,7 @@ open_city.show_data(meta = True, terminal = True) #indicate one or several tags 
 
 #### get data of a data set
 ```python
-open_city.get_data(["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
+open_city.get_data(data = ["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -204,7 +204,7 @@ open_city.get_data(["<shortname>"]) #indicate one or several data sets as a list
 
 #### get data of a tag
 ```python
-open_city.get_data(["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
+open_city.get_data(data = ["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -217,7 +217,7 @@ open_city.get_data(["<Tag>"], tag = True) #indicate one or several tags as a lis
 
 #### get meta data of a data set
 ```python
-open_city.get_data(["<shortname>"], meta = True) #indicate one or several data sets as a list of Strings, using their shortname
+open_city.get_data(data = ["<shortname>"], meta = True) #indicate one or several data sets as a list of Strings, using their shortname
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -225,7 +225,7 @@ open_city.get_data(["<shortname>"], meta = True) #indicate one or several data s
 
 #### get meta data of a tag
 ```python
-open_city.get_data(["<Tag>"], tag = True, meta = True) #indicate one or several tags as a list of Strings
+open_city.get_data(data = ["<Tag>"], tag = True, meta = True) #indicate one or several tags as a list of Strings
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -236,7 +236,7 @@ open_city.get_data(["<Tag>"], tag = True, meta = True) #indicate one or several 
 
 #### save data of a data set
 ```python
-open_city.save_data(["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
+open_city.save_data(data = ["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 ```
 > The output will look something like this: <br /> 
 > `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.csv`  <br /> 
@@ -245,12 +245,12 @@ open_city.save_data(["<shortname>"]) #indicate one or several data sets as a lis
 
 #### save data of a tag
 ```python
-open_city.save_data(["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
+open_city.save_data(data = ["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
 ```
 #### save data to another folder than your project directory
 ```python
 path = "C:/Users/example_path" #important to use either forward slashes or double backward slashes!
-open_city.save_data(["<shortname>"], folder = path)
+open_city.save_data(data = ["<shortname>"], folder = path)
 ```
 
 
