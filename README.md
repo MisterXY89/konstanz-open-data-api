@@ -140,7 +140,7 @@ saves the indicated data to the local disk
 
 In the following, we use `<shortname>` as a placeholder for the actual shortnames of each data set. To find out about the actual shortnames, you can use `open_city.show_data(overview = True)` and check the second column.
 
-As a placeholder for the actual tags we use `<Tag>`. To find out about all the available tags, you can use `open_city.show_data()` and check the third column.
+As a placeholder for the actual tags we use `<Tag>`. To find out about all the available tags, you can use `open_city.show_data()`.
 
 ### At first: create an instance of the class OpenCity
 ```python
