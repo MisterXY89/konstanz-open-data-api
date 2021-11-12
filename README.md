@@ -140,7 +140,7 @@ saves the indicated data to the local disk
 
 In the following, we use `<shortname>` as a placeholder for the actual shortnames of each data set. To find out about the actual shortnames, you can use `open_city.show_data(overview = True)` and check the second column.
 
-As a placeholder for the actual tags we use `<Tag>`. To find out about all the available tags, you can use `open_city.show_data()` and check the third column.
+As a placeholder for the actual tags we use `<Tag>`. To find out about all the available tags, you can use `open_city.show_data()`.
 
 ### At first: create an instance of the class OpenCity
 ```python
@@ -194,7 +194,7 @@ open_city.show_data(meta = True, terminal = True) #indicate one or several tags 
 
 #### get data of a data set
 ```python
-open_city.get_data(["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
+open_city.get_data(data = ["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -204,7 +204,7 @@ open_city.get_data(["<shortname>"]) #indicate one or several data sets as a list
 
 #### get data of a tag
 ```python
-open_city.get_data(["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
+open_city.get_data(data = ["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -217,7 +217,7 @@ open_city.get_data(["<Tag>"], tag = True) #indicate one or several tags as a lis
 
 #### get meta data of a data set
 ```python
-open_city.get_data(["<shortname>"], meta = True) #indicate one or several data sets as a list of Strings, using their shortname
+open_city.get_data(data = ["<shortname>"], meta = True) #indicate one or several data sets as a list of Strings, using their shortname
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -225,7 +225,7 @@ open_city.get_data(["<shortname>"], meta = True) #indicate one or several data s
 
 #### get meta data of a tag
 ```python
-open_city.get_data(["<Tag>"], tag = True, meta = True) #indicate one or several tags as a list of Strings
+open_city.get_data(data = ["<Tag>"], tag = True, meta = True) #indicate one or several tags as a list of Strings
 ```
 > The output will look something like this: <br /> 
 > `Loading data` <br />
@@ -236,21 +236,20 @@ open_city.get_data(["<Tag>"], tag = True, meta = True) #indicate one or several 
 
 #### save data of a data set
 ```python
-open_city.save_data(["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
+open_city.save_data(data = ["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 ```
-> The output will look something like this: <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.csv`  <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.zip`  <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.geojson`   <br /> 
+> After you confirm the check-back with a `y` and the saving was successful, you will see a progress bar in your console, indicating the status of downloading the files. When the saving process is finished, the output on your console will look something like this: <br /> 
+> `[Saving Progress] : 100%|████████████████████████████████| 4/4 [00:15<00:00,  3.84s/it]` <br /> 
+> `[+] Finished saving requested data to 'C:\Users\username\Downloads\test'.` <br /> 
 
 #### save data of a tag
 ```python
-open_city.save_data(["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
+open_city.save_data(data = ["<Tag>"], tag = True) #indicate one or several tags as a list of Strings
 ```
 #### save data to another folder than your project directory
 ```python
 path = "C:/Users/example_path" #important to use either forward slashes or double backward slashes!
-open_city.save_data(["<shortname>"], folder = path)
+open_city.save_data(data = ["<shortname>"], folder = path)
 ```
 
 
