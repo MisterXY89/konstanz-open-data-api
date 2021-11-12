@@ -238,10 +238,9 @@ open_city.get_data(data = ["<Tag>"], tag = True, meta = True) #indicate one or s
 ```python
 open_city.save_data(data = ["<shortname>"]) #indicate one or several data sets as a list of Strings, using their shortname
 ```
-> The output will look something like this: <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.csv`  <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.zip`  <br /> 
-> `Finished saving requested data to C:\Users\username\Desktop\Standorte Sportanlagen.geojson`   <br /> 
+> After you confirm the check-back with a `y` and the saving was successful, you will see a progress bar in your console, indicating the status of downloading the files. When the saving process is finished, the output on your console will look something like this: <br /> 
+> `[Saving Progress] : 100%|████████████████████████████████| 4/4 [00:15<00:00,  3.84s/it]` <br /> 
+> `[+] Finished saving requested data to 'C:\Users\username\Downloads\test'.` <br /> 
 
 #### save data of a tag
 ```python
