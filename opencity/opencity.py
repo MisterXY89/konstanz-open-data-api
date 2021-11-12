@@ -156,6 +156,7 @@ class OpenCity:
                     
                     if inp == "N":
                         print(f"{Fore.RED}> EXITING{Style.RESET_ALL}")
+                        return
                     elif inp == "y":
                             os.mkdir(path = folder)   
                             print(f"{Fore.GREEN}> DIRECTORY CREATED{Style.RESET_ALL}")              
@@ -167,7 +168,7 @@ class OpenCity:
                 inp = input("Do you wish to download all the files belonging to " + ', '.join(data) + " and save them at '" + folder + "'? [y/N]\n> ")
                 if inp == "N":
                     print(f"{Fore.RED}> ABORTING DOWNLOAD{Style.RESET_ALL}")
-                    return ""
+                    return 
                 elif inp == "y":
                     print(f"{Fore.GREEN}> STARTING DOWNLOAD{Style.RESET_ALL}")
 
@@ -193,9 +194,9 @@ class OpenCity:
                     tqdm.write(f"{Fore.RED}[x]{Style.RESET_ALL} The file '{key}' could not be saved to your local disk. Please check its url: {url} {Style.RESET_ALL}")
         tqdm.write(f"{Fore.GREEN}[+]{Style.RESET_ALL} Finished saving requested data to '{folder}'.")
         
-        if file_ret:
-            return file_return
-        return ""
+        # if file_ret:
+        #    return file_return
+        #return ""
 
 
     def show_data(self, data = [], tag = False, overview = False, meta = False, terminal = False): 
