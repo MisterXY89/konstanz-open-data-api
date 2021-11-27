@@ -69,7 +69,7 @@ class OpenCity:
                 df_meta = pd.DataFrame(columns=['id', 'url', 'format', 'name', 'created', 'last_modified', 'description'])
                 for i in tqdm(range(length), total=length, desc=f"[Loading Progress] "):
                     number_files = len(requests.get(cf.PACKAGE_BASE_URL + self.id_list[i]).json()["result"][0]["resources"])
-                    for id, url, format, name, created, last_modified, description in tqdm(FetchHelper.fetch_dataset_meta(self.id_list[i]), total = number_files, desc=f"[#] "):
+                    for id, url, format, name, created, last_modified, description in tqdm(FetchHelper.fetch_dataset_meta(self.id_list[i]), total = number_files, desc=f"[Loading Progress] "):
                         df_meta = df_meta.append({'id': id, 'url': url, 'format': format, 'name': name, 'created': created, 'last_modified': last_modified, 'description': description}, ignore_index=True)
                 result_dict["meta"] = df_meta
                 tqdm.write(f"{Fore.GREEN}[+]{Style.RESET_ALL} Successfully loaded meta data of {df_meta.shape[0]} data sets")
