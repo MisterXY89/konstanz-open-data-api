@@ -78,7 +78,7 @@ class OpenCity:
             else:
                 print("Loading data")
                 length = len(self.id_list)
-                for i in tqdm(range(length), total=length, desc=f"[#] "):
+                for i in tqdm(range(length), total=length, desc=f"[Loading Progress] "):
                     number_files = len(requests.get(cf.PACKAGE_BASE_URL + self.id_list[i]).json()["result"][0]["resources"])
                     for url, format, name in tqdm(FetchHelper.fetch_dataset_urls(self.id_list[i]), total=number_files, desc=f"[Loading Progress] "):
                         ending = FetchHelper.get_url_ending(url) # works also with Kn Gis Hub?
