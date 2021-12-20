@@ -11,7 +11,7 @@ def opencity_instance() -> opencity.OpenCity:
 
 
 @pytest.fixture
-def current_list(opencity_instance: opencity) -> DataFrame:
+def current_list(opencity_instance):
     df = opencity_instance.id_helper.current_list
     return df
 
