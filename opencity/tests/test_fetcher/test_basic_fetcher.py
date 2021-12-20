@@ -1,4 +1,4 @@
-from .fetcher.basic_fetcher import BasicFetcher
+from fetcher.basic_fetcher import BasicFetcher
 import pytest
 
 

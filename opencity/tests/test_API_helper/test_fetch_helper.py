@@ -1,9 +1,9 @@
 import pytest
 
-from .API_helper import FetchHelper
-from .fetcher.csv_fetcher import csvFetcher
-from .fetcher.shp_fetcher import shpFetcher
-from .fetcher.txt_fetcher import txtFetcher
+from API_helper import FetchHelper
+from fetcher.csv_fetcher import csvFetcher
+from fetcher.shp_fetcher import shpFetcher
+from fetcher.txt_fetcher import txtFetcher
 
 
 @pytest.fixture
