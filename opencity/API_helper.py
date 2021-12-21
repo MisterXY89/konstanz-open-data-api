@@ -5,9 +5,11 @@ import pandas as pd
 import numpy as np
 from tabulate import tabulate
 import re
+
 try:
     import tkinter as tk
     import tksheet
+
     TK = True
 except Exception as e:
     TK = False
@@ -35,7 +37,7 @@ formats_dict = {
     "zip": shpFetcher,
     "geojson": shpFetcher,
     "json": jsonFetcher,
-    "kml": kmlFetcher
+    "kml": kmlFetcher,
 }
 
 
@@ -46,6 +48,7 @@ class FetchHelper:
     """
     helper class containing functions for fetching
     """
+
     def __init__(self):
         pass
 
@@ -85,7 +88,7 @@ class FetchHelper:
             for resource in resources:
                 yield resource["url"], resource["format"], resource["name"]
         return response.status_code
-    
+
     def fetch_dataset_meta(id):
         """
         get meta data corresponding to id
@@ -105,7 +108,11 @@ class FetchHelper:
         if response.status_code == 200:
             resources = response.json()["result"][0]["resources"]
             for resource in resources:
-                yield resource["id"], resource["url"], resource["format"], resource["name"], resource["created"], resource["last_modified"], resource["description"]
+                yield resource["id"], resource["url"], resource["format"], resource[
+                    "name"
+                ], resource["created"], resource["last_modified"], resource[
+                    "description"
+                ]
         return response.status_code
 
     def get_url_ending(url):
@@ -146,6 +153,7 @@ class IdHelper:
     """
     helper class for creating id list
     """
+
     def __init__(self, dsuf):
         self.dsuf = dsuf
         if hasattr(self.dsuf, "current_list"):
@@ -179,21 +187,27 @@ class IdHelper:
         else:
             for i in range(len(data)):
                 if data[i] in self.current_list["name"].values:
-                    id_element = np.array2string(self.current_list[
-                        self.current_list['name'] == data[i]]['id'].values)
+                    id_element = np.array2string(
+                        self.current_list[self.current_list["name"] == data[i]][
+                            "id"
+                        ].values
+                    )
                     id_list.append(id_element[2:-2])
         if len(id_list) == 0:
-            print("The provided names or tags are incorrect." + 
-            "\nPlease check spelling. Note that the names for data sets are written in lower case, whereas tags are written with capital letters. " + 
-            "\nAdditionally, make sure to set the parameter 'tag' to True if you specified a tag." + 
-            "\nFurthermore, make sure to always provide the names of the data sets or tags as a list of strings.")
+            print(
+                "The provided names or tags are incorrect."
+                + "\nPlease check spelling. Note that the names for data sets are written in lower case, whereas tags are written with capital letters. "
+                + "\nAdditionally, make sure to set the parameter 'tag' to True if you specified a tag."
+                + "\nFurthermore, make sure to always provide the names of the data sets or tags as a list of strings."
+            )
             spelling = False
         else:
             spelling = True
-            
+
         return id_list, spelling
 
-class ShowDataHelper: 
+
+class ShowDataHelper:
     """
     helper class for the show_data() function
     """
@@ -204,37 +218,73 @@ class ShowDataHelper:
     def summary(self):
         tags = []
         for taglist in self.current_list.tags:
-            clean = re.findall(r"\'(.*?)\'", taglist) #find everything enclosed by '...'
-            for entry in clean: 
+            clean = re.findall(
+                r"\'(.*?)\'", str(taglist)
+            )  # find everything enclosed by '...'
+            for entry in clean:
                 if entry not in tags:
-                    tags.append(entry)        
-        print('There are in total {} datasets available.\nThese datasets belong to {} different categories.These categories are: {}'.format(len(self.current_list), len(tags), tags)) 
-    
+                    tags.append(entry)
+        print(
+            "There are in total {} datasets available.\nThese datasets belong to {} different categories.These categories are: {}".format(
+                len(self.current_list), len(tags), tags
+            )
+        )
+
     def short(self, df):
-        print(tabulate(df[['title', 'name', 'tags']], headers = ['Title', 'Shortname', 'Tags']))
+        print(
+            tabulate(
+                df[["title", "name", "tags"]], headers=["Title", "Shortname", "Tags"]
+            )
+        )
 
     def long(self, df):
-        long = pd.melt(df,id_vars = 'title')
+        long = pd.melt(df, id_vars="title")
         titles = long.title.unique()
-        for element in titles: 
-            df_element = long.loc[long['title'] == element]
-            print(" \n" + element + " :\n" + tabulate(df_element[['variable', 'value']], headers = ['Variable', 'Value'], showindex=False))
-    
+        for element in titles:
+            df_element = long.loc[long["title"] == element]
+            print(
+                " \n"
+                + element
+                + " :\n"
+                + tabulate(
+                    df_element[["variable", "value"]],
+                    headers=["Variable", "Value"],
+                    showindex=False,
+                )
+            )
+
     def meta(self, df):
-        df = df[['title', 'name', 'id', 'modified', 'source', 'notes', 'tags']]
+        df = df[["title", "name", "id", "modified", "source", "notes", "tags"]]
         df = df.values.tolist()
-        headers = ['Title', 'Shortname', 'ID', 'Last edited on', 'Source', 'Notes', 'Tags']
+        headers = [
+            "Title",
+            "Shortname",
+            "ID",
+            "Last edited on",
+            "Source",
+            "Notes",
+            "Tags",
+        ]
         app = tk.Tk()
-        table = tksheet.Sheet(app, height=1000, width = 2000)
+        table = tksheet.Sheet(app, height=1000, width=2000)
         table.grid()
         table.headers(headers)
-        table.enable_bindings(("single_select",
-                       "row_select",
-                       "column_width_resize",
-                       "arrowkeys",
-                       "right_click_popup_menu",
-                       "copy"))
-        table.change_theme(theme = "light blue")
-        table.set_sheet_data(data = df, reset_highlights = True, reset_col_positions=True, reset_row_positions=True)
-        table.set_all_cell_sizes_to_text(redraw = True)
+        table.enable_bindings(
+            (
+                "single_select",
+                "row_select",
+                "column_width_resize",
+                "arrowkeys",
+                "right_click_popup_menu",
+                "copy",
+            )
+        )
+        table.change_theme(theme="light blue")
+        table.set_sheet_data(
+            data=df,
+            reset_highlights=True,
+            reset_col_positions=True,
+            reset_row_positions=True,
+        )
+        table.set_all_cell_sizes_to_text(redraw=True)
         app.mainloop()
