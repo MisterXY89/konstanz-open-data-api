@@ -253,7 +253,7 @@ class ShowDataHelper:
                 )
             )
 
-    def meta(self, df):
+    def meta(self, df, destroy_=False):
         df = df[["title", "name", "id", "modified", "source", "notes", "tags"]]
         df = df.values.tolist()
         headers = [
@@ -287,4 +287,6 @@ class ShowDataHelper:
             reset_row_positions=True,
         )
         table.set_all_cell_sizes_to_text(redraw=True)
+        if destroy_ == True:
+            app.after(1000, app.destroy())
         app.mainloop()
