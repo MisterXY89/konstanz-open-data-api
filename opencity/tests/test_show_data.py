@@ -5,7 +5,8 @@ from pandas import DataFrame
 
 
 @pytest.fixture
-def opencity_instance() -> opencity.OpenCity:
+def opencity_instance(monkeypatch) -> opencity.OpenCity:
+    monkeypatch.setattr("builtins.input", lambda _: "y")
     open_city = opencity.OpenCity()
     return open_city
 
