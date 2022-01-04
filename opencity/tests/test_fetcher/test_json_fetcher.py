@@ -1,6 +1,5 @@
 import pytest
 from fetcher.json_fetcher import jsonFetcher
-import pandas
 
 
 @pytest.fixture
@@ -25,7 +24,7 @@ def test_load_data_correct(fetcher_instance):
         json fetcher instance
     """
     df, flag = fetcher_instance.load_data(
-        url="https://services2.arcgis.com/bvsdhqn48gvbFiYS/arcgis/rest/services/Solarpotenzial_2018/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json"
+        url="https://offenedaten-konstanz.de/sites/default/files/Wahlbezirke-OB-Wahl-2020.json"
     )
     assert flag == True
     assert len(df) > 0
