@@ -1,4 +1,4 @@
-from .fetcher.kml_fetcher import kmlFetcher
+from opencity.fetcher.kml_fetcher import kmlFetcher
 import pytest
 import pandas
 

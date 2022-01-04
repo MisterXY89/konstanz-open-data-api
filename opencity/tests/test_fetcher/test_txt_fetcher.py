@@ -1,5 +1,5 @@
 import pytest
-from .fetcher.txt_fetcher import txtFetcher
+from opencity.fetcher.txt_fetcher import txtFetcher
 
 
 @pytest.fixture

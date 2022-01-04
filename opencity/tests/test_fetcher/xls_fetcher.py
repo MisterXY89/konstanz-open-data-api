@@ -1,5 +1,5 @@
 import pytest
-from .fetcher.xls_fetcher import xlsFetcher
+from opencity.fetcher.xls_fetcher import xlsFetcher
 
 
 @pytest.fixture

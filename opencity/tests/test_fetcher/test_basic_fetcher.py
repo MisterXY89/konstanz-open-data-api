@@ -1,4 +1,4 @@
-from .fetcher.basic_fetcher import BasicFetcher
+from opencity.fetcher.basic_fetcher import BasicFetcher
 import pytest
 
 
