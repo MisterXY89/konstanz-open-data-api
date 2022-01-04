@@ -1,6 +1,6 @@
 import pytest
-from .config import Config as cf
-from .fetch_dataset_list import DataSetUrlFetcher
+from ..config import Config as cf
+from ..fetch_dataset_list import DataSetUrlFetcher
 import pandas as pd
 
 
