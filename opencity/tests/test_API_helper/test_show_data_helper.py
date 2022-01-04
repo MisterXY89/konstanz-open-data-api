@@ -1,7 +1,7 @@
-from opencity.API_helper import ShowDataHelper
-from opencity.API_helper import DataSetUrlFetcher
+from .API_helper import ShowDataHelper
+from .API_helper import DataSetUrlFetcher
 import pytest
-from opencity.config import Config as cf
+from .config import Config as cf
 
 
 @pytest.fixture

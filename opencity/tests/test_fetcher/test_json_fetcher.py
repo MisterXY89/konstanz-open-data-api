@@ -1,5 +1,5 @@
 import pytest
-from fetcher.json_fetcher import jsonFetcher
+from .fetcher.json_fetcher import jsonFetcher
 
 
 @pytest.fixture

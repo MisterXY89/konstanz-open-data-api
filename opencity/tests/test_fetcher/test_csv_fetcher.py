@@ -1,5 +1,5 @@
 import pytest
-from fetcher.csv_fetcher import csvFetcher
+from .fetcher.csv_fetcher import csvFetcher
 import pandas
 
 

@@ -1,7 +1,5 @@
-from abc import abstractclassmethod
 import pytest
-from fetcher.txt_fetcher import txtFetcher
-import pandas
+from .fetcher.txt_fetcher import txtFetcher
 
 
 @pytest.fixture

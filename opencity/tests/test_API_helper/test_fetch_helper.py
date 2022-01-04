@@ -1,9 +1,9 @@
 import pytest
 
-from opencity.API_helper import FetchHelper
-from opencity.fetcher.csv_fetcher import csvFetcher
-from opencity.fetcher.shp_fetcher import shpFetcher
-from opencity.fetcher.txt_fetcher import txtFetcher
+from .API_helper import FetchHelper
+from .fetcher.csv_fetcher import csvFetcher
+from .fetcher.shp_fetcher import shpFetcher
+from .fetcher.txt_fetcher import txtFetcher
 
 
 @pytest.fixture

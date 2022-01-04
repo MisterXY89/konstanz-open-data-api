@@ -1,5 +1,5 @@
 import pytest
-from fetcher.shp_fetcher import shpFetcher
+from .fetcher.shp_fetcher import shpFetcher
 import pandas
 
 

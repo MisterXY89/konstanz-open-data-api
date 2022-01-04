@@ -1,6 +1,5 @@
 import pytest
-from fetcher.xls_fetcher import xlsFetcher
-import pandas
+from .fetcher.xls_fetcher import xlsFetcher
 
 
 @pytest.fixture
