@@ -44,6 +44,6 @@ def test_long(capfd, show_data_helper, current_list):
     assert ("Title" and "Shortname" and "Variable" and "Tags" and "Value") in out
 
 
-def test_meta(show_data_helper, current_list):
-    show_data_helper.meta(current_list, destroy_=True)
-    assert True
+# def test_meta(show_data_helper, current_list):
+#     show_data_helper.meta(current_list, destroy_=True)
+#     assert True
