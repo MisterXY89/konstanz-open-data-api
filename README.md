@@ -1,4 +1,4 @@
-opencity 1.0.1
+opencity
 ================
 
 <img src='logo_package.png' align="right" height="139" />
