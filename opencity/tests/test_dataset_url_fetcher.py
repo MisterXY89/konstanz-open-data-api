@@ -1,5 +1,5 @@
 import pytest
-from ..config import Config as cf
+from ..config import Config
 from ..fetch_dataset_list import DataSetUrlFetcher
 import pandas as pd
 
@@ -7,6 +7,7 @@ import pandas as pd
 @pytest.fixture
 def url_fetcher(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "y")
+    cf = Config()
     url_fetcher = DataSetUrlFetcher(cf)
     return url_fetcher
 
