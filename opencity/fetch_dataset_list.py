@@ -61,7 +61,7 @@ class DataSetUrlFetcher:
 
             data_frame = self._parse_data(resp)
             self._store(data_frame)
-            data_frame = read_curr_packages()
+            data_frame = self.read_curr_packages()
             
         return data_frame
 
