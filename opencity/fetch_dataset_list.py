@@ -61,7 +61,7 @@ class DataSetUrlFetcher:
 
             data_frame = self._parse_data(resp)
             self._store(data_frame)
-            data_frame = pd.read_csv(self.cf.CURRENT_PACKAGE_LIST_FILE)
+            data_frame = read_curr_packages()
             
         return data_frame
 
