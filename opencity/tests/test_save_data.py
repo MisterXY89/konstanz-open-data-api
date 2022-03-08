@@ -16,7 +16,7 @@ def test_data_parameter(opencity_instance, monkeypatch):
     assert os.path.exists(os.getcwd() + "/Einwohner nach Stadtvierteln.csv")
 
 
-def test_data_parameter_wrong(opencity_instance, monkeypatch, capfd):
+def test_data_parameter_e_wrong(opencity_instance, monkeypatch, capfd):
     monkeypatch.setattr("builtins.input", lambda _: "y")
     opencity_instance.save_data(data=["einwoner"])
     out, err = capfd.readouterr()
@@ -27,23 +27,16 @@ def test_tag_parameter(opencity_instance, monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "y")
     opencity_instance.save_data(data=["Geo"], tag=True, folder="data_tag")
     assert os.path.exists(
-        os.getcwd() + "/data_tag/Alte Wahlbezirkseinteilung bis 2018.csv"
+        os.getcwd() + "/data_tag/Stadtteilgrenzen-Stadtteilfläche.xls"
     )
     assert os.path.exists(
         os.getcwd()
         + "/data_tag/Georeferenzierte Standorte Fahrradmietsytsem (konrad, TINK).xls"
     )
+    assert os.path.exists(os.getcwd() + "/data_tag/Solarpotenzial 2018.geojson")
     assert os.path.exists(
-        os.getcwd() + "/data_tag/Kindertagesbetreuung - Einrichtungen.geojson"
+        os.getcwd() + "/data_tag/Öffentlichen Papiereimer - Stadt Konstanz.csv"
     )
-    assert os.path.exists(os.getcwd() + "/data_tag/Baumkataster 2020.zip")
-
-
-def test_data_parameter_wrong(opencity_instance, monkeypatch, capfd):
-    monkeypatch.setattr("builtins.input", lambda _: "y")
-    opencity_instance.save_data(data=["einwoner"], tag=True)
-    out, err = capfd.readouterr()
-    assert "The provided names or tags are incorrect." in out
 
 
 def test_data_parameter_wrong(opencity_instance, monkeypatch, capfd):
