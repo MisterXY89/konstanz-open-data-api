@@ -7,7 +7,7 @@ opencity 1.0.1
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![PyPI version shields.io](https://img.shields.io/pypi/v/ansicolortags.svg)](https://pypi.org/project/opencity/)
+[![PyPI version shields.io](https://camo.githubusercontent.com/3185a59304aa4f41e7ee530782b9a654502d1fe9946ed487c3b119f1506a3bae/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f646565706c61626375742d6c697665)](https://pypi.org/project/opencity/)
 <!-- badges: end -->
 
 `opencity` is an interface for the [open data portal of Constance](https://offenedaten-konstanz.de). It allows you to directly inspect, download, and work with the available data. This package can be easily used by practitioners, members of the civil society, and academics. Technically, it relies on the DKAN API. <br>
