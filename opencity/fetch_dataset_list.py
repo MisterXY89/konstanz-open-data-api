@@ -41,7 +41,6 @@ class DataSetUrlFetcher:
                     return data_frame
                 #print("> Updating packages...")
                 self.update()
-            return data_frame
                 
         except Exception as e:
             if self._interactive:
@@ -55,14 +54,17 @@ class DataSetUrlFetcher:
                     print(f"{Fore.RED}> EXITING")
                     sys.exit(0)
                     return 0
-            resp = self.fetch()
-            if isinstance(resp, int):
-                print(f"Error: status_code = {resp}")
-                return False
+            #resp = self.fetch()
+            #if isinstance(resp, int):
+            #    print(f"Error: status_code = {resp}")
+            #    return False
 
-            data_frame = self._parse_data(resp)
-            self._store(data_frame)
-            return self.read_curr_packages()
+            #data_frame = self._parse_data(resp)
+            #self._store(data_frame)
+            self.update()
+            data_frame = pd.read_csv(self.cf.CURRENT_PACKAGE_LIST_FILE)
+        
+        return data_frame
             
             
     def fetch(self):
