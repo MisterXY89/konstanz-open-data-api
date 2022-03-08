@@ -54,15 +54,14 @@ class DataSetUrlFetcher:
                     print(f"{Fore.RED}> EXITING")
                     sys.exit(0)
                     return 0
-            #resp = self.fetch()
-            #if isinstance(resp, int):
-            #    print(f"Error: status_code = {resp}")
-            #    return False
+            resp = self.fetch()
+            if isinstance(resp, int):
+                print(f"Error: status_code = {resp}")
+                return False
 
-            #data_frame = self._parse_data(resp)
-            #self._store(data_frame)
-            self.update()
-            data_frame = pd.read_csv(self.cf.CURRENT_PACKAGE_LIST_FILE)
+            data_frame = self._parse_data(resp)
+            self._store(data_frame)
+            data_frame = self.read_curr_packages()
         
         return data_frame
             
