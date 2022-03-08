@@ -41,6 +41,7 @@ class DataSetUrlFetcher:
                     return data_frame
                 #print("> Updating packages...")
                 self.update()
+            return data_frame
                 
         except Exception as e:
             if self._interactive:
@@ -61,10 +62,9 @@ class DataSetUrlFetcher:
 
             data_frame = self._parse_data(resp)
             self._store(data_frame)
-            data_frame = self.read_curr_packages()
+            return self.read_curr_packages()
             
-        return data_frame
-
+            
     def fetch(self):
         """
 		basic fetch method for the self.cf.CURRENT_PACKAGE_LIST_URL
