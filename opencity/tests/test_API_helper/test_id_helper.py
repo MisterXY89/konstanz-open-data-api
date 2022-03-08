@@ -1,12 +1,13 @@
 from ...API_helper import IdHelper
 import pytest
-from ...config import Config as cf
+from ...config import Config
 from ...fetch_dataset_list import DataSetUrlFetcher
 
 
 @pytest.fixture
 def id_helper(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "y")
+    cf = Config()
     url_fetcher = DataSetUrlFetcher(cf)
     id_helper = IdHelper(url_fetcher)
     return id_helper

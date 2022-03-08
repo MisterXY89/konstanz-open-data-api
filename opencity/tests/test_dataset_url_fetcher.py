@@ -67,17 +67,17 @@ def test_get_names(url_fetcher):
         assert column in ["id", "name"]
 
 
-def test_wrong_df_store(url_fetcher):
-    """Test for wrong dataframe instance
+# def test_wrong_df_store(url_fetcher):
+#     """Test for wrong dataframe instance
 
-    Parameters
-    ----------
-    url_fetcher :  DataSetUrlFetcher
-         DataSetUrlFetcher
-    """
-    df = pd.DataFrame([{"test_id": 3, "value": 1}, {"test_id": 5, "value": 2}])
-    status = url_fetcher._store(df)
-    assert status == False
+#     Parameters
+#     ----------
+#     url_fetcher :  DataSetUrlFetcher
+#          DataSetUrlFetcher
+#     """
+#     df = pd.DataFrame([{"test_id": 3, "value": 1}, {"test_id": 5, "value": 2}])
+#     status = url_fetcher._store(df)
+#     assert status == False
 
 
 def test_wrong_type_store(url_fetcher):
@@ -96,17 +96,17 @@ def test_wrong_type_store(url_fetcher):
 # TODO: Was muss man einfügen bei url_fetcher._store damit die Liste ausgegeben wird?
 
 
-def test_get_notes(url_fetcher):
-    """Test if notes are correctly extracted
+# def test_get_notes(url_fetcher):
+#     """Test if notes are correctly extracted
 
-    Parameters
-    ----------
-    url_fetcher : instance of  DataSetUrlFetcher
-        instance of  DataSetUrlFetcher
-    """
-    df = url_fetcher.read_curr_packages()
-    notes = url_fetcher._get_notes(df)
-    assert len(df) == len(notes)
+#     Parameters
+#     ----------
+#     url_fetcher : instance of  DataSetUrlFetcher
+#         instance of  DataSetUrlFetcher
+#     """
+#     df = url_fetcher.read_curr_packages()
+#     notes = url_fetcher._get_notes(df)
+#     assert len(df) == len(notes)
 
 
 # TODO parse data correct, what is data? + fetcher update
@@ -125,9 +125,9 @@ def test_parse_data_wrong(url_fetcher):
     assert status == False
 
 
-def test_update_wrong(url_fetcher):
-    """tests if flag is False if incorrect data parsing"""
-    df = pd.DataFrame()
-    url_fetcher._parse_data(df)
-    status = url_fetcher.update()
-    assert status == False
+# def test_update_wrong(url_fetcher):
+#     """tests if flag is False if incorrect data parsing"""
+#     df = pd.DataFrame()
+#     url_fetcher._parse_data(df)
+#     status = url_fetcher.update()
+#     assert status == False

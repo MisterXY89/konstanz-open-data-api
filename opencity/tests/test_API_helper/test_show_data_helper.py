@@ -1,13 +1,14 @@
 from ...API_helper import ShowDataHelper
 from ...API_helper import DataSetUrlFetcher
 import pytest
-from ...config import Config as cf
+from ...config import Config
 
 
 @pytest.fixture
 def show_data_helper(monkeypatch) -> ShowDataHelper:
     monkeypatch.setattr("builtins.input", lambda _: "y")
-    dsuf = DataSetUrlFetcher(cf=cf)
+    cf = Config()
+    dsuf = DataSetUrlFetcher(cf)
     show_data_helper = ShowDataHelper(dsuf.current_list)
     return show_data_helper
 
@@ -15,6 +16,7 @@ def show_data_helper(monkeypatch) -> ShowDataHelper:
 @pytest.fixture
 def current_list(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "y")
+    cf = Config()
     dsuf = DataSetUrlFetcher(cf=cf)
     return dsuf.current_list
 
